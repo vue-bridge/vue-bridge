@@ -5,7 +5,7 @@
 ## Usage
 
 ```js
-import VueMonoRepo from 'vue-monorepo-lib'
+import VueMonoRepo from 'vue3-compat-lib'
 
 // TODO: DEMONSTRATE API
 ```
