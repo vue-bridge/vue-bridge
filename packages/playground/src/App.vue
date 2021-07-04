@@ -3,7 +3,7 @@
   <MyComponent message="Hello from 'vue3-compat-lib'" />
 </template>
 
-<script>
+<script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 // import { MyComponent } from 'vue3-compat-lib' // -> registered via plugin in main.js
 
