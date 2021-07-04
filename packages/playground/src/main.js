@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import Lib from '@linusborg/lib'
+import Lib from 'vue3-compat-lib'
 import App from './App.vue'
 import './index.css'
 

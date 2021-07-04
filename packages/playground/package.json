@@ -8,7 +8,7 @@
     "lint": "eslint 'src/**/*.{ts,vue}'"
   },
   "dependencies": {
-    "@linusborg/lib": "*",
+    "vue3-compat-lib": "*",
     "vue": "^3.0.4"
   },
   "devDependencies": {

@@ -7,11 +7,11 @@ export default {
   plugins: [vue(), WindiCSS()],
   resolve: {
     alias: {
-      '@linusborg/lib': '@linusborg/lib/src/main.ts',
+      'vue3-compat-lib': 'vue3-compat-lib/src/main.ts',
     },
     dedupe: ['vue'],
   },
   optimizeDeps: {
-    exclude: ['@linusborg/lib'],
+    exclude: ['vue3-compat-lib'],
   },
 }

@@ -23,7 +23,7 @@
     "esModuleInterop": true,
     "types": ["vite/client", "jest", "cypress"],
     "paths": {
-      "@linusborg/lib": ["packages/lib/src/main.ts"]
+      "vue3-compat-lib": ["packages/lib/src/main.ts"]
     }
   },
   "include": [
