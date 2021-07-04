@@ -1,0 +1,11 @@
+
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*.vue", "src/**/*.ts"],
+  "exclude": ["src/**/__tests__/**/*"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "types"
+  }
+}

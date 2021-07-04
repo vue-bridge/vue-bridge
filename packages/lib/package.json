@@ -1,0 +1,40 @@
+{
+  "name": "@linusborg/lib",
+  "version": "0.0.0",
+  "private": true,
+  "description": "This is a placeholder description, please change me.",
+  "author": "Thorsten Lünborg <t.luneborg@googlemail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/es5/lib.umd.js",
+  "module": "dist/lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    },
+    "./": "./"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "yarn build:lib && yarn build:types",
+    "build:lib": "vite build",
+    "build:types": "rollup --config ../../config/rollup.types.config.js",
+    "typecheck": "vuedx-typecheck src",
+    "typecheck:watch": "vuedx-typecheck  src --watch",
+    "lint": "eslint 'src/**/*.{ts,vue}'",
+    "test": "jest --config ../../jest.config.ts --runInBand",
+    "test:w": "jest --config ../../jest.config.ts --watch --runInBand"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.4"
+  }
+}
