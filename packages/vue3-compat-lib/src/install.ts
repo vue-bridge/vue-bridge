@@ -1,4 +1,5 @@
-import { App, isVue2 } from 'vue-demi'
+import type { App } from 'vue'
+import { isVue2 } from './constants'
 import { lifecyclePlugin } from './lifecycleHooks'
 import { listenersPlugin } from './listeners'
 import { modelEmitPlugin } from './vModel'

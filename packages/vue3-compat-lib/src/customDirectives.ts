@@ -1,5 +1,5 @@
 import type { Directive, DirectiveBinding, DirectiveHook, VNode } from 'vue'
-import { isVue3 } from 'vue-demi'
+import { isVue2 } from './constants'
 
 const map = {
   beforeMount: 'bind' as const,
@@ -13,10 +13,10 @@ const map = {
   unmounted: 'unbind',
 } as const
 
-export function directiveCompat<T, V>(
+export function defineDirective<T, V>(
   directiveConfig: Directive<T, V>
 ): Directive<T, V> {
-  if (isVue3) {
+  if (!isVue2) {
     return directiveConfig
   } else {
     const newDirective = {} as Directive<T, V>

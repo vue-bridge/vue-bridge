@@ -1,4 +1,4 @@
-import { isVue2 } from 'vue-demi'
+import { isVue2 } from './constants'
 import { defineAsyncComponent as _defineAsyncComponent } from 'vue'
 import type { AsyncComponentLoader, AsyncComponentOptions } from 'vue'
 

@@ -1,5 +1,5 @@
-import { App, isVue2 } from 'vue-demi'
-
+import type { App } from 'vue'
+import { isVue2 } from './constants'
 export function listenersPlugin(Vue: App) {
   if (isVue2) {
     Object.defineProperty((Vue as any).prototype, '$_listeners', {

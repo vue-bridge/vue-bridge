@@ -1,5 +1,5 @@
-import { App, isVue3 } from 'vue-demi'
-
+import type { App, DefineComponent } from 'vue'
+import { isVue3 } from './constants'
 /**
  * Usage:
  * props: {
@@ -14,7 +14,7 @@ export function modelEmitPlugin(Vue: App) {
 }
 
 const modelEmitMixin = {
-  beforeCreate() {
+  beforeCreate(this: DefineComponent) {
     if (isVue3) return
 
     const _emit = this.$emit
