@@ -23,6 +23,6 @@
     "vue3-compat-lib": "*"
   },
   "devDependencies": {
-    "vitepress": "^0.13.0"
+    "vitepress": "^0.15.6"
   }
 }

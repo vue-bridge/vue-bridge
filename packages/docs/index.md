@@ -2,8 +2,8 @@
 home: true
 heroImage: /logo.png
 heroAlt: Logo of this library
-heroText: Vue Monorepo
-tagline: Template for developing vue libraries in a monorepo
+heroText: Vue 3 Compat Library
+tagline: A Guide and plugin for building cross-version compatible Vue libraries
 actionText: Get Started
 actionLink: /guide/
 features:
@@ -15,3 +15,5 @@ features:
   details: Add new packages with one command, supported by hygen.
 footer: MIT Licensed | Copyright © 2020-present Thorsten Lünborg
 ---
+
+# Hello!

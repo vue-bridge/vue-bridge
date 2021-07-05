@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'VueMonoRepoLib',
-  description: 'Replace this descriptions with something nice!',
+  title: 'Vue3 Compat Lib',
+  description: 'A Guide and plugin for building cross-version compatible Vue libraries',
   themeConfig: {
-    repo: '',
+    repo: 'https://github.com/linusborg/vue3-compat-lib',
     repoLabel: 'GitHub',
     docsDir: 'docs',
     docsBranch: 'next',
