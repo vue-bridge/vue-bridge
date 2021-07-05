@@ -1,0 +1,1 @@
+export { defineAsyncComponent } from 'vue'

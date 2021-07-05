@@ -23,17 +23,15 @@ export default <UserConfig>{
   resolve: {
     alias: {
       vue: process.env.BUILD_TARGET_V2 ? 'vue2' : 'vue',
-    }
+    },
   },
   // we build with esbuild for Vue 2
   esbuild: !!process.env.BUILD_TARGET_V2,
   build: {
     lib: {
-      entry: 'src/main.ts',
+      entry: process.env.BUILD_TARGET_V2 ? 'src/main.vue2.ts' : 'src/main.ts',
       name: 'Vue3Compat',
-      fileName: process.env.BUILD_TARGET_V2
-        ? 'vue2/index'
-        : 'index',
+      fileName: process.env.BUILD_TARGET_V2 ? 'vue2/index' : 'index',
     },
     emptyOutDir: !process.env.BUILD_TARGET_V2,
     minify: false,
