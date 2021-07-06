@@ -8,13 +8,14 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vue2": "npm:vue@^2.6",
+    "vue3-compat-lib": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
     "vite": "^2.4.0",
-    "vue2": "npm:vue@^2.6",
-    "vue3-compat-lib": "*"
+    "vite-plugin-vue3-compat-lib": "*"
   }
 }
