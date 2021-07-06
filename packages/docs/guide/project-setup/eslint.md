@@ -22,7 +22,19 @@ If you do, you should enforce the following rules manually, as they are not incl
         "importNames": ["defineAsyncComponent"],
         "message": "Please use defineAsyncComponent from 'vue3-compat-lib' instead."
       }]
-    }]
+    }],
+    // recommended in combination with attrsListenersMixin
+    'no-restricted-properties': [
+      'error',
+      {
+        property: '$attrs',
+        message: 'Please use $_attrs instead',
+      },
+      {
+        property: '$listeners',
+        message: 'Please use $_listeners instead',
+      },
+    ],
   }
 }
 ```

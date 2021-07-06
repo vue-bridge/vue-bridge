@@ -1,5 +1,6 @@
 # Introduction
 
+
 ## Why `vue3-compat-lib`?
 
 With Vue 3, a considerable amount of breaking changes were introduced. And while the overall API and style of writing Vue components stayed the same, the sum of these changes plus the all-new virtual DOM and template compiler, which is incompatible with the old one, mean supporting both Vue 2 and 3 is not trivial.
@@ -23,11 +24,25 @@ Therefore, this project consists of multiple parts:
 
 ### How does this compare to `@vue/'compat`
 
+The "Migration build" of Vue 3, aka `@vue/compat`, is meant to support the _transition_ from Vue 2 to Vue 3. It should be used *temporarily* while migrating a big app from Vue 2 to Vue 3. After you are done migating to Vue 3, you remove `@vue/compat` from your setup and run on Vue 3 only. It also will be phased out from publishing around the end of 2021.
+
+In comparison `@vue3-compat-lib` is intended to be a long-term solution for *libraries* that want to build and publish packages that can be consumed by both Vue 2 and Vue 3 projects. As such, it has some limitations that authors need to be aware of and respect while writing their libraries, which is what the guide of this project provides.
+
 ## Is this for me?
 
+This project is generally for you if you:
 
+* have a small to medium sized library
+* that doesn't need to use render functions and can rely on SFCs exclusively
+* don't have a hard requirement on any of the [incompatible features](./compatibility/index.md#incompatible)
+* want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
 
-## On Writing  cross-compatible Vue Libraries
+It will be easier to use this project if you:
+
+* are familiar with the differences between Vue 2 and Vue 3
+* know how to use and configure [Eslint](https://eslint.org)
+* feel comfortable configuring your build system (Vite, rollup, webpack)
+## Workflow of publishing cross-compatible Vue Libraries
 
 The changes introduced in Vue 3 can be roughly put in 3 categories:
 
@@ -35,4 +50,4 @@ The changes introduced in Vue 3 can be roughly put in 3 categories:
 2. **Incompatible, but can be polyfilled safely at runtime** - this is what the `vue3-compat-lib` package does.
 3. **behavioral differences** - these you can account for yourself in your code, by following a few basic rules.
 
-Our guide will expain all of these to you and offer intructions on how to deal with them.
+Our guide will explain all of these to you and offer instructions on how to deal with them.

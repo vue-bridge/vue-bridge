@@ -12,16 +12,16 @@ export default {
       h(Badge, { type: 'info', ...props }, slots)
     )
     app.component('eslint', (props, { slots }) =>
-      h(Badge, { type: 'info', ...props }, '🔍 Eslint')
+      h(Badge, { type: 'info', ...props }, '🔍 Eslint')
     )
     app.component('plugin', (props, { slots }) =>
-      h(Badge, { type: 'success', ...props }, '✅ Plugin')
+      h(Badge, { type: 'success', ...props }, '✅ Plugin')
     )
     app.component('discipline', (props, { slots }) =>
-      h(Badge, { type: 'warn', ...props }, '👩🏽‍💻 Discipline')
+      h(Badge, { type: 'warn', ...props }, '👩🏽‍💻 Discipline')
     )
     app.component('pitfall', (props, { slots }) =>
-      h(Badge, { type: 'error', ...props }, '⚠️ Pitfall')
+      h(Badge, { type: 'error', ...props }, '⚠️ Pitfall')
     )
   },
 }
