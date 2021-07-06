@@ -9,8 +9,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "lerna run start --stream --parallel --scope '@linusborg/*'",
     "play": "cd packages/playground && yarn start",
+    "docs:dev": "cd packages/docs && yarn start",
     "test:all": "jest --runInBand --config jest.config.ts",
     "test:w": "jest --runInBand --config jest.config.ts --watch",
     "test:packages": "lerna run test --stream --scope '@linusborg/*'  --",

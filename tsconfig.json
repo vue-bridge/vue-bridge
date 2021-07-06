@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "outDir": "./dist",
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
@@ -11,6 +12,7 @@
     "importsNotUsedAsValues": "error",
     //
 
+    "allowJs":true,
     "declaration": true,
     "sourceMap": true,   
     "strict": true,
@@ -31,6 +33,8 @@
     "/**/src/**/*.ts",
     "/**/src/**/*.js",
     "/**/src/**/*.vue",
+    "/packages/docs/**/*.vue",
+    "/packages/docs/**/*.js",
     "/cypress/**/*.js",
     // necessary for un-breaking jest types broken by cypress' chai dependency
     // https://github.com/cypress-io/cypress/issues/1087#issuecomment-353370449
