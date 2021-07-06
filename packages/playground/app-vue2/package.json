@@ -1,0 +1,19 @@
+{
+  "name": "app-vue2",
+  "version": "0.0.0",
+  "private":"true",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.4",
+    "vite": "^2.4.0",
+    "vite-plugin-vue2": "^1.7.2",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

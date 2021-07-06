@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/playground/*"
   ],
   "scripts": {
     "play": "cd packages/playground && yarn start",
