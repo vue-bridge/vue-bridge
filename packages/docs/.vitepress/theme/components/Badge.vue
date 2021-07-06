@@ -35,4 +35,16 @@ export default defineComponent({
     border-color: blue;
     color: blue;
   }
+  .badge.success {
+    border-color: limegreen;
+    color: limegreen;
+  }
+  .badge.warn {
+    border-color: goldenrod;
+    color: goldenrod;
+  }
+  .badge.error {
+    border-color: tomato;
+    color: tomato;
+  }
 </style>
