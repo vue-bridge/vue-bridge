@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import VueCompat from 'vite-plugin-vue3-compat-lib'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [...VueCompat({ mainMode: 3 })],
   build: {
     lib: {
       entry: 'src/main.js',
+      formats: ['es', 'umd'],
     },
   },
 })

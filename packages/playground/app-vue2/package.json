@@ -7,11 +7,14 @@
     "build": "vite build",
     "serve": "vite preview"
   },
+  "workspaces": {
+    "nohoist": ["vue", "vue-template-compiler", "vite-plugin-vue2", "vite"]
+  },
   "dependencies": {
-    "vue": "^3.0.5"
+    "vue": "^2.6.0",
+    "example-library": "*"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.2.4",
     "vite": "^2.4.0",
     "vite-plugin-vue2": "^1.7.2",
     "vue-template-compiler": "^2.6.14"

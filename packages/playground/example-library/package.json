@@ -1,10 +1,11 @@
 {
-  "name": "example-lib",
+  "name": "example-library",
   "version": "0.1.0",
   "private":"true",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "watch": "vite build --watch",
+    "build": "vite build && BUILD_TARGET_VUE=2 vite build",
     "serve": "vite preview"
   },
   "dependencies": {
