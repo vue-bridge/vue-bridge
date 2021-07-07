@@ -1,0 +1,20 @@
+{
+  "name": "vite-plugin-vue3-compat-lib",
+  "version": "0.1.0",
+  "description": "A Vite Plugin to build Vue libraries for both Vue 2 and Vue 3",
+  "main": "index.js",
+  "author": "Thorsten Luenborg",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.1.4",
+    "vite-plugin-vue2": "^1.7.2",
+    "vue": "^3.1.4",
+    "vue-template-compiler": "^2.6.14",
+    "vue2": "npm:vue@^2.6"
+  },
+    "peerDependencies": {
+    "vite": "^2.4.0"
+  }
+}
