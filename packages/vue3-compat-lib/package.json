@@ -7,16 +7,12 @@
   "homepage": "",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.umd.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    },
-    "./vue2": {
-      "import": "./dist/vue2/index.es.js",
-      "require": "./dist/vue2/index.umd.js"
+      "require": "./dist/index.cjs.js"
     },
     "./": "./"
   },
@@ -26,9 +22,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "yarn build:v3 && yarn build:v2 && yarn build:types",
-    "build:v3": "vite build",
-    "build:v2": "cross-env BUILD_TARGET_V2=1 vite build",
+    "build": "vite build && yarn build:types",
     "build:types": "rollup --config ../../config/rollup.types.config.js",
     "typecheck": "vuedx-typecheck src",
     "typecheck:watch": "vuedx-typecheck  src --watch",
@@ -37,10 +31,11 @@
     "test:w": "jest --config ../../jest.config.ts --watch --runInBand"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "vue-demi": "^0.10.0"
   },
   "peerDependencies": {
-    "vue": "^3.0.4"
+    "vue": "^3.0.4 || ^2.6"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
