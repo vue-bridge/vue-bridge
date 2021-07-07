@@ -15,7 +15,7 @@ If you do, you should enforce the following rules manually, as they are not incl
     'vue/no-deprecated-v-bind-sync': 'error',
     'vue/no-deprecated-v-on-native-modifier': 'error',
     'vue/no-use-v-if-with-v-for': 'error',
-    'vue/no-deprecated-dollar-listeners-api': 'error,
+    'vue/no-deprecated-dollar-listeners-api': 'error',
     "no-restricted-imports": ["error", {
       "paths": [{
         "name": "vue",
