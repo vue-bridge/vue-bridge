@@ -31,20 +31,21 @@ export default defineComponent({
     color: #CCC;
 
   }
+  /* Colors: https://coolors.co/4fc08d-486684-f3b61f-1c0f13-f05d5e */
   .badge.info {
-    border-color: blue;
-    color: blue;
+    border-color: #486684;
+    color: #486684;
   }
   .badge.success {
-    border-color: limegreen;
-    color: limegreen;
+    border-color: #41B883;
+    color: #41B883;
   }
   .badge.warn {
-    border-color: goldenrod;
-    color: goldenrod;
+    border-color: #F3B61F;
+    color: #F3B61F;
   }
   .badge.error {
-    border-color: tomato;
-    color: tomato;
+    border-color: #F05D5E; /* #ED6A5A; tomato; */
+    color: #ED6A5A;
   }
 </style>
