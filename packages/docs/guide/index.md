@@ -7,7 +7,7 @@ With Vue 3, a considerable amount of breaking changes were introduced. And while
 
 Especially the new compiler is a challenge for library authors, because when writing SFCs (`.vue` files), even if they theoretically wrote code that didn't use any of the breaking APIs, the would still have to compile their library twice: once for Vue 2, once for Vue 3.
 
-Furthermore, avoiding all of the breaking API changes would severly limit a developer's ability to use Vue to its full potential, so it's not a realistic option for them.
+Furthermore, avoiding all of the breaking API changes would severely limit a developer's ability to use Vue to its full potential, so it's not a realistic option for them.
 
 ### Introducing Vue 3 Compat Lib
 
@@ -34,7 +34,7 @@ This project is generally for you if you:
 
 * have a small to medium sized library
 * that doesn't need to use render functions and can rely on SFCs exclusively
-* don't have a hard requirement on any of the [incompatible features](./compatibility/index.md#incompatible)
+* don't have a hard requirement on any of the [incompatible features](../compatibility/index.md)
 * want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
 
 It will be easier to use this project if you:

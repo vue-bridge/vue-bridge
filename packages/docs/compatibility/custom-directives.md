@@ -35,16 +35,6 @@ export const myDirective = defineDirective({
 })
 ```
 
-## Vnode arguments
-
-::: warning
-  
-  As vnodes are totally different in Vue 2 and Vue 3, it's recommended to not access them in custom directives.
-
-  You can try and find a way that works for both by using `vue-demi`
-
-:::
-
 ## Accessing the component instance
   
 In some edge cases, it might be necessary to get access to the component instance. This works differently in Vue 2 and Vue 3. You can use `vue-demi` to take care of that:
@@ -58,3 +48,11 @@ const myDirective = defineDirective({
   }
 })
 ```
+
+## Vnode arguments
+
+::: warning
+  As vnodes are totally different in Vue 2 and Vue 3, it's recommended to not access them in custom directives.
+
+  You can try and find a way that works for both by using `vue-demi`
+:::
