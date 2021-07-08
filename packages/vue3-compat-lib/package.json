@@ -34,10 +34,17 @@
     "tslib": "^2.0.0",
     "vue-demi": "^0.10.0"
   },
-  "peerDependencies": {
-    "vue": "^3.0.4 || ^2.6"
-  },
   "devDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.13",
     "cross-env": "^7.0.3"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.13",
+    "vue": "^2.0.0 || >=3.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   }
 }

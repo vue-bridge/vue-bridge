@@ -1,18 +1,24 @@
 {
   "name": "app-vue2",
   "version": "0.0.0",
-  "private":"true",
+  "private": "true",
   "scripts": {
-    "dev": "vite",
+    "dev": "vue-demi-switch 2 && vite --open",
     "build": "vite build",
     "serve": "vite preview"
   },
   "workspaces": {
-    "nohoist": ["vue", "vue-template-compiler", "vite-plugin-vue2", "vite"]
+    "nohoist": [
+      "vue",
+      "vue-template-compiler",
+      "vite-plugin-vue2",
+      "vite"
+    ]
   },
   "dependencies": {
-    "vue": "^2.6.0",
-    "example-library": "*"
+    "example-library": "*",
+    "vue": "2.6.14",
+    "vue-demi": "^0.10.0"
   },
   "devDependencies": {
     "vite": "^2.4.0",

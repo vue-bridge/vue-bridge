@@ -10,7 +10,8 @@
     "packages/playground/*"
   ],
   "scripts": {
-    "play": "cd packages/playground && yarn start",
+    "s:2": "vue-demi-switch 2",
+    "s:3": "vue-demi-switch 3",
     "docs:dev": "cd packages/docs && yarn start",
     "test:all": "jest --runInBand --config jest.config.ts",
     "test:w": "jest --runInBand --config jest.config.ts --watch",
@@ -47,8 +48,6 @@
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.0",
     "vite": "^2.4.0",
-    "vue": "^3.0.4",
-    "vue-demi": "^0.9.1",
     "vue-jest": "^5.0.0-alpha.7",
     "vue-tsc": "^0.1.2"
   },
