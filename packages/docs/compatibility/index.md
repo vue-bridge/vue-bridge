@@ -43,6 +43,7 @@ This can seem like a lot, so make sure to read the Guide to learn how to navigat
 - Always respect `v-bind` order precedence of Vue 3 <pitfall />
 - Always use `null` to remove non-boolean attrs instead of `false` <pitfall />
 - Always respect Vue 3's `v-if` - `v-for`precedence <eslint />
+- Always use [the `is` prop with special `<component>`](./component-is-prop.md) <eslint />
 
 ## 🧬 Polyfilled by `@vue3-compat-lib`
 

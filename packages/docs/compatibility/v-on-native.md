@@ -8,6 +8,14 @@ But make sure to always document your component's emitted events with `emits:` a
 
 * [vue/no-deprecated-v-on-native-modifier](https://eslint.vuejs.org/rules/no-deprecated-v-on-native-modifier.html#vue-no-deprecated-v-on-native-modifier)
 
+```js
+{
+  rules: {
+    'vue/no-deprecated-v-on-native-modifier': 'error'
+  }
+}
+```
+
 ## Workaround: Custom directive
 
 ```js
