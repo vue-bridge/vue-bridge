@@ -4,9 +4,7 @@
 
 <script>
 export default {
-  data: () => ({
-    msg: 'Hello World!',
-  }),
+  props: ['msg']
 }
 </script>
 

@@ -1,6 +1,7 @@
 module.exports = {
   // extends: ['../../../.eslintrc.js'],
   rules: {
+    'unused-imports/no-unused-imports': 0,
     'vue/no-multiple-template-root': 'error',
     'vue/require-explicit-emits': 'error',
     'vue/no-v-model-argument': 'error',
@@ -24,6 +25,19 @@ module.exports = {
     //     ],
     //   },
     // ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'vue',
+            importNames: ['defineComponent'],
+            message:
+              "Please use ` import { defineComponent } from 'vue3-compat-lib' instead.",
+          },
+        ],
+      },
+    ],
 
     // recommended in combination with attrsListenersMixin
     'no-restricted-properties': [
