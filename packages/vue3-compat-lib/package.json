@@ -24,8 +24,6 @@
   "scripts": {
     "build": "vite build && yarn build:types",
     "build:types": "rollup --config ../../config/rollup.types.config.js",
-    "typecheck": "vuedx-typecheck src",
-    "typecheck:watch": "vuedx-typecheck  src --watch",
     "lint": "eslint 'src/**/*.{ts,vue}'",
     "test": "jest --config ../../jest.config.ts --runInBand",
     "test:w": "jest --config ../../jest.config.ts --watch --runInBand"

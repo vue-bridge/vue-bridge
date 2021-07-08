@@ -1,6 +1,3 @@
-export { install } from './install'
-export { attrsListenersMixin } from './attrs-listeners'
-export { vModelPlugin } from './vModel'
-// TODO: include as manually compiled extra file?
-// export { defineAsyncComponent } from './defineAsyncComponent.vue3'
+export {set, del } from '@vue/composition-api'
 export { defineDirective } from './customDirectives'
+export { defineComponent } from './defineComponent'

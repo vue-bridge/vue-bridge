@@ -6,7 +6,7 @@ export function attrsListenersMixin() {
     return {
       computed: {
         $_attrs() {
-          return (this as any).$listeners
+          return (this as any).$attrs
         },
         $_listeners() {
           return (this as any).$listeners
@@ -31,7 +31,9 @@ export function attrsListenersMixin() {
           const listeners: Record<string, () => void> = {}
           Object.keys(attrs).forEach((key: string) => {
             if (listenerRE.test(key)) {
-              listeners[lowerFirstChar(key.replace(/^on/, ''))]
+              const listener = lowerFirstChar(key.replace(/^on/, ''))
+              // FIXME: only include events that are *not* declared in `emits` option 
+              listeners[listener]
             }
           })
         },

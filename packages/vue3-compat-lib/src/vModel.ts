@@ -1,28 +1,17 @@
-import type { App, DefineComponent } from 'vue'
-import { isVue2 } from './constants'
-
-export function vModelPlugin(Vue: App) {
-  Vue.mixin(vModelMixin)
+export function patchVModelProp(component: any) {
+  if (hasVModelProp(component.props) && hasvModelEvent(component.emits)) {
+    component.model = {
+      prop: 'modelValue',
+      event: 'update:modelValue'
+    }
+  }
 }
 
-const vModelMixin = {
-  beforeCreate(this: DefineComponent) {
-    if (!isVue2) return
+function hasvModelEvent(emits: string[] | Record<string, any> = []): boolean {
+  const events = Array.isArray(emits) ? emits : Object.keys(emits)
+  return events.includes('update:modelValue')
+}
 
-    const _emit = this.$emit
-
-    this.$emit = (event: string, payload?: any) => {
-      event = event === 'update:modelValue' ? 'input' : event
-
-      _emit(event, payload)
-    }
-
-    if (
-      !this.$options.keepValueProp &&
-      Object.prototype.hasOwnProperty.call(this.$options.props || {}, 'value')
-    ) {
-      this.$options.props.modelValue = this.$options.props.value
-      delete this.$options.props.value
-    }
-  },
+function hasVModelProp(props = {}) {
+  return Object.prototype.hasOwnProperty.call(props, 'modelValue')
 }
