@@ -18,10 +18,10 @@ This can seem like a lot, so make sure to read the Guide to learn how to navigat
 ## 🛑 Incompatible
 
 - Don' use [Multiple Root elements / Fragments](./multiple-root-elements.md) <eslint />
-- Don't use `v-model:arg` <- -> `v-bind.sync` <eslint />
+- Don't use [`v-model:arg` & `v-bind.sync`](./v-model-arg-sync.md) <eslint />
 - Don't use [`v-on.native` (removed in Vue 3)](./v-on-native.md) <eslint />
 - [Don't use template `ref` on `v-for` element](./ref-v-for.md) <discipline />
--  Don't use Filters (removed in Vue 3) <eslint />
+-  Don't use [Filters (removed in Vue 3)](./filter.md) <eslint />
 
 ## 🛠 Compatibility achievable
 

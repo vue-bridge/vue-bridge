@@ -14,14 +14,15 @@ If you do, you should enforce the following rules manually, as they are not incl
     'vue/no-v-model-argument': 'error',
     'vue/no-deprecated-v-bind-sync': 'error',
     'vue/no-deprecated-v-on-native-modifier': 'error',
-    'vue/no-use-v-if-with-v-for': 'error',
     'vue/no-deprecated-dollar-listeners-api': 'error',
     "vue/no-deprecated-filter": "error",
+    "vue/no-deprecated-html-element-is",
+    'vue/no-use-v-if-with-v-for': 'error',
     "no-restricted-imports": ["error", {
       "paths": [{
         "name": "vue",
         "importNames": ["defineAsyncComponent"],
-        "message": "Please use defineAsyncComponent from 'vue3-compat-lib' instead."
+        "message": "defineAsyncComponent is not available in Vue 2. @vue3-compat-lib plans to provide support for this in the future."
       }]
     }],
     // recommended in combination with attrsListenersMixin
