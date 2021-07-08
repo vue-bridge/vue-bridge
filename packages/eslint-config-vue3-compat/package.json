@@ -1,0 +1,17 @@
+{
+  "name": "eslint-config-vue3-compat",
+  "version": "0.1.0",
+  "description": "An eslint config that enables a set of helpful rules in projects using vue3-compat-lib",
+  "main": "index.js",
+  "author": "Thorsten Luenborg",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^6.2.0 || ^7.0.0",
+    "eslint-plugin-vue": "7.13.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
+  }
+}
