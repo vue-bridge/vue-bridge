@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Thorsten Luenborg",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "vue-demi": "^0.10.0"
   },

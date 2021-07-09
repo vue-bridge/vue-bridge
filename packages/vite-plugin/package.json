@@ -6,7 +6,8 @@
   "author": "Thorsten Luenborg",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "vue": "^3.1.4",

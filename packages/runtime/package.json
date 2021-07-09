@@ -28,6 +28,9 @@
     "test": "jest --config ../../jest.config.ts --runInBand",
     "test:w": "jest --config ../../jest.config.ts --watch --runInBand"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "tslib": "^2.0.0",
     "vue-demi": "^0.10.0"
