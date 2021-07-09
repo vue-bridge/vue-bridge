@@ -1,5 +1,5 @@
 {
-  "name": "vue3-compat-testing",
+  "name": "@vue-bridge/testing",
   "version": "0.1.0",
   "description": "Wrapper over vue-test-utils to enable tests in cross-version Vue libraries",
   "main": "index.js",
