@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "lib": ["dom", "ES2020"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationDir": "types",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["index.ts"]
+}

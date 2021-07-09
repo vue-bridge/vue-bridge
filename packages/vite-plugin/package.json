@@ -2,15 +2,21 @@
   "name": "@vue-bridge/vite-plugin",
   "version": "0.1.0",
   "description": "A Vite Plugin to build Vue libraries for both Vue 2 and Vue 3",
-  "main": "index.js",
   "author": "Thorsten Luenborg",
   "license": "MIT",
   "private": false,
+  "main": "index.js",
+  "types": "./types",
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "vue-demi-switch 3"
+  },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
     "vue": "^3.1.4",
+    "vue-demi": "^0.10.0",
     "@vitejs/plugin-vue": "^1.2.4",
     "vite-plugin-vue2": "^1.7.2",
     "@vue/compiler-sfc": "^3.1.4",

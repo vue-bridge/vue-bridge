@@ -3,6 +3,7 @@ import { createVuePlugin as vue2 } from 'vite-plugin-vue2'
 import type { VueViteOptions as Vue2Options } from 'vite-plugin-vue2'
 import type { Options as Vue3Options } from '@vitejs/plugin-vue'
 import type { Plugin } from 'vite'
+import { isVue2 } from 'vue-demi'
 
 /**
  * Usage:
@@ -32,10 +33,10 @@ export default function viteVueCompatPlugin(_options: VueCompatOptions) {
 
   const vueCompatPlugin = createVueCompatPlugin(options)
 
+  const _version = process.env.BUILD_TARGET_VUE === '2' ? 2 : null
+  const version = _version ?? isVue2 ? 2 : 3
   const vuePlugin =
-    process.env.BUILD_TARGET_VUE === '2'
-      ? vue2(vue2PluginOptions)
-      : vue3(vue3PluginOptions)
+    version === 2 ? vue2(vue2PluginOptions) : vue3(vue3PluginOptions)
 
   return [vueCompatPlugin, vuePlugin]
 }
@@ -45,7 +46,7 @@ function createVueCompatPlugin(
 ) {
   const compatPlugin: Plugin = {
     name: 'vue3-compat',
-    // @ts-expect-error - return type mismatch in vite's types
+    // @ts-expect-error
     config(config) {
       const mode = process.env.BUILD_TARGET_VUE || options.mainMode
       const baseFileName =
