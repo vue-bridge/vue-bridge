@@ -1,9 +1,14 @@
 // TODO: Convert to Typescript
 const { isVue2 } = require('vue-demi')
-const { mount: _mount, ...testUtils } = require('@vue/test-utils')
+const {
+  mount: _mount,
+  shallowMount: _shallowMount,
+  ...testUtils
+} = require('@vue/test-utils')
 
 module.exports = {
   mount,
+  shallowMount,
   ...testUtils,
 }
 
@@ -15,6 +20,16 @@ function mount(component, options) {
   } else {
     patchSlots(options)
     return _mount(component, options)
+  }
+}
+function shallowMount(component, options) {
+  if (isVue2) {
+    patchProps(options)
+    patchGlobals(options)
+    return patchUnMount(_shallowMount(component, options))
+  } else {
+    patchSlots(options)
+    return _shallowMount(component, options)
   }
 }
 
