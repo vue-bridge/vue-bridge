@@ -17,6 +17,6 @@
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
     "vite": "^2.4.0",
-    "@vue-bridge/vite-plugin-vue": "*"
+    "@vue-bridge/vite-plugin": "*"
   }
 }

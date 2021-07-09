@@ -20,7 +20,7 @@ Therefore, this project consists of multiple parts:
    * by avoiding APIs that are fundamentally incompatible between Vue 2 and Vue 3 (spoiler: those are not as bad as you might fear)
 2. `@vue-bridge/eslint-config` - A set of eslint rules that keep you from using incompatible features
 2. `@vue-bridge/runtime` A Vue plugin that "polyfills" or patches a few of the breaking changes for Vue 2 at runtime.
-3. `@vue-bridge/vite-plugin-vue` - A Vite plugin that makes bundling your cross-compatible components for Vue 2 and Vue 3 easy
+3. `@vue-bridge/vite-plugin` - A Vite plugin that makes bundling your cross-compatible components for Vue 2 and Vue 3 easy
     * We also provide config examples for other build systems, and are open to contributions for plugins like this one
 4. `@vue-bridge/testing` - A wrapper around `@vue/testing-library's` main functions: `mount()` and `shallowMount()`, allowing your tests to be run in both environments
 

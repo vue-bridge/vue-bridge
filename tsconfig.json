@@ -26,7 +26,7 @@
     "types": ["vite/client", "jest", "cypress"],
     "paths": {
       "@vue-bridge/runtime": ["packages/vue3-compat-lib/src/main.ts"],
-      "@vue-bridge/vite-plugin-vue": ["packages/vite-plugin/src/index.ts"]
+      "@vue-bridge/vite-plugin": ["packages/vite-plugin/src/index.ts"]
     }
   },
   "include": [

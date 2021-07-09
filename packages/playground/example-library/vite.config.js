@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import VueCompat from '@vue-bridge/vite-plugin-vue'
+import VueCompat from '@vue-bridge/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
