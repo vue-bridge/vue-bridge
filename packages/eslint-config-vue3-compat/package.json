@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-vue3-compat",
+  "name": "@vue-bridge/eslint-config",
   "version": "0.1.0",
   "description": "An eslint config that enables a set of helpful rules in projects using @vue-bridge/runtime",
   "main": "index.js",
