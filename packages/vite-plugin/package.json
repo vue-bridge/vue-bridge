@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-vue3-compat-lib",
+  "name": "@vue-bridge/vite-plugin-vue",
   "version": "0.1.0",
   "description": "A Vite Plugin to build Vue libraries for both Vue 2 and Vue 3",
   "main": "index.js",

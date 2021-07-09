@@ -19,7 +19,7 @@ Therefore, this project consists of multiple parts:
 2. A [Guide](#) on how to write and publish cross-compatible components (and directives) 
    * with the helpers provided by this plugin.
    * by avoiding APIs that are fundamentally incompatible between Vue 2 and Vue 3 (spoiler: those are not as bad as you might fear)
-3. `vite-plugin-vue3-compat-lib` A plugin for Vite to make it easier to compile your cross-compatible components for Vue 2 and Vue 3
+3. `@vue-bridge/vite-plugin-vue` A plugin for Vite to make it easier to compile your cross-compatible components for Vue 2 and Vue 3
    * We also provide config examples for other build systems, and are open to contributions for plugins like this one
 
 ### How does this compare to `@vue/'compat`
