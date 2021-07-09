@@ -7,5 +7,4 @@
 ```
 const docs = require('docs');
 
-// TODO: DEMONSTRATE API
 ```

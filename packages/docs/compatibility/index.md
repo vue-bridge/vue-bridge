@@ -30,7 +30,7 @@ These concern features / syntax that is straight up incompatble, though some hav
 This section covers featues that are mostly the same in Vue 2/3, but have some special cases and situations where the developer has to make sure to account for limitations or differences. 
 
 ### Reactivity
-- Always Respect Vue 2 Reactivity Caveats <pitfall />
+- Always Respect Vue 2 Reactivity Caveats <pitfall /> <plugin />
 - Don't use Maps & Sets in Reactive Data <discipline />
 ### Transitions
 - Attention when using `<Transition>` as root element <discipline />
@@ -53,7 +53,6 @@ This section covers featues that are mostly the same in Vue 2/3, but have some s
 
 - `v-model` prop and event names (patched for Vue 2 by plugin) <plugin />
 - `this.$set` / `this.$delete` (removed in Vue 3) <plugin /> 
-- `$listeners` (was removed in Vue 3) <eslint /><plugin />
 - Some Component Lifecycle Hooks (patched for Vue 2 by this plugin) <plugin />
 - [Custom Directives (Lifecycle hook names patched for Vue 2 by plugin)](./custom-directives.md) <plugin />
 - TODO: `defineAsyncComponent()` (only exists in Vue 3) <eslint /><plugin />
