@@ -2,7 +2,7 @@ export function patchVModelProp(component: any) {
   if (hasVModelProp(component.props) && hasvModelEvent(component.emits)) {
     component.model = {
       prop: 'modelValue',
-      event: 'update:modelValue'
+      event: 'update:modelValue',
     }
   }
 }
