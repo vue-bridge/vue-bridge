@@ -24,7 +24,7 @@ It will also throw warnings when use use a hook that has no counterpart in one o
 ## Example
 
 ```js
-import { defineDirective } from 'vue3-compat-lib'
+import { defineDirective } from '@vue-bridge/runtime'
 
 export const myDirective = defineDirective({
   beforeMount(el, binding, vnode) {

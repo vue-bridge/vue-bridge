@@ -1,5 +1,5 @@
 {
-  "name": "vue3-compat-lib",
+  "name": "@vue-bridge/runtime",
   "version": "0.1.0",
   "private": false,
   "description": "A library achieving partial runtime compat between Vue 2 and Vue 3 components",

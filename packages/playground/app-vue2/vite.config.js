@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       vue: path.resolve(__dirname, './node_modules/vue'),
-      'vue3-compat-lib': path.resolve(
+      '@vue-bridge/runtime': path.resolve(
         __dirname,
         '../../vue3-compat-lib/src/main.ts'
       ),

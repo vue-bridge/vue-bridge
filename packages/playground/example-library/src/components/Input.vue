@@ -1,5 +1,5 @@
 <script>
-import { defineComponent } from 'vue3-compat-lib'
+import { defineComponent } from '@vue-bridge/runtime'
 
 export default defineComponent({
   name: 'Input',

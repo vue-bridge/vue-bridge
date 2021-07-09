@@ -18,7 +18,7 @@
     "test:packages": "lerna run test --stream --scope '@linusborg/*'  --",
     "lint": "lerna run lint -- --fix",
     "build": "yarn build:packages && yarn build playground && yarn build:docs",
-    "build:packages": "lerna run build --scope vue3-compat-lib",
+    "build:packages": "lerna run build --scope @vue-bridge/runtime",
     "build:playground": "lerna run build --scope 'playground'",
     "build:docs": "lerna run build --scope 'docs'",
     "cypress": "cypress run --config-file cypress/cypress.json",

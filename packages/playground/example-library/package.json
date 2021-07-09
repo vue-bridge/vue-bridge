@@ -11,7 +11,7 @@
   "dependencies": {
     "vue": "^3.0.5",
     "vue2": "npm:vue@^2.6",
-    "vue3-compat-lib": "*"
+    "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.4",

@@ -20,7 +20,7 @@
     "lint": "eslint 'src/**/*.{ts,vue}' --no-error-on-unmatched-pattern"
   },
   "dependencies": {
-    "vue3-compat-lib": "*"
+    "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
     "vitepress": "^0.15.6"

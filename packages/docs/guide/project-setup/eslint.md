@@ -22,7 +22,7 @@ If you do, you should enforce the following rules manually, as they are not incl
       "paths": [{
         "name": "vue",
         "importNames": ["defineAsyncComponent"],
-        "message": "defineAsyncComponent is not available in Vue 2. @vue3-compat-lib plans to provide support for this in the future."
+        "message": "defineAsyncComponent is not available in Vue 2. @@vue-bridge/runtime plans to provide support for this in the future."
       }]
     }],
     // recommended in combination with attrsListenersMixin

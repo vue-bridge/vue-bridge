@@ -61,7 +61,7 @@ function createVueCompatPlugin(
             fileName,
           },
           rollupOptions: {
-            external: ['vue3-compat-lib'],
+            external: ['@vue-bridge/runtime'],
           },
         },
         resolve: {

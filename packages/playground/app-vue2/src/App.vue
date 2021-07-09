@@ -13,7 +13,7 @@ import { Input as ExampleInput } from 'example-library'
 export default {
   name: 'App',
   data: () => ({
-    msg: 'Hello Vue 2 with vue3-compat-lib',
+    msg: 'Hello Vue 2 with @vue-bridge/runtime',
   }),
   components: {
     HelloWorld,

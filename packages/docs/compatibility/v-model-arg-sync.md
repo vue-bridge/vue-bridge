@@ -1,6 +1,6 @@
 # `v-model:arg` & `v-bind.sync`
 
-Both Vue 2 and 3 have `v-model` for a two-way binding of one prop between parent and child components (See here how `vue3-compat-lib` handles Vue 2/3 differences for you). But that's not the point here, this is: 
+Both Vue 2 and 3 have `v-model` for a two-way binding of one prop between parent and child components (See here how `@vue-bridge/runtime` handles Vue 2/3 differences for you). But that's not the point here, this is: 
 
 Both versions also offer a way to add more than one two-way binding, but do so using different template syntax:
 

@@ -12,7 +12,7 @@ module.exports = {
     'vue/no-deprecated-dollar-listeners-api': 'error',
     'vue/require-explicit-emits': 'error',
 
-    // enforce alternative exports from `vue3-compat-lib`
+    // enforce alternative exports from `@vue-bridge/runtime`
     'no-restricted-imports': [
       'error',
       {
@@ -21,7 +21,7 @@ module.exports = {
             name: 'vue',
             importNames: ['defineComponent'],
             message:
-              "Please use `import { defineComponent } from 'vue3-compat-lib'` instead.",
+              "Please use `import { defineComponent } from '@vue-bridge/runtime'` instead.",
           },
         ],
       },
@@ -38,11 +38,11 @@ module.exports = {
       },
       {
         property: '$set',
-        message: 'Please use `set()` exported from `vue3-compat-lib`',
+        message: 'Please use `set()` exported from `@vue-bridge/runtime`',
       },
       {
         property: '$delete',
-        message: 'Please use `del()` exported from `vue3-compat-lib`',
+        message: 'Please use `del()` exported from `@vue-bridge/runtime`',
       },
     ],
   },

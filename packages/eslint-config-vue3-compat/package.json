@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vue3-compat",
   "version": "0.1.0",
-  "description": "An eslint config that enables a set of helpful rules in projects using vue3-compat-lib",
+  "description": "An eslint config that enables a set of helpful rules in projects using @vue-bridge/runtime",
   "main": "index.js",
   "author": "Thorsten Luenborg",
   "license": "MIT",
