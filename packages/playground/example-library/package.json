@@ -2,10 +2,13 @@
   "name": "example-library",
   "version": "0.1.0",
   "private":"true",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "watch": "vite build --watch",
-    "build": "vite build && BUILD_TARGET_VUE=2 vite build",
+    "dev": "vue-demi-switch 3 && vite",
+    "watch": "vue-demi-switch 3 && vite build --watch",
+    "build": "yarn build:2 &&  yarn build:3",
+    "build:2": "vue-demi-switch 2 && vite build",
+    "build:3": "vue-demi-switch 3 && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -17,6 +20,7 @@
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
     "vite": "^2.4.0",
+    "@vue-bridge/testing": "*",
     "@vue-bridge/vite-plugin": "*"
   }
 }
