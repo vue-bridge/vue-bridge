@@ -3,6 +3,7 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "module": "esnext",
+    "moduleResolution": "node",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
     
@@ -20,7 +21,6 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
     "jsx": "preserve",
     "esModuleInterop": true,
     "types": ["vite/client", "jest", "cypress"],
