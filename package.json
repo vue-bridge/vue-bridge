@@ -5,13 +5,16 @@
   "author": "Thorsten Lünborg <thorsten@linusb.org>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "packages/playground/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/playground/*"
+    ],
+    "nohoist": []
+  },
   "scripts": {
-    "s:2": "vue-demi-switch 2",
-    "s:3": "vue-demi-switch 3",
+    "v2": "vue-demi-switch 2",
+    "v3": "vue-demi-switch 3",
     "docs:dev": "cd packages/docs && yarn start",
     "test:all": "jest --runInBand --config jest.config.ts",
     "test:w": "jest --runInBand --config jest.config.ts --watch",
