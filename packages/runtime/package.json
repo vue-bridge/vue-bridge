@@ -36,15 +36,17 @@
     "vue-demi": "^0.10.0"
   },
   "devDependencies": {
-    "@vue/composition-api": "^1.0.0-rc.13",
-    "cross-env": "^7.0.3"
+    "@vue/composition-api": "^1.0.0-0"
   },
   "peerDependencies": {
-    "@vue/composition-api": "^1.0.0-rc.13",
+    "@vue/composition-api": "^1.0.0-0",
     "vue": "^2.0.0 || >=3.0.4"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
+      "optional": true
+    },
+    "vue": {
       "optional": true
     }
   }
