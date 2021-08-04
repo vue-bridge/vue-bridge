@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "example-library": "*",
+    "example-library-vue2": "*",
     "vue": "2.6.14",
     "vue-demi": "^0.10.0"
   },
