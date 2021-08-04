@@ -15,12 +15,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "vue": "^3.1.4",
-    "vue-demi": "^0.10.0",
     "@vitejs/plugin-vue": "^1.2.4",
-    "vite-plugin-vue2": "^1.7.2",
     "@vue/compiler-sfc": "^3.1.4",
     "vite": "^2.4.0",
+    "vite-plugin-vue2": "^1.7.2",
+    "vue": "^2.6.13",
+    "vue-demi": "^0.10.0",
     "vue-template-compiler": "^2.6.14"
   }
 }
