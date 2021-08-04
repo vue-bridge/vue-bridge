@@ -32,18 +32,31 @@ In comparison `@vue-bridge/runtime` is intended to be a long-term solution for *
 
 ## Is this for me?
 
-This project is generally for you if you:
+This project isn't necessarily a good fit for *your* kind of library. To judge wether or not this might be for you, see the following guidelines:
+
+### This project is generally for you if you:
 
 * have a small to medium sized library
-* that doesn't need to use render functions and can rely on SFCs exclusively
+* don't need to use render functions
+* don't have any dependencies that are incompatible with one of the Vue versions
 * don't have a hard requirement on any of the [incompatible features](../compatibility/index.md)
 * want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
 
-It will be easier to use this project if you:
+Summary: if you want to write a vue library that is small in scope, doesn't rely on incompatible 
+dependencies and are fine with a few rules to follow, this might be for you.
+
+### It will be easier to use this project if you:
 
 * are familiar with the differences between Vue 2 and Vue 3
 * know how to use and configure [Eslint](https://eslint.org)
 * feel comfortable configuring your build system (Vite, rollup, webpack)
+
+
+### You might not need this at all if you:
+
+* want to write a Vue library that doesn't use/export components (only composition functions or other helpers, for example)
+* 
+
 ## Workflow of publishing cross-compatible Vue Libraries
 
 The changes introduced in Vue 3 can be roughly put in 3 categories:
