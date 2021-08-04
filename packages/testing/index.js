@@ -7,9 +7,9 @@ const {
 } = require('@vue/test-utils')
 
 module.exports = {
+  ...testUtils,
   mount,
   shallowMount,
-  ...testUtils,
 }
 
 function mount(component, options) {
