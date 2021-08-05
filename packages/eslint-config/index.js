@@ -25,6 +25,15 @@ module.exports = {
           },
         ],
       },
+      {
+        paths: [
+          {
+            name: '@vue/testing-library',
+            message:
+              'Please use `@vue-bridge/testing` instead. It has all of the exports of `@vue/testing-library available`',
+          },
+        ],
+      },
     ],
     'no-restricted-properties': [
       'error',
