@@ -32,7 +32,7 @@ export function attrsListenersMixin() {
           Object.keys(attrs).forEach((key: string) => {
             if (listenerRE.test(key)) {
               const listener = lowerFirstChar(key.replace(/^on/, ''))
-              // FIXME: only include events that are *not* declared in `emits` option 
+              // FIXME: only include events that are *not* declared in `emits` option
               listeners[listener]
             }
           })
