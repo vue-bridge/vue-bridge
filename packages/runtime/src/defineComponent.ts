@@ -14,6 +14,5 @@ export function /*#__PURE__*/ defineComponent(component: DefineComponent) {
     patchVModelProp(component)
     component.mixins.push(lifecycleMixin)
   }
-  console.log('patched component', component)
   return _defineComponent(component)
 }
