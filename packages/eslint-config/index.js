@@ -24,9 +24,9 @@ module.exports = {
               "Please use `import { defineComponent } from '@vue-bridge/runtime'` instead.",
           },
           {
-            name: '@vue/testing-library',
+            name: '@vue/test-utils',
             message:
-              'Please use `@vue-bridge/testing` instead. It has all of the exports of `@vue/testing-library available`',
+              'Please use `@vue-bridge/testing` instead. It provides a cross-compat version of test-utils`',
           },
         ],
       },
