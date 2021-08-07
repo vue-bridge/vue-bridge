@@ -27,7 +27,7 @@ export default <UserConfig>{
     },
     minify: false,
     rollupOptions: {
-      external: ['vue', 'vue-demi'],
+      external: ['vue', 'vue-demi', '@vue/composition-api'],
       treeshake: false,
       output: {
         banner: `

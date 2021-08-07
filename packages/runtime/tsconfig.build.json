@@ -6,6 +6,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "declaration": true,
-    "declarationDir": "types"
+    "declarationDir": "types",
+    "importHelpers": false
   }
 }

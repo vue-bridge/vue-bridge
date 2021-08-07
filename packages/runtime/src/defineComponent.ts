@@ -7,7 +7,7 @@ import { patchVModelProp } from './vModel'
 import { attrsListenersMixin } from './attrs-listeners'
 import { lifecycleMixin } from './lifecycleHooks'
 
-export const defineComponent = (component: DefineComponent) => {
+export function /*#__PURE__*/ defineComponent(component: DefineComponent) {
   component.mixins = component.mixins || []
   component.mixins.push(attrsListenersMixin())
   if (isVue2) {

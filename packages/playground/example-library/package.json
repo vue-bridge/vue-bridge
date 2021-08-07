@@ -2,23 +2,34 @@
   "name": "example-library",
   "version": "0.1.0",
   "private":"true",
+  "license": "MIT",
+  "author": {
+    "name": "Thorsten Luenborg",
+    "url": "https://twitter.com/linus_borg"
+  },
+  "files": ["src", "dist"],
   "scripts": {
     "dev": "vue-demi-switch 3 && vite",
     "watch": "vue-demi-switch 3 && vite build --watch",
-    "build": "yarn build:2 &&  yarn build:3",
-    "build:2": "vue-demi-switch 2 && vite build",
-    "build:3": "vue-demi-switch 3 && vite build",
+    "build": "vue-demi-switch 3 && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.5",
     "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.4",
+    "@vue-bridge/testing": "*",
     "@vue/compiler-sfc": "^3.0.5",
     "vite": "^2.4.0",
-    "@vue-bridge/testing": "*",
-    "@vue-bridge/vite-plugin": "*"
+    "vue": "^3.0.5"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.5"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
   }
 }
