@@ -12,7 +12,7 @@ module.exports = {
     'vue/no-deprecated-dollar-listeners-api': 'error',
     'vue/require-explicit-emits': 'error',
 
-    // enforce alternative exports from `@vue-bridge/runtime`
+    // enforce alternative exports from `@vue-bridge/runtime` and `@vue-bridge/testing`
     'no-restricted-imports': [
       'error',
       {

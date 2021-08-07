@@ -1,5 +1,4 @@
 const esModules = ['lodash-es'].join('|')
-const path = require('path')
 
 const config = {
   rootDir: process.cwd(),
