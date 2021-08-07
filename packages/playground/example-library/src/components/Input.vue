@@ -29,4 +29,3 @@ export default defineComponent({
     </label>
   </div>
 </template>
-<style lang="postcss"></style>

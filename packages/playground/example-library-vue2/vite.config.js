@@ -14,7 +14,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: '../example-library/src/main.js',
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs'],
+    },
+    minify: false,
+    rollupOptions: {
+      // TODO: these should be added by vite plugin
+      external: [
+        'vue',
+        'vue-demi',
+        '@vue/composition-api',
+        '@vue-bridge/runtime',
+      ],
     },
   },
 })

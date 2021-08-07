@@ -1,16 +1,15 @@
-import type { Config } from '@jest/types'
-
 const esModules = ['lodash-es'].join('|')
 
-const config: Config.InitialOptions = {
+/**
+ * @typedef {import("@jest/types").Config.InitialOptions} Config
+ */
+
+/**
+ * @type { Config }
+ */
+const config = {
   rootDir: process.cwd(),
-  preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  moduleNameMapper: {
-    // we need to tell jest which Vue2 packages to use
-    '^vue$': '<rootDir>/node_modules/vue',
-    '@vue/testing-library': '<rootDir>/node_modules/@vue/tesing-library',
-  },
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '^.+\\js$': 'esbuild-jest',
