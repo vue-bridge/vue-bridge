@@ -1,0 +1,34 @@
+{
+  "name": "example-library-vue2",
+  "version": "0.1.0",
+  "private":"true",
+  "scripts": {
+    "dev": "vue-demi-switch 3 && vite",
+    "watch": "vue-demi-switch 3 && vite build --watch",
+    "build": "yarn build:2 &&  yarn build:3",
+    "build:2": "vue-demi-switch 2 && vite build",
+    "build:3": "vue-demi-switch 3 && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@vue-bridge/runtime": "*"
+  },
+  "devDependencies": {
+    "@vue-bridge/vite-plugin": "*",
+    "@vue-bridge/testing": "*",
+    "@vue/test-utils": "^1.2.2",
+    "vite": "^2.4.0",
+    "vite-plugin-vue2": "^1.2.4",
+    "vue": "^2.6",
+    "vue-jest": "^4.0.0",
+    "vue-template-compiler": "^2.6"
+  },
+  "peerDependencies": {
+    "vue": "^2.6"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  }
+}
