@@ -1,6 +1,6 @@
 # Eslint Setup
 
-It's strongly recommened to use Eslint and with it, `eslint-plugin-vue`.
+It's strongly recommended to use Eslint and with it, `eslint-plugin-vue`.
 
 If you do, you should enforce the following rules manually, as they are not included in this configuration together in any of the available presets:
 

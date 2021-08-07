@@ -11,14 +11,14 @@ Furthermore, avoiding all of the breaking API changes would severely limit a dev
 
 ### Introducing the `@vue-bridge` Suite
 
-The goal of this project is to support Vue library others on multiple levels, from guidance on how to write good and safe cross-compatible components to tooling for enabling true cross-compatibility.
+The goal of this project is to support Vue library authors on multiple levels, from guidance on how to write good and safe cross-compatible components to tooling for enabling true cross-compatibility.
 
 Therefore, this project consists of multiple parts:
 
 1. The [Guide](#) - Guiding you on your journey, teaching you how to write and publish cross-compatible components (and directives) 
    * with the help of the packages provided by this project.
    * by avoiding APIs that are fundamentally incompatible between Vue 2 and Vue 3 (spoiler: those are not as bad as you might fear)
-2. `@vue-bridge/eslint-config` - A set of eslint rules that keep you from using incompatible features
+2. `@vue-bridge/eslint-config` - A set of eslint rules that help you from avoid incompatible features
 2. `@vue-bridge/runtime` A Vue plugin that "polyfills" or patches a few of the breaking changes for Vue 2 at runtime.
 3. `@vue-bridge/vite-plugin` - A Vite plugin that makes bundling your cross-compatible components for Vue 2 and Vue 3 easy
     * We also provide config examples for other build systems, and are open to contributions for plugins like this one
@@ -55,7 +55,6 @@ dependencies and are fine with a few rules to follow, this might be for you.
 ### You might not need this at all if you:
 
 * want to write a Vue library that doesn't use/export components (only composition functions or other helpers, for example)
-* 
 
 ## Workflow of publishing cross-compatible Vue Libraries
 
@@ -64,5 +63,7 @@ The changes introduced in Vue 3 can be roughly put in 3 categories:
 1. **Fundamentally incompatible** - When writing cross-compatible components, you simply have to avoid these.
 2. **Incompatible, but can be polyfilled safely at runtime** - this is what the `@vue-bridge/runtime` package does.
 3. **behavioral differences in specific scenarios** - these you can account for yourself in your code, by following a few basic rules.
+
+This compatible code will have to be both _tested_ and _built_ twice - once for each version. 
 
 Our guide will explain all of these to you and offer instructions on how to deal with them.

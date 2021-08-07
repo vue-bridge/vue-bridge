@@ -8,7 +8,7 @@ Each of the points listed has it's own dedicated page explaining how to deal wit
 
 | Badge          | Description                          |
 |----------------|--------------------------------------|
-| <eslint />     | Compat can be supported by an eslint rule                              |
+| <eslint />     | Compat can be ensured by an eslint rule                              |
 | <plugin />     | Compat is (at least partially) provided by the `@vue-bridge/runtime` plugin |
 | <discipline /> | Compat needs to be ensured by the developer without tooling support. Following these rules is generally straightforward and low-risk  |
 | <pitfall />    | Like <discipline />, but with a noteworthy risk of introducing bugs because these are easy to miss |
@@ -49,7 +49,7 @@ This section covers featues that are mostly the same in Vue 2/3, but have some s
 - Always respect Vue 3's `v-if` - `v-for`precedence <eslint />
 - Always use [the `is` prop with special `<component>`](./component-is-prop.md) <eslint />
 
-## 🧬 Polyfilled by `@@vue-bridge/runtime`
+## 🧬 Polyfilled by `@vue-bridge/runtime`
 
 - `v-model` prop and event names (patched for Vue 2 by plugin) <plugin />
 - `this.$set` / `this.$delete` (removed in Vue 3) <plugin /> 
