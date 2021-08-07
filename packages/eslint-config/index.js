@@ -23,10 +23,6 @@ module.exports = {
             message:
               "Please use `import { defineComponent } from '@vue-bridge/runtime'` instead.",
           },
-        ],
-      },
-      {
-        paths: [
           {
             name: '@vue/testing-library',
             message:
