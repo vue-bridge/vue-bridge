@@ -14,7 +14,7 @@
   "scripts": {
     "watch": "vue-demi-switch 3 && vite build --watch",
     "build": "vue-demi-switch 3 && vite build",
-    "test": "jest --config ./jest.config.js --runInBand"
+    "test": "vue-demi-switch 3 && jest --config ./jest.config.js --runInBand"
   },
   "dependencies": {
     "@vue-bridge/runtime": "*"

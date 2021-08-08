@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": "true",
   "scripts": {
-    "dev": "vue-demi-switch 2 && vite --open",
+    "dev": "vue-demi-switch 2 && vite --open --port 3001",
     "build": "vite build",
     "serve": "vite preview"
   },

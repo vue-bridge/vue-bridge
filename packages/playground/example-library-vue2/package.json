@@ -3,9 +3,21 @@
   "version": "0.1.0",
   "private":"true",
   "scripts": {
-    "watch": "vue-demi-switch 2 && vite build --watch",
-    "build": "vue-demi-switch 2 && vite build && vue-demi-switch 3",
-    "test": "vue-demi-switch 2 && jest --runInBand && vue-demi-switch 3"
+    "watch": "vite build --watch",
+    "build": "vite build",
+    "test": "jest --runInBand",
+    
+    "--pre--": "---",
+    "prewatch": "yarn v2",
+    "prebuild": "yarn v2",
+    "pretest": "yarn v2",
+    "--post--": "--",
+    "postwatch": "yarn v3",
+    "postbuild": "yarn v3",
+    "posttest": "yarn v3",
+
+    "v2": "vue-demi-switch 2",
+    "v3": "vue-demi-switch 3"
   },
   "dependencies": {
     "@vue-bridge/runtime": "*"
