@@ -9,11 +9,6 @@ export default defineConfig({
       // this is just necessary because we have both Vue 2 and 3 in this monorepo
       vue: path.resolve(__dirname, './node_modules/vue'),
 
-      // these are so we don't need to build the plugins during dev
-      '@vue-bridge/runtime': path.resolve(
-        __dirname,
-        '../../vue3-compat-lib/src/main.ts'
-      ),
       'example-library': path.resolve(
         __dirname,
         '../example-library/src/main.js'

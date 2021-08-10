@@ -1,19 +1,19 @@
 <template>
   <div>
-    <label for="">Input:</label>
-    <CustomInput v-model="text" />
+    <label for="custom-input">Input:</label>
+    <CustomInput id="custom-input" v-model="text" />
     <hr />
-    Text from input: {{ text }}
+    <p data-test-text>Text from input: {{ text }}</p>
+    <hr />
+    <Switch />
   </div>
 </template>
 
 <script setup>
-import { Input as CustomInput } from 'example-library'
+import { Input as CustomInput, Switch } from 'example-library'
 import { ref } from 'vue'
 
 const text = ref('')
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
 
 <style>

@@ -4,12 +4,13 @@
     <HelloWorld :msg="msg" />
     <!-- <ExampleInput v-model="msg" /> -->
     <ExampleInput v-model="msg" />
+    <Switchx />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import { Input as ExampleInput } from 'example-library'
+import { Input as ExampleInput, Switch as Switchx } from 'example-library'
 export default {
   name: 'App',
   data: () => ({
@@ -18,6 +19,7 @@ export default {
   components: {
     HelloWorld,
     ExampleInput,
+    Switchx,
   },
 }
 </script>
