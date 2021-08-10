@@ -1,7 +1,9 @@
+import type { ObjectEmitsOptions } from '@vue/runtime-core'
 import { isVue2 } from './constants'
 
 const listenerRE = /^on[A-Z]/
-export function attrsListenersMixin() {
+
+export function /*#__PURE__*/ attrsListenersMixin() {
   if (isVue2) {
     return {
       computed: {
@@ -10,6 +12,12 @@ export function attrsListenersMixin() {
         },
         $_listeners() {
           return (this as any).$listeners
+        },
+        $_class() {
+          return ''
+        },
+        $_style() {
+          return ''
         },
       },
     }
@@ -27,15 +35,26 @@ export function attrsListenersMixin() {
           return _attrs
         },
         $_listeners() {
+          const emitsOptions = ((this as any)._ as any)
+            .emitsOptions as ObjectEmitsOptions
           const attrs = (this as Record<string, any>).$attrs
           const listeners: Record<string, () => void> = {}
           Object.keys(attrs).forEach((key: string) => {
             if (listenerRE.test(key)) {
               const listener = lowerFirstChar(key.replace(/^on/, ''))
               // FIXME: only include events that are *not* declared in `emits` option
-              listeners[listener]
+              if (!emitsOptions[listener]) {
+                listeners[listener]
+              }
             }
           })
+          return listeners
+        },
+        $_class(): any {
+          return (this as any).$attrs.class
+        },
+        $_style(): any {
+          return (this as any).$attrs.style
         },
       },
     }
