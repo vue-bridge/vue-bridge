@@ -1,8 +1,8 @@
 import { mount } from '@vue-bridge/testing'
-import { nextTick } from 'vue'
+import { nextTick } from 'vue-demi'
 import Input from '../components/Input.vue'
 describe('Input', () => {
-  test('works', async () => {
+  test('mounts', async () => {
     const wrapper = mount(Input, {
       props: {
         modelValue: 'Hello World',
@@ -14,4 +14,6 @@ describe('Input', () => {
     expect(wrapper.exists())
     expect(wrapper.find('input').element.value).toBe('Hello World')
   })
+
+  test.todo('v-model on input works')
 })
