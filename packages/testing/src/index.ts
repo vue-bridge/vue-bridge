@@ -1,18 +1,41 @@
-// TODO: Convert to Typescript
-const { isVue2 } = require('vue-demi')
-const {
-  mount: _mount,
-  shallowMount: _shallowMount,
-  ...testUtils
-} = require('@vue/test-utils')
+import { isVue2 } from 'vue-demi'
+import type { ComponentPublicInstance, ComponentOptionsBase } from 'vue'
+import {
+  mount as _mount,
+  shallowMount as _shallowMount,
+  MountingOptions,
+  VueWrapper,
+} from '@vue/test-utils'
+// import * as testUtils from '@vue/test-utils'
 
-module.exports = {
-  ...testUtils,
-  mount,
-  shallowMount,
+type Comp = ComponentPublicInstance<
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  false,
+  ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>
+>
+
+interface Vue2Options {
+  components?: any
+  plugins?: any
+  directives?: any
+  mixins?: any
+  provide?: any
+
+  stubs?: any
+  mocks?: any
 }
 
-function mount(component, options) {
+export function mount<T extends Comp, P, D = {}>(
+  component: T,
+  options: MountingOptions<P, D>
+): ReturnType<typeof _mount> {
   // console.log(component)
   if (isVue2) {
     patchProps(options)
@@ -23,7 +46,10 @@ function mount(component, options) {
     return _mount(component, options)
   }
 }
-function shallowMount(component, options) {
+export function shallowMount<T extends Comp, P, D = {}>(
+  component: T,
+  options: MountingOptions<P, D>
+): ReturnType<typeof _shallowMount> {
   if (isVue2) {
     patchProps(options)
     patchGlobals(options)
@@ -34,16 +60,17 @@ function shallowMount(component, options) {
   }
 }
 
-function patchProps(options) {
+function patchProps<P, D = {}>(options: MountingOptions<P, D>) {
   if (options.props) {
     options.propsData = options.props
     delete options.props
   }
 }
 
-function patchGlobals(options) {
-  if (options.global) return
+function patchGlobals<P, D = {}>(options: MountingOptions<P, D> & Vue2Options) {
+  if (!options.global) return
 
+  //@ts-expect-error - this is a Vue 2 API
   const { createLocalVue } = testUtils
   const localVue = createLocalVue()
   if (options.global) {
@@ -82,16 +109,19 @@ function patchGlobals(options) {
   }
 }
 
-function patchUnMount(wrapper) {
+function patchUnMount<T extends Comp>(wrapper: VueWrapper<T>) {
+  // @ts-expect-error
   wrapper.unmount = () => wrapper.destroy()
   return wrapper
 }
 
-function patchSlots(options) {
+function patchSlots<P, D = {}>(
+  options: MountingOptions<P, D> & { scopedSlots?: any }
+) {
   if (options.scopedSlots) {
     options.slots = options.slots || {}
     Object.keys(options.scopedSlots).forEach((key) => {
-      options.slots[key] = options.scopedSlots[key]
+      options.slots![key] = options.scopedSlots[key]
     })
   }
 }

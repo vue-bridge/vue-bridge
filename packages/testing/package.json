@@ -2,14 +2,18 @@
   "name": "@vue-bridge/testing",
   "version": "0.1.0",
   "description": "Wrapper over vue-test-utils to enable tests in cross-version Vue libraries",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Thorsten Luenborg",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "vue-demi": "^0.10.0"
+    "vue-demi": "^0.10.0",
+    "typescript": "^4.1.0"
   },
   "peerDependencies": {
     "@vue/test-utils": "^1.2.1 || ^2.0.0-0"

@@ -1,0 +1,24 @@
+{
+  "include": ["./src/*.ts"],
+  "exclude": ["node_modules/**/*"],
+
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,
+    
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    
+    "moduleResolution": "node",
+    "lib": ["dom", "ES2020"],
+    
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": false,
+    "skipLibCheck": true,
+  }
+}
