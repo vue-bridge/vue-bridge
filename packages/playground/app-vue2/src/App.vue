@@ -10,7 +10,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import { Input as ExampleInput, Switch as Switchx } from 'example-library'
+import { Input as ExampleInput, Switch as Switchx } from 'example-library-vue2'
 export default {
   name: 'App',
   data: () => ({
