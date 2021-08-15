@@ -33,8 +33,7 @@ export default function viteVueCompatPlugin(_options: VueCompatOptions) {
 
   const vueCompatPlugin = createVueCompatPlugin(options)
 
-  const _version = process.env.BUILD_TARGET_VUE === '2' ? 2 : null
-  const version = _version ?? isVue2 ? 2 : 3
+  const version = isVue2 ? 2 : 3
   const vuePlugin =
     version === 2 ? vue2(vue2PluginOptions) : vue3(vue3PluginOptions)
 
@@ -67,7 +66,7 @@ function createVueCompatPlugin(
         },
         resolve: {
           alias: {
-            vue: mode === 2 ? 'vue2' : 'vue',
+            vue: mode === 2 ? 'vue' : 'vue3',
           },
         },
       } // as UserConfig
