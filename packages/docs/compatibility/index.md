@@ -17,7 +17,7 @@ This can seem like a lot, so make sure to read the Guide to learn how to navigat
 
 ## 🛑 Incompatible
 
-These concern features / syntax that is straight up incompatble, though some have workarounds.
+These concern features / syntax that is straight up incompatible, though some have workarounds.
 
 - Don' use [Multiple Root elements / Fragments](./multiple-root-elements.md) <eslint />
 - Don't use [`v-model:arg` & `v-bind.sync`](./v-model-arg-sync.md) <eslint />
@@ -45,7 +45,7 @@ This section covers featues that are mostly the same in Vue 2/3, but have some s
 
 - Always configure the `emits:` option <eslint />
 - Always respect `v-bind` order precedence of Vue 3 <pitfall />
-- Always use `null` to remove non-boolean attrs instead of `false` <pitfall />
+- Always use `null` to remove non-boolean attrs. not `false` <discipline />
 - Always respect Vue 3's `v-if` - `v-for`precedence <eslint />
 - Always use [the `is` prop with special `<component>`](./component-is-prop.md) <eslint />
 
