@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "description": "A Vite Plugin to build Vue libraries for both Vue 2 and Vue 3",
   "author": "Thorsten Luenborg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinusBorg/vue-bridge.git",
+    "directory": "packages/vite-plugin"
+  },
   "license": "MIT",
   "private": false,
   "main": "index.js",

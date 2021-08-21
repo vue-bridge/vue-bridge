@@ -4,7 +4,11 @@
   "private": false,
   "description": "A library achieving partial runtime compat between Vue 2 and Vue 3 components",
   "author": "Thorsten Lünborg <t.luneborg@googlemail.com>",
-  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinusBorg/vue-bridge.git",
+    "directory": "packages/runtime"
+  },
   "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs.js",
