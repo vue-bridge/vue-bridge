@@ -39,9 +39,11 @@ With these two tools added to your project, you will already be able to circumve
 
 While Vue 2 will stay around for quite some time, Vue 3 is clearly the future, so VueBridge assumes that your code will be written in Vue 3 style wherever possible, and `@vue-bridge/runtime` will change/polyfill your component definition where necessary (and possible) to ensure Vue 2 compatibility.
 
-The way in which it does is very convenient for developers: by wrapping the `defineComponent()` function that you might already know from Vue 3. 
+The way in which it does that is very convenient for developers: by wrapping the `defineComponent()` function that you might already know from Vue 3. 
 
-In Vue 3, it originally doesn't really do anything besides signaling Typescript (or your editor/IDE) that the object passed to it is actually a Vue component definition. It  looks like this, normally:
+In Vue 3, it originally doesn't really do anything besides signaling Typescript (or your editor/IDE) that the object passed to it is actually a Vue component definition, which enables type checking/autocomplete. 
+
+It  looks like this:
 
 ```js
 import { defineComponent } from 'vue'
@@ -57,7 +59,7 @@ export default defineComponent({
 })
 ```
 
-Now, the above code would have a bug in Vue because there is no `beforeUnmount` hook - there's `beforeDestroy`. We can fix that by importing `defineComponent`from `@vue-bridge/runtime` instead:
+Now, the above code would have a bug in Vue 2 because there is no `beforeUnmount` hook - there's `beforeDestroy`. We can fix that by importing `defineComponent`from `@vue-bridge/runtime` instead:
 
 ```diff
 - import { defineComponent } from 'vue'
@@ -88,12 +90,81 @@ Some of them are kind of edge cases or very simple and obvious fixes. But there 
 
 ::: info
 
-We have a chapter about [Testing Cross-Compatibility](./testing-cross-compatibility.md) which explains in detail how you can run your unit jests in both Vue 2 and Vue 3, which is important to make sure that you properly dealt with these compatibility differences.
+We have a chapter about [Testing Cross-Compatibility](./testing-cross-compatibility.md) which explains in detail how you can run your unit tests with both Vue 2 and Vue 3. This is important to make sure that you properly dealt with these compatibility differences for both versions.
 
 :::
 
-### Vue 2 Reactivity Caveats
+### Reactivity Caveats
 
+Vue 2's Reactivity System has a couple of caveats where reactive change detection doesn't work (see [Vue 2 docs](https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats)). 
+
+To work around them, you are probably used to using `this.$set` and `this.$delete`. Since Vue 3 doesn't provide these methods, `defineComponent` will add them to your component with a mixin. But you still have to make sure to properly use them.
+
+In short:
+
+* Always use `$set()` to add *new* properties to a reactive **object**.
+* Always use `$delete()` to *remove* properties from a reactive **object**.
+* Always use `$set()` to add or replace an item in a reactive **array**.
+* Always use `$delete()` to *remove* an item from a reactive **array**.
+* Don't use Maps and Sets (in reactive code, i.e. `data()`), as Vue 2 can't make these reactive
+
+If you are used to work in Vue 3, where these caveats don't exist, using these helpers is very easy to miss from time to time. So it's **very** important to run your unit tests against both Vue 2 and Vue 3 to catch such mistakes before you release a version of your package.
 
 
 ### `$attrs` (and `$listeners`)
+
+The behavior of `this.$attrs` differs between Vue 2 and 3 in multiple ways:
+
+1. In Vue 3, it contains *all* attributes, including `class` & `style`, while those are excluded in Vue 2 because they will *always* be applied to the component's root element
+2. In Vue 3, `$attrs` also contains any events that were declared on a component, but not defined in that component's [`emits:` option](#) <!-- TODO: add link -->
+
+Also, Vue 2's [`$listeners` simply doesn't exist anymore](#), and the same goes for the [`v-on.native` modifier](#). <!-- TODO: add links--> 
+
+At the same time, Vue 3 will now apply any events passed to a component to the component's root element unless they are explicitly declared as events in that component's `emits:` option.
+
+All of this combined poses a challenge for cross-compatibility when dealing with components that want to make use of these features - (most commonly when the `inheritAttrs: false` option is set to pass these values on to a child element or component).
+
+
+
+### Custom Directives
+
+Since Custom directives' lifecycle hooks were renamed in Vue 3, we also need to give them a bit of a treatment for cross-compatibility. We do this with `defineDirective()` provided by `@vue-bridge/runtime`.
+
+```js
+// my-directive.js
+import { defineDirective } from '@vue-bridge/runtime'
+
+export const myDirective = defineDirective({
+  // Vue 2 equivalent: bind()
+  beforeMount(el, binding) {
+    el.addEventListener('binding.arg', binding.value)
+  }
+})
+```
+
+Similar to `defineComponent()`, this wrapper function will take care that the names of the hooks are changed to their proper Vue 2 equivalents when used in a Vue 2 context.
+
+Then you can use them like any other directive:
+
+```js
+import { myDirective } from './myDirective.js'
+
+// Vue 3
+app.directive('my-directive', myDirective)
+
+// Vue 2
+Vue.directive('my-directive', myDirective)
+
+// locally in a component:
+export default {
+  directives: {
+    myDirective,
+  }
+}
+```
+
+::: info Learn more
+
+Be sure to read the page in the [compatiblity Listing about custom directives](../compatibility/custom-directives.md) as there are some other things to keep an eye out for, such as a few lifecycle hooks that are only available in Vue 2 or Vue 3, and therefore should not be used.
+
+::: 
