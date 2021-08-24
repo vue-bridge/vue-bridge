@@ -168,3 +168,8 @@ export default {
 Be sure to read the page in the [compatiblity Listing about custom directives](../compatibility/custom-directives.md) as there are some other things to keep an eye out for, such as a few lifecycle hooks that are only available in Vue 2 or Vue 3, and therefore should not be used.
 
 ::: 
+
+### Composition API
+
+- Use `@vue/compostion-api` through `vue-demi`
+- Both are peer dependencies of `@vue-bridge/runtime` already
