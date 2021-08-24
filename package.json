@@ -8,7 +8,7 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "packages/playground/*"
+      "playground/*"
     ],
     "nohoist": [
       "example-library-vue2/vue",
