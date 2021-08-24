@@ -1,4 +1,5 @@
 export { attrsListenersMixin } from './attrs-listeners'
+export { lifecycleMixin } from './lifecycleHooks'
+export { setDeleteMixin } from './set-delete'
 export { defineDirective } from './customDirectives'
 export { defineComponent } from './defineComponent'
-export { set, del } from 'vue-demi'
