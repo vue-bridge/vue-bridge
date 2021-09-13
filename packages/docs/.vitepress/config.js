@@ -12,32 +12,74 @@ module.exports = {
     lastUpdated: 'Last Updated',
     nav: [
       {
-        text: 'Guide',
+        text: 'Getting Started',
+      },
+      {
+        text: 'Guides',
         link: '/guide/',
       },
       {
-        text: 'Compatibility',
-        link: '/compatibility/',
+        text: 'Reference',
+        items: [
+          {
+            text: 'Compatibility Reference',
+            link: '/reference/compatibility/',
+          },
+          {
+            text: 'Eslint Plugin',
+            link: '#',
+          },
+          {
+            text: 'Runtime Plugin',
+            link: '#',
+          },
+          {
+            text: 'Testing Plugin',
+            link: '#',
+          },
+          {
+            text: 'Vite Plugin',
+            link: '#',
+          },
+        ],
       },
       {
-        text: 'API',
-        link: '/api/',
+        text: 'FAQ',
+        link: '/faq',
       },
     ],
     sidebar: {
-      '/guide/': getGuideSidebar(),
-      '/api/': getApiSidebar(),
-      '/compatibility/': getCompatSidebar(),
+      '/guide/': getGuidesSidebar(),
+      '/reference/compatibility': getCompatSidebar(),
     },
   },
 }
 
-function getGuideSidebar() {
-  return [{ text: 'Getting Started', link: '/guide/getting-started' }]
+function getGuidesSidebar() {
+  return [{ text: 'Getting Started', link: '/guides/getting-started' }]
 }
-function getApiSidebar() {
-  return []
-}
+
 function getCompatSidebar() {
-  return []
+  return [
+    {
+      text: '',
+      link: '',
+    },
+    {
+      text: '',
+      link: '',
+    },
+    {
+      text: '',
+      link: '',
+    },
+    {
+      text: '',
+      link: '',
+    },
+    {
+      text: '',
+      link: '',
+    },
+  ]
 }
