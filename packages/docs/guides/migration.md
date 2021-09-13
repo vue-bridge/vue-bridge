@@ -1,1 +1,1 @@
-# Migrating a Vue 2 Plugin codebase to `@vue-bridge
+# How to a Vue 2 Plugin codebase to `@vue-bridge`

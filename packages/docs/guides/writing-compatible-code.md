@@ -1,4 +1,4 @@
-# Writing cross-compatible Vue code
+# How to write cross-compatible Vue code
 
 Writing cross-compatible Vue code is possible, but it comes with a few limitations and challenges. The goal of Vue-Bridge is to support authors in this process as far as possible.
 

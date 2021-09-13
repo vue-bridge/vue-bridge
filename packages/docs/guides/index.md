@@ -22,7 +22,7 @@ Therefore, this project consists of multiple parts:
 2. `@vue-bridge/runtime` A Vue plugin that "polyfills" or patches a few of the breaking changes for Vue 2 at runtime.
 3. `@vue-bridge/vite-plugin` - A Vite plugin that makes bundling your cross-compatible components for Vue 2 and Vue 3 easy
     * We also provide config examples for other build systems, and are open to contributions for plugins like this one
-4. `@vue-bridge/testing` - A wrapper around `@vue/testing-library's` main functions: `mount()` and `shallowMount()`, allowing your tests to be run in both environments
+4. `@vue-bridge/testing` - A wrapper around `@vue/testing-library`'s main functions: `mount()` and `shallowMount()`, allowing your tests to be run in both environments
 
 ### How does this compare to `@vue/compat`
 
@@ -54,7 +54,7 @@ dependencies and are fine with a few rules to follow, this might be for you.
 
 ### You might not need this at all if you:
 
-* want to write a Vue library that doesn't use/export components (only composition functions or other helpers, for example)
+* want to write a Vue library that doesn't use/export components (only composition functions or other helpers, for example). Then [`vue-demi`](https://github.com/vueuse/vue-demi) might be all you need, or not even that.
 
 ## Workflow of publishing cross-compatible Vue Libraries
 

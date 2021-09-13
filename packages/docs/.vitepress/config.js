@@ -1,11 +1,10 @@
 module.exports = {
-  title: 'Vue3 Compat Lib',
-  description:
-    'A Guide and plugin for building cross-version compatible Vue libraries',
+  title: 'Vue Bridge',
+  description: 'Enabling cross-compatible Vue libraries',
   themeConfig: {
-    repo: 'https://github.com/linusborg/vue3-compat-lib',
+    repo: 'https://github.com/linusborg/vue-bridge',
     repoLabel: 'GitHub',
-    docsDir: 'docs',
+    docsDir: 'packages/docs',
     docsBranch: 'main',
     editLinks: true,
     editLinkText: 'Help improve these docs!',
@@ -13,10 +12,15 @@ module.exports = {
     nav: [
       {
         text: 'Getting Started',
+        link: '/getting-started/',
       },
       {
-        text: 'Guides',
-        link: '/guide/',
+        text: 'Topics',
+        link: '/topics/',
+      },
+      {
+        text: 'How-to Guides',
+        link: '/guides/',
       },
       {
         text: 'Reference',
@@ -26,20 +30,24 @@ module.exports = {
             link: '/reference/compatibility/',
           },
           {
-            text: 'Eslint Plugin',
-            link: '#',
+            text: 'Template',
+            link: '/reference/template',
           },
           {
-            text: 'Runtime Plugin',
-            link: '#',
+            text: '@vue-bridge/runtime',
+            link: '/reference/runtime/',
           },
           {
-            text: 'Testing Plugin',
-            link: '#',
+            text: '@vue-bridge/eslint-config',
+            link: '/reference/eslint/',
           },
           {
-            text: 'Vite Plugin',
-            link: '#',
+            text: '@vue-bridge/testing',
+            link: '/reference/testing/',
+          },
+          {
+            text: '@vue-bridge/vite-plugin',
+            link: '/reference/vite-plugin',
           },
         ],
       },

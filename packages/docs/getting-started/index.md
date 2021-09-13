@@ -1,6 +1,6 @@
 # Getting Started
 
-There's a few different ways to create a Vue-Bridge project. The quickest and easiest way is to clone one of our templates on github (see below), but you can also configure your project setup yourself manually. We have a guide for this further down.
+The quickest and easiest way is to clone one of our templates on github (see below), but you can also configure your project setup yourself manually. We have a guide for this further down.
 
 ::: info 
 
