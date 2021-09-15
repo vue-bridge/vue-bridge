@@ -20,6 +20,9 @@
   "peerDependenciesMeta": {
     "eslint": {
       "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
     }
   }
 }
