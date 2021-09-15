@@ -43,11 +43,11 @@ module.exports = {
       },
       {
         property: '$set',
-        message: 'Please use `set()` exported from `@vue-bridge/runtime`',
+        message: 'Please use `set()` exported from `vue-demi`',
       },
       {
         property: '$delete',
-        message: 'Please use `del()` exported from `@vue-bridge/runtime`',
+        message: 'Please use `del()` exported from `vue-demi`',
       },
     ],
   },
