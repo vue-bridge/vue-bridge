@@ -1,0 +1,13 @@
+diff --git a/node_modules/vue-template-compiler/index.js b/node_modules/vue-template-compiler/index.js
+index dcc7e6c..a616603 100644
+--- a/node_modules/vue-template-compiler/index.js
++++ b/node_modules/vue-template-compiler/index.js
+@@ -4,7 +4,7 @@ try {
+ 
+ var packageName = require('./package.json').name
+ var packageVersion = require('./package.json').version
+-if (vueVersion && vueVersion !== packageVersion) {
++if (vueVersion && vueVersion !== packageVersion && vueVersion[0] === '2') {
+   var vuePath = require.resolve('vue')
+   var packagePath = require.resolve('./package.json')
+   throw new Error(
