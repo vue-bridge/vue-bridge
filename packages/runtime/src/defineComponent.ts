@@ -1,13 +1,17 @@
-import { defineComponent as _defineComponent, DefineComponent } from 'vue-demi'
+import { defineComponent as _defineComponent } from 'vue-demi'
 import { isVue2 } from './constants'
 import { patchVModelProp } from './vModel'
-import { attrsListenersMixin } from './attrs-listeners'
 import { lifecycleMixin } from './lifecycleHooks'
 import { setDeleteMixin } from './set-delete'
 
-export function /*#__PURE__*/ defineComponent(component: DefineComponent) {
+export const defineComponent: typeof _defineComponent = (component: any) => {
+  if (typeof component === 'function') {
+    component = {
+      setup: component,
+      name: component.name,
+    }
+  }
   component.mixins = component.mixins || []
-  component.mixins.push(attrsListenersMixin())
   if (isVue2) {
     patchVModelProp(component)
     component.mixins.push(lifecycleMixin)
