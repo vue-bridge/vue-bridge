@@ -10,13 +10,20 @@
     "directory": "packages/runtime"
   },
   "license": "MIT",
-  "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.vue3.cjs.js",
+  "module": "dist/index.vue3.es.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
+      "import": "./dist/index.vue3.es.js",
+      "require": "./dist/index.vue3.cjs.js"
+    },
+    "./vue2": {
+      "import": "./dist/index.vue2.es.js",
+      "require": "./dist/index.vue2.cjs.js"
+    },
+    "./vue3": {
+      "import": "./dist/index.vue3.es.js",
+      "require": "./dist/index.vue3.cjs.js"
     },
     "./*": "./*"
   },
@@ -26,11 +33,11 @@
     "README.md"
   ],
   "scripts": {
-    "build": "vite build && yarn build:types",
-    "build:types": "rollup --config ../../config/rollup.types.config.js",
-    "lint": "eslint 'src/**/*.{ts,vue}'",
-    "test": "jest --config ../../jest.config.ts --runInBand",
-    "test:w": "jest --config ../../jest.config.ts --watch --runInBand"
+    "build": "yarn build:v3 && yarn build:v2",
+    "build:v3": "vite build && yarn build:types",
+    "build:v2": "BUILD_TARGET_V2=1 vite build",
+    "build:types": "rimraf types && rollup --config ../../config/rollup.types.config.js",
+    "lint": "eslint 'src/**/*.{ts,vue}'"
   },
   "publishConfig": {
     "access": "public"
