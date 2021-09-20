@@ -14,6 +14,7 @@
   "types": "./types",
   "scripts": {
     "build": "tsc",
+    "build:w": "tsc --watch",
     "prebuild": "vue-demi-switch 3"
   },
   "publishConfig": {
