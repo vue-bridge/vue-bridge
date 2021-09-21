@@ -33,9 +33,11 @@
     "README.md"
   ],
   "scripts": {
-    "build": "yarn build:v3 && yarn build:v2",
+    "build": "yarn build:v3 && yarn build:v2 && rimraf types",
     "build:v3": "vite build && yarn build:types",
+    "build:v3:w": "vite build --watch",
     "build:v2": "BUILD_TARGET_V2=1 vite build",
+    "build:v2:w": "BUILD_TARGET_V2=1 vite build --watch",
     "build:types": "rimraf types && rollup --config ../../config/rollup.types.config.js",
     "lint": "eslint 'src/**/*.{ts,vue}'"
   },
