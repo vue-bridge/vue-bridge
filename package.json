@@ -25,7 +25,7 @@
     "test:2": "yarn workspace example-library-vue2 test",
     "test:3": "yarn workspace example-library test",
     "lint": "lerna run lint -- --fix",
-    "build": "yarn build:packages && yarn build playground && yarn build:docs",
+    "build": "yarn build:packages && yarn build:playground && yarn build:docs",
     "build:packages": "lerna run build --scope @vue-bridge/*",
     "build:playground": "lerna run build --scope '{app-*,example-library*}'",
     "build:docs": "lerna run build --scope 'docs'",

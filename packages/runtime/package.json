@@ -42,7 +42,7 @@
     "build:v3:w": "vite build --watch",
     "build:v2": "BUILD_TARGET_V2=1 vite build",
     "build:v2:w": "BUILD_TARGET_V2=1 vite build --watch",
-    "build:types": "rimraf types && rollup --config ../../config/rollup.types.config.js",
+    "build:types": "rollup --config ../../config/rollup.types.config.js",
     "lint": "eslint 'src/**/*.{ts,vue}'"
   },
   "publishConfig": {
