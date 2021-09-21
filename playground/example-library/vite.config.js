@@ -6,6 +6,11 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   // plugins: [...VueCompat({ mainMode: 3 })],
   plugins: [vue()],
+  resolve: {
+    alias: {
+      '@vue-bridge/runtime': '@vue-bridge/runtime/vue3',
+    },
+  },
   build: {
     lib: {
       entry: 'src/main.js',

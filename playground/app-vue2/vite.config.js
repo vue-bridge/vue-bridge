@@ -4,6 +4,7 @@ const { createVuePlugin } = require('vite-plugin-vue2')
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [createVuePlugin()],
   resolve: {
     alias: {
       // this is just necessary because we have both Vue 2 and 3 in this monorepo
@@ -13,6 +14,7 @@ export default defineConfig({
         __dirname,
         '../example-library/src/main.js'
       ),
+      '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
     },
   },
   server: {
@@ -20,8 +22,7 @@ export default defineConfig({
       restrict: false,
     },
   },
-  plugins: [createVuePlugin()],
   optimizeDeps: {
-    exclude: ['vue', '@vue-bridge/runtime', 'vue-demi'],
+    exclude: ['vue', '@vue-bridge/runtime', 'vue-demi', '@vue/composition-api'],
   },
 })

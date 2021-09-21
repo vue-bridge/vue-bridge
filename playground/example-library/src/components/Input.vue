@@ -1,9 +1,9 @@
 <script>
-import { defineComponent } from '@vue-bridge/runtime'
+import { defineComponent, attrsListenersMixin } from '@vue-bridge/runtime'
 
 export default defineComponent({
   name: 'Input',
-  // mixins: [attrsListenersMixin()],
+  mixins: [attrsListenersMixin()],
   props: {
     modelValue: {
       type: String,

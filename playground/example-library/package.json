@@ -7,6 +7,15 @@
     "name": "Thorsten Luenborg",
     "url": "https://twitter.com/linus_borg"
   },
+  "main": "dist/example-library.cjs.js",
+  "module": "dist/example-library.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/example-library.es.js",
+      "require": "./dist/example-library.cjs.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "files": [
     "src",
     "dist"
