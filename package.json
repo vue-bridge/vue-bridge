@@ -29,6 +29,8 @@
     "build:packages": "lerna run build --scope @vue-bridge/*",
     "build:playground": "lerna run build --scope '{app-*,example-library*}'",
     "build:docs": "lerna run build --scope 'docs'",
+    "version": "yarn changeset version",
+    "release": "yarn build:packages && yarn changeset publish",
     "cypress": "cypress run --config-file cypress/cypress.json",
     "cypress:open": "cypress open --config-file cypress/cypress.json",
     "postinstall": "patch-package"
