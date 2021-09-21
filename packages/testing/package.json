@@ -1,6 +1,6 @@
 {
   "name": "@vue-bridge/testing",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "Wrapper over vue-test-utils to enable tests in cross-version Vue libraries",
   "main": "dist/index.js",
   "author": "Thorsten Luenborg",
