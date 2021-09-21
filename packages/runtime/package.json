@@ -32,6 +32,10 @@
     "dist",
     "README.md"
   ],
+  "bin": {
+    "vue-bridge-fix": "bin/vue-bridge-fix.js",
+    "vue-bridge-switch": "bin/vue-bridge-switch.js"
+  },
   "scripts": {
     "build": "yarn build:v3 && yarn build:v2 && rimraf types",
     "build:v3": "vite build && yarn build:types",
