@@ -10,12 +10,12 @@
     "directory": "packages/runtime"
   },
   "license": "MIT",
-  "main": "dist/index.vue3.cjs.js",
-  "module": "dist/index.vue3.es.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
     },
     "./vue2": {
       "import": "./dist/index.vue2.es.js",
