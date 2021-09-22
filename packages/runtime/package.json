@@ -1,6 +1,6 @@
 {
   "name": "@vue-bridge/runtime",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "description": "A library achieving partial runtime compat between Vue 2 and Vue 3 components",
   "author": "Thorsten Lünborg <t.luneborg@googlemail.com>",

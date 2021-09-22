@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.4
+
+### Patch Changes
+
+- f5c933a: fix cjs filename in postinstall copy fn
+
 ## 0.0.3
 
 ### Patch Changes
