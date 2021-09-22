@@ -1,4 +1,4 @@
-import { isVue2 } from 'vue-demi'
+// import { isVue2 } from 'vue-demi'
 import type { ComponentPublicInstance, ComponentOptionsBase } from 'vue'
 import {
   mount as _mount,
@@ -7,6 +7,18 @@ import {
   VueWrapper,
 } from '@vue/test-utils'
 // import * as testUtils from '@vue/test-utils'
+
+let version: string = ''
+try {
+  const vue = require('vue')
+  version = vue.version
+} catch {
+  /* eslint-disable-next-line no-empty */
+  console.warn('[@vue-bridge/testing] Vue version could not be determined')
+}
+
+export const isVue2 = version.startsWith('2.')
+export const isVue3 = version.startsWith('3.')
 
 type Comp = ComponentPublicInstance<
   {},

@@ -17,8 +17,7 @@
     "access": "public"
   },
   "dependencies": {
-    "typescript": "^4.1.0",
-    "vue-demi": "^0.11.3"
+    "typescript": "^4.1.0"
   },
   "peerDependencies": {
     "@vue/test-utils": "^1.2.1 || ^2.0.0-0"
