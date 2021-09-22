@@ -30,6 +30,8 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
+    "scripts",
+    "bin",
     "README.md"
   ],
   "bin": {
@@ -43,7 +45,8 @@
     "build:v2": "BUILD_TARGET_V2=1 vite build",
     "build:v2:w": "BUILD_TARGET_V2=1 vite build --watch",
     "build:types": "rollup --config ../../config/rollup.types.config.js",
-    "lint": "eslint 'src/**/*.{ts,vue}'"
+    "lint": "eslint 'src/**/*.{ts,vue}'",
+    "postinstall": "node ./scripts/postinstall.js"
   },
   "publishConfig": {
     "access": "public"
