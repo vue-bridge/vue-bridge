@@ -5,5 +5,15 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
     "compat"
-  ]
+  ],
+  "peacock.color": "#42b983",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#42b983",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#359368",
+    "titleBar.activeBackground": "#42b983",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#42b98399",
+    "titleBar.inactiveForeground": "#15202b99"
+  }
 }
