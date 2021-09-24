@@ -25,7 +25,7 @@
     "esModuleInterop": true,
     "types": ["vite/client", "jest", "cypress"],
     "paths": {
-      "@vue-bridge/runtime": ["packages/vue3-compat-lib/src/main.ts"],
+      "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
       "@vue-bridge/vite-plugin": ["packages/vite-plugin/src/index.ts"]
     }
   },
