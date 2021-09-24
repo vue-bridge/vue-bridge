@@ -1,3 +1,4 @@
+/** @type {import('vitepress').UserConfig} */
 module.exports = {
   title: 'Vue Bridge',
   description: 'Enabling cross-compatible Vue libraries',
@@ -30,8 +31,8 @@ module.exports = {
             link: '/reference/compatibility/',
           },
           {
-            text: 'Template',
-            link: '/reference/template',
+            text: 'Templates',
+            link: '/reference/templates',
           },
           {
             text: '@vue-bridge/runtime',
@@ -57,14 +58,66 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/guide/': getGuidesSidebar(),
+      '/guides/': getGuidesSidebar(),
       '/reference/compatibility': getCompatSidebar(),
     },
   },
 }
 
 function getGuidesSidebar() {
-  return [{ text: 'Getting Started', link: '/guides/getting-started' }]
+  return [
+    {
+      text: 'Introduction: Compatible Code',
+      link: '/guides/writing-compatible-code/',
+    },
+    {
+      text: 'How to use/write...',
+      children: [
+        {
+          text: 'component v-model',
+          link: 'guides/writing-code/v-model',
+        },
+        {
+          text: 'Transitions',
+          link: 'guides/writing-code/transitions',
+        },
+      ],
+    },
+    {
+      text: 'Testing',
+      children: [
+        {
+          text: 'Unit-Testing with Jest',
+          link: '#',
+        },
+        {
+          text: 'E2E-Testing with Cypress',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Building/Bundling',
+      children: [
+        {
+          text: 'Two separate packages',
+          link: '#',
+        },
+        {
+          text: 'One combined packages',
+          link: '#',
+        },
+        {
+          text: 'Raw .vue files',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Publishing',
+      children: [],
+    },
+  ]
 }
 
 function getCompatSidebar() {
