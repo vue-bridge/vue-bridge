@@ -1,5 +1,11 @@
 # @vue-bridge/eslint-config
 
+## 0.0.4
+
+### Patch Changes
+
+- 3842d4f: Added rule vue/no-invalid-model-keys
+
 ## 0.0.3
 
 ### Patch Changes
