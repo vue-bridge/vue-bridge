@@ -1,19 +1,17 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: false
 heroAlt: Logo of this library
-heroText: Vue 3 Compat Library
-tagline: A Guide and plugin for building cross-version compatible Vue libraries
+heroText: Vue-Bridge 🌉
+tagline: A Guide and tooling collection for building cross-version compatible Vue libraries
 actionText: Get Started
-actionLink: /guide/
+actionLink: /getting-started/
 features:
-- title: Manage multiple packages
-  details: Build, lint, test multiple packages with simple pre-configured commands
-- title: Playground & docs with vite & vitepress
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: package templates
-  details: Add new packages with one command, supported by hygen.
+- title: Guiding you to success
+  details: Extensive Guide and How-Tos explaining how to build cross-version compatible libraries.
+- title: Easy Quickstart with Templates
+  details: Get right to building your library with out pre-configured templates.
+- title: Clever Tooling
+  details: Vue-Bridge provides multiple tools assisting you in writing, testing and building your cross-version compatible Vue Library.
 footer: MIT Licensed | Copyright © 2020-present Thorsten Lünborg
 ---
-
-# Hello!
