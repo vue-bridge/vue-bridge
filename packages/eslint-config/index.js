@@ -3,6 +3,7 @@ module.exports = {
     // Template-related
     'vue/no-multiple-template-root': 'error',
     'vue/no-v-model-argument': 'error',
+    'vue/no-invalid-model-keys': 'error',
     'vue/no-deprecated-v-bind-sync': 'error',
     'vue/no-deprecated-v-on-native-modifier': 'error',
     'vue/no-use-v-if-with-v-for': 'error',
