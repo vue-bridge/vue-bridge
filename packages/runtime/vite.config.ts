@@ -1,10 +1,29 @@
-import { UserConfig } from 'vite'
+import { Plugin, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ts from 'rollup-plugin-typescript2'
+import path from 'path'
 
 const isVue2 = !!process.env.BUILD_TARGET_V2
+
+const dcPath = path.join(__dirname, 'src/defineComponent.ts')
+const vueDemiPlugin: Plugin = {
+  name: 'vue-demi-virtualizer',
+  enforce: 'pre',
+  resolveId(source, importer) {
+    if (source === 'vue-demi' && importer === dcPath) {
+      return path.join(
+        __dirname,
+        `src/defineComponent/vue${isVue2 ? '2' : '3'}.ts`
+      )
+    }
+    // console.log('importer: ', importer)
+    return null
+  },
+}
+
 export default <UserConfig>{
   plugins: [
+    vueDemiPlugin,
     vue(),
     // we build with TS plugin for Vue 3
     isVue2
@@ -32,8 +51,8 @@ export default <UserConfig>{
     emptyOutDir: !isVue2,
     minify: false,
     rollupOptions: {
-      external: ['vue', 'vue-demi', '@vue/composition-api'],
-      treeshake: true,
+      external: ['vue', /*'vue-demi', */ '@vue/composition-api'],
+      treeshake: 'smallest',
       output: {
         banner: `
         /**

@@ -52,11 +52,11 @@
     "access": "public"
   },
   "dependencies": {
-    "tslib": "^2.0.0",
-    "vue-demi": "^0.11.3"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@vue/composition-api": "^1.0.0-0"
+    "@vue/composition-api": "^1.0.0-0",
+    "vue-demi": "^0.11.3"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-0",
