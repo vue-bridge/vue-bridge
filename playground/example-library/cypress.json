@@ -1,0 +1,10 @@
+{ 
+  "$schema": "https://on.cypress.io/cypress.schema.json", 
+  "video": false, 
+  "experimentalStudio": true,
+  "testFiles": ["**/*.cy.ts", "**/*.cy.js"],
+  "component": {
+    "componentFolder": "src",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  }
+}

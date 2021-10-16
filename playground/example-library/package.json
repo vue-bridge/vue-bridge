@@ -23,7 +23,8 @@
   "scripts": {
     "watch": "vue-demi-switch 3 && vite build --watch",
     "build": "vue-demi-switch 3 && vite build",
-    "test": "vue-demi-switch 3 && jest --config ./jest.config.js --runInBand"
+    "test": "vue-demi-switch 3 && cypress run-ct",
+    "test:open": "vue-demi-switch 3 && cypress open-ct"
   },
   "dependencies": {
     "@vue-bridge/runtime": "*"
