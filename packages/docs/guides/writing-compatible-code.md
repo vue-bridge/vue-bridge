@@ -2,7 +2,7 @@
 
 Writing cross-compatible Vue code is possible, but it comes with a few limitations and challenges. The goal of Vue-Bridge is to support authors in this process as far as possible.
 
-## Limitations and Challenges  in Cross-Compatibility
+## Limitations and Challenges in Cross-Compatibility
 
 Vue 3 has some new features that cannot be replicated in Vue 2, so when writing cross-compatible components, we *can't use* these. Examples:
 

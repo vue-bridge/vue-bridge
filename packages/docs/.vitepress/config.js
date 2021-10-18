@@ -31,7 +31,7 @@ module.exports = {
             link: '/reference/compatibility/',
           },
           {
-            text: 'Templates',
+            text: '`create-vue-bridge` (Template)',
             link: '/reference/templates',
           },
           {
@@ -59,6 +59,7 @@ module.exports = {
     ],
     sidebar: {
       '/guides/': getGuidesSidebar(),
+      '/topics/': getTopicsSidebar(),
       '/reference/compatibility': getCompatSidebar(),
     },
   },
@@ -71,7 +72,7 @@ function getGuidesSidebar() {
       link: '/guides/writing-compatible-code/',
     },
     {
-      text: 'How to use/write...',
+      text: 'How to do/use ...?',
       children: [
         {
           text: 'component v-model',
@@ -86,6 +87,10 @@ function getGuidesSidebar() {
     {
       text: 'Testing',
       children: [
+        {
+          text: 'Unit-Testing with Cypress',
+          link: '#',
+        },
         {
           text: 'Unit-Testing with Jest',
           link: '#',
@@ -117,6 +122,13 @@ function getGuidesSidebar() {
       text: 'Publishing',
       children: [],
     },
+  ]
+}
+
+function getTopicsSidebar() {
+  return [
+    { text: 'Foundations', children: [] },
+    { text: 'Phases', children: [] },
   ]
 }
 

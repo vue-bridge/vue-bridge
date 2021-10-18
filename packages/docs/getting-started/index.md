@@ -2,17 +2,11 @@
 
 The quickest and easiest way is to clone one of our templates on github (see below), but you can also configure your project setup yourself manually. We have a guide for this further down.
 
-::: info 
+::: info Why Vue-Bridge?
 
-We also plan on creating a `create-vue-bridge` package so you can do that from the command line:
+If you want to learn more about the why and how of Vue-Bridge before diving right into the code, be sure to visit the Introduction in our Topics section:
 
-```bash
-npx init vue-bridge
-
-yarn create vue-bridge
-```
-
-But that will take us a while
+[_"Why Vue-Bidge?"_ - A brief introduction](../topics/introduction.md)
 
 :::
 
