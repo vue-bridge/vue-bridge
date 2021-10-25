@@ -1,1 +1,0 @@
-# Writing cross-compatible code

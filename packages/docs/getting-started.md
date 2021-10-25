@@ -10,23 +10,4 @@ If you want to learn more about the why and how of Vue-Bridge before diving righ
 
 :::
 
-## Quickstart (Template)
 
-xxx
-
-## Manual setup
-
-### 1. Install dependencies
-
-```bash
-npm i @vue-bridge/runtime @vue-bridge/eslint-config @vue-bridge/testing
-```
-
-### 2. Configure Eslint
-
-### 3. Configure Jest
-
-### 4. Configure build tooling
-
-
-## A word about Monorepos
