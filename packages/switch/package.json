@@ -14,8 +14,19 @@
     "bin",
     "scripts"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.4",
+    "vite": "^2.4.0",
     "vue": "^3.2.*"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.* || ^3.2.*"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
   },
   "bin": {
     "vue-bridge-auto-switch": "bin/vue-bridge-auto-switch.js",

@@ -27,7 +27,8 @@
     "test:open": "vue-demi-switch 3 && cypress open-ct"
   },
   "dependencies": {
-    "@vue-bridge/runtime": "*"
+    "@vue-bridge/runtime": "*",
+    "vue-demi": "^0.11.4"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

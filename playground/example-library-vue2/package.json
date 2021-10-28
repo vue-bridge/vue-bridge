@@ -8,26 +8,30 @@
     "test": "cypress run-ct",
     "test:open": "cypress open-ct",
     "--pre--": "---",
-    "prewatch": "yarn v2",
-    "prebuild": "yarn v2",
-    "pretest": "yarn v2",
-    "pretest:open": "yarn v2",
+    "prewatch": "pnpm v2",
+    "prebuild": "pnpm v2",
+    "pretest": "pnpm v2",
+    "pretest:open": "pnpm v2",
     "--post--": "--",
-    "postwatch": "yarn v3",
-    "postbuild": "yarn v3",
-    "posttest": "yarn v3",
-    "posttest:open": "yarn v3",
+    "postwatch": "pnpm v3",
+    "postbuild": "pnpm v3",
+    "posttest": "pnpm v3",
+    "posttest:open": "pnpm v3",
     "v2": "vue-demi-switch 2",
     "v3": "vue-demi-switch 3"
   },
   "workspaces": {
-    "nohoist": ["vue"]
+    "nohoist": [
+      "vue"
+    ]
   },
   "dependencies": {
-    "@vue-bridge/runtime": "*"
+    "@vue-bridge/runtime": "*",
+    "vue-demi": "^0.12.0"
   },
   "devDependencies": {
     "@cypress/vue": "^2.2.4",
+    "@vue-bridge/eslint-config": "*",
     "@vue-bridge/testing": "*",
     "@vue-bridge/vite-plugin": "*",
     "@vue/test-utils": "^1.2.2",

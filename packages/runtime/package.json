@@ -39,8 +39,8 @@
     "vue-bridge-switch": "bin/vue-bridge-switch.js"
   },
   "scripts": {
-    "build": "yarn build:v3 && yarn build:v2 && rimraf types",
-    "build:v3": "vite build && yarn build:types",
+    "build": "pnpm build:v3 && pnpm build:v2 && rimraf types",
+    "build:v3": "vite build && pnpm build:types",
     "build:v3:w": "vite build --watch",
     "build:v2": "BUILD_TARGET_V2=1 vite build",
     "build:v2:w": "BUILD_TARGET_V2=1 vite build --watch",
@@ -56,6 +56,8 @@
   },
   "devDependencies": {
     "@vue/composition-api": "^1.0.0-0",
+    "@vitejs/plugin-vue": "^1.2.4",
+    "vite": "^2.4.0",
     "vue-demi": "^0.11.3"
   },
   "peerDependencies": {
