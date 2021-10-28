@@ -1,0 +1,23 @@
+{
+  "name": "example-library",
+  "description": "This is just an example file for experimenting with config settings for @vue-bridge/switch",
+  "main": "dist/index.cjs.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "dist/index.cjs.js",
+      "imports": "dist/index.es.js",
+      "types": "dist/index.d.ts"
+    },
+    "./vue2": {
+      "require": "dist-vue2/index.cjs.js",
+      "imports": "dist-vue2/index.es.js",
+      "types": "dist-vue2/index.d.ts"
+    },
+    "./vue3": {
+      "require": "dist/index.cjs.js",
+      "imports": "dist/index.es.js",
+      "types": "dist/index.d.ts"
+    }
+  }
+}

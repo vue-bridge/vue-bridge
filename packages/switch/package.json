@@ -1,0 +1,26 @@
+{
+  "name": "@vue-bridge/switch",
+  "version": "0.0.1",
+  "description": "small executable to change package.json exports according to project's Vue major version",
+  "author": "Thorsten Lünborg <t.luneborg@googlemail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinusBorg/vue-bridge.git",
+    "directory": "packages/switch"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "bin",
+    "scripts"
+  ],
+  "dependencies": {
+    "vue": "^3.2.*"
+  },
+  "bin": {
+    "vue-bridge-auto-switch": "bin/vue-bridge-auto-switch.js",
+    "vb-as": "bin/vue-bridge-auto-switch.js",
+    "vue-bridge-man-switch": "bin/vue-bridge-switch.js",
+    "vb-s": "bin/vue-bridge-switch.js"
+  }
+}
