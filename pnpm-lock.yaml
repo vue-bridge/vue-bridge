@@ -149,6 +149,7 @@ importers:
       '@babel/core': ^7.15.0
       '@babel/preset-env': ^7.15.0
       '@vitejs/plugin-vue': ^1.2.4
+      '@vue-bridge/eslint-config': '*'
       '@vue-bridge/runtime': '*'
       '@vue-bridge/testing': '*'
       '@vue/compiler-sfc': ^3.0.5
@@ -156,15 +157,14 @@ importers:
       jest: ^26.6.3
       vite: ^2.4.0
       vue: ^3.0.5
-      vue-demi: ^0.11.4
       vue-jest: ^5.0.0-0
     dependencies:
       '@vue-bridge/runtime': link:../../packages/runtime
-      vue-demi: 0.11.4_vue@3.2.20
     devDependencies:
       '@babel/core': 7.15.8
       '@babel/preset-env': 7.15.8_@babel+core@7.15.8
       '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
+      '@vue-bridge/eslint-config': link:../../packages/eslint-config
       '@vue-bridge/testing': link:../../packages/testing
       '@vue/compiler-sfc': 3.2.20
       babel-jest: 26.6.3_@babel+core@7.15.8
@@ -184,11 +184,9 @@ importers:
       vite: ^2.4.0
       vite-plugin-vue2: ^1.2.4
       vue: ^2.6
-      vue-demi: ^0.12.0
       vue-template-compiler: ^2.6
     dependencies:
       '@vue-bridge/runtime': link:../../packages/runtime
-      vue-demi: 0.12.0_vue@2.6.14
     devDependencies:
       '@cypress/vue': 2.2.4_e1d60e678c7b9d4654c8db95df3b5b13
       '@vue-bridge/eslint-config': link:../../packages/eslint-config
@@ -11152,21 +11150,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.20
-    dev: false
-
-  /vue-demi/0.12.0_vue@2.6.14:
-    resolution: {integrity: sha512-eggsbQSQEJKlvQrtrJLx4J44MIVq5+Z7QetIEh1Na+ZWLgt5Fq0qskQ1QmckTTEoFcUdn36c4K23EjtXZhws7w==}
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      vue: 2.6.14
     dev: false
 
   /vue-eslint-parser/7.11.0_eslint@7.32.0:

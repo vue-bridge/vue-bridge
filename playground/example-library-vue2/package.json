@@ -6,19 +6,7 @@
     "watch": "vite build --watch",
     "build": "vite build",
     "test": "cypress run-ct",
-    "test:open": "cypress open-ct",
-    "--pre--": "---",
-    "prewatch": "pnpm v2",
-    "prebuild": "pnpm v2",
-    "pretest": "pnpm v2",
-    "pretest:open": "pnpm v2",
-    "--post--": "--",
-    "postwatch": "pnpm v3",
-    "postbuild": "pnpm v3",
-    "posttest": "pnpm v3",
-    "posttest:open": "pnpm v3",
-    "v2": "vue-demi-switch 2",
-    "v3": "vue-demi-switch 3"
+    "test:open": "cypress open-ct"
   },
   "workspaces": {
     "nohoist": [
