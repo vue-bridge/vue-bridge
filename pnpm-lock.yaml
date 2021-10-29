@@ -137,7 +137,7 @@ importers:
       vite: ^2.4.0
       vue: ^3.0.5
     dependencies:
-      example-library: 0.4.0
+      example-library: link:../example-library
       vue: 3.2.20
     devDependencies:
       '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
@@ -5804,10 +5804,6 @@ packages:
   /eventemitter3/4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
     dev: true
-
-  /example-library/0.4.0:
-    resolution: {integrity: sha1-vm016UmjRCJeY51tMdSMGSCZvlU=}
-    dev: false
 
   /exec-sh/0.3.6:
     resolution: {integrity: sha512-nQn+hI3yp+oD0huYhKwvYI32+JFeq+XkNcD1GAo3Y/MjxsfVGmrrzrnzjWiNY6f+pUCP440fThsFh5gZrRAU/w==}
