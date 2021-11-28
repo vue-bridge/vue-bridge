@@ -23,7 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "jsx": "preserve",
     "esModuleInterop": true,
-    "types": ["vite/client", "jest", "cypress"],
+    "types": ["vite/client", "cypress"],
     "paths": {
       "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
       "@vue-bridge/testing": ["packages/testing/src/index.ts"]
@@ -36,9 +36,6 @@
     "/**/src/**/*.vue",
     "/packages/docs/**/*.vue",
     "/packages/docs/**/*.js",
-    "/cypress/**/*.js",
-    // necessary for un-breaking jest types broken by cypress' chai dependency
-    // https://github.com/cypress-io/cypress/issues/1087#issuecomment-353370449
-    "./node_modules/jest", 
+    "/cypress/**/*.js"
   ]
 }

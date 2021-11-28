@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    // "baseUrl": ".",
+    "paths": {},
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.vue", "src/**/*.{ts,js}"]
+}

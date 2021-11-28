@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@vue/composition-api": [
+        "./node_modules/@vue/composition-api/"
+      ],
+      "vue-demi": [
+        "./node_modules/vue-demi/"
+      ]
+    },
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.vue", "src/**/*.{ts,js}"]
+}
