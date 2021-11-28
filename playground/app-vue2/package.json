@@ -18,10 +18,10 @@
   "dependencies": {
     "example-library-vue2": "*",
     "vue": "2.6.14",
-    "vue-demi": "^0.11.3"
+    "vue-demi": "^0.12.1"
   },
   "devDependencies": {
-    "vite": "^2.4.0",
+    "vite": "^2.6.14",
     "vite-plugin-vue2": "^1.7.2",
     "vue-template-compiler": "^2.6.14"
   }
