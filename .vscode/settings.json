@@ -8,10 +8,7 @@
   ],
   "peacock.color": "#42b983",
   "workbench.colorCustomizations": {
-    "editorGroup.border": "#66c89c",
-    "panel.border": "#66c89c",
     "sash.hoverBorder": "#66c89c",
-    "sideBar.border": "#66c89c",
     "titleBar.activeBackground": "#42b983",
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#42b98399",

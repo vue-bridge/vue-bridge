@@ -21,26 +21,21 @@
     "dist"
   ],
   "scripts": {
-    "watch": "vue-demi-switch 3 && vite build --watch",
+    "watch": "vite build --watch",
     "build": "vite build",
-    "test": "vue-demi-switch 3 && cypress run-ct",
-    "test:open": "vue-demi-switch 3 && cypress open-ct"
+    "test": "cypress run-ct",
+    "test:open": "cypress open-ct"
   },
   "dependencies": {
     "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue-bridge/testing": "*",
     "@vue-bridge/eslint-config": "*",
     "@vue/compiler-sfc": "^3.0.5",
-    "babel-jest": "^26.0.6",
-    "jest": "^26.6.3",
     "vite": "^2.4.0",
-    "vue": "^3.0.5",
-    "vue-jest": "^5.0.0-0"
+    "vue": "^3.0.5"
   },
   "peerDependencies": {
     "vue": "^3.0.5"
