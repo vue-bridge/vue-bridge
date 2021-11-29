@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { defineComponent } from '@vue-bridge/runtime'
 export default defineComponent({
   name: 'CompB',
