@@ -1,5 +1,7 @@
 <script lang="ts">
-import { defineComponent } from '@vue-bridge/runtime'
+// import { defineComponent } from '@vue-bridge/runtime'
+/* eslint-disable-next-line */
+import { defineComponent } from 'vue'
 import CompA from './dummys/CompA.vue'
 import CompB from './dummys/CompB.vue'
 

@@ -10,7 +10,6 @@ export default defineComponent({
     },
   },
   emits: ['update:modelValue'],
-
   computed: {
     model: {
       get(): string | undefined {
@@ -20,16 +19,13 @@ export default defineComponent({
         this.$emit('update:modelValue', v)
       },
     },
-    $_attrs(): Record<string, any> {
-      return {} // FIXME workaround until global types in /runtime pkg are fixed.
-    },
   },
 })
 </script>
 <template>
   <div>
     <label for="input">
-      <input type="text" v-model="model" v-bind="$_attrs" />
+      <input type="text" v-model="model" />
     </label>
   </div>
 </template>

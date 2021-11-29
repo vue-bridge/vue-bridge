@@ -27,7 +27,8 @@
     "test:open": "cypress open-ct"
   },
   "dependencies": {
-    "@vue-bridge/runtime": "*"
+    "@vue-bridge/runtime": "*",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.10.1",

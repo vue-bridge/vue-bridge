@@ -1,9 +1,15 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    // "baseUrl": ".",
-    "paths": {},
-    "skipLibCheck": true
+    "baseUrl": ".",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "./typings"
   },
-  "include": ["src/**/*.vue", "src/**/*.{ts,js}"]
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.js"
+  ]
 }
