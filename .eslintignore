@@ -1,3 +1,5 @@
 dist/
 packages/*/dist
+packages/*/typings
+playground/*/typings
 node_modules/

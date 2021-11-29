@@ -25,7 +25,7 @@
     "esModuleInterop": true,
     "types": ["vite/client", "cypress"],
     "paths": {
-      "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
+      // "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
       "@vue-bridge/testing": ["packages/testing/src/index.ts"]
     }
   },
