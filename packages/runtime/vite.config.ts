@@ -1,6 +1,5 @@
 import { Plugin, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import ts from 'rollup-plugin-typescript2'
 import path from 'path'
 
 const isVue2 = !!process.env.BUILD_TARGET_V2
@@ -22,25 +21,10 @@ const vueDemiPlugin: Plugin = {
 }
 
 export default <UserConfig>{
-  plugins: [
-    vueDemiPlugin,
-    vue(),
-    // we build with TS plugin for Vue 3
-    isVue2
-      ? undefined
-      : {
-          apply: 'build',
-          ...ts({
-            tsconfig: './tsconfig.build.json',
-            useTsconfigDeclarationDir: true,
-          }),
-        },
-  ],
+  plugins: [vueDemiPlugin, vue()],
   define: {
     __VUE_BRIDGE_TARGET_VERSION__: isVue2 ? 2 : 3,
   },
-  // we build with esbuild for Vue 2
-  esbuild: isVue2,
   build: {
     lib: {
       entry: 'src/main.ts',
