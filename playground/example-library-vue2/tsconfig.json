@@ -1,12 +1,19 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "outDir": "./typings",
     "baseUrl": ".",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@vue-bridge/runtime": [
+        "@vue-bridge/runtime/vue2"
+      ]
+    }
   },
   "include": [
     "src/**/*.vue",
     "src/**/*.ts",
-    "src/**/*.js"
+    "src/**/*.js",
+    "src/**/*.d.ts"
   ]
 }

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import { createVuePlugin } from 'vite-plugin-vue2'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [createVuePlugin()],
@@ -25,7 +26,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: './src/main.js',
+      entry: './src/main.ts',
       formats: ['es', 'cjs'],
     },
     minify: false,
