@@ -14,16 +14,16 @@
     "typings",
     "README.md"
   ],
-  "main": "./dist/example-library.cjs.js",
-  "module": "./dist/example-library.es.js",
+  "main": "./dist/example-library-vue2.cjs.js",
+  "module": "./dist/example-library-vue2.es.js",
   "types": "./typings/main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/example-library.es.js",
-      "require": "./dist/example-library.cjs.js",
+      "import": "./dist/example-library-vue2.es.js",
+      "require": "./dist/example-library-vue2.cjs.js",
       "types": "./typings/main.d.ts"
     },
-    "./": "./"
+    "./style.css": "./dist/style.css"
   },
   "dependencies": {
     "@vue-bridge/runtime": "*",

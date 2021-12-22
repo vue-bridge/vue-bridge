@@ -7,13 +7,14 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "workspaces": {
-    "nohoist": [
-      "vue",
-      "vue-template-compiler",
-      "vite-plugin-vue2",
-      "vite"
-    ]
+  "pnpm": {
+    "packageExtensions": {
+      "vue-template-compiler": {
+        "dependencies": {
+          "vue": "^2.6"
+        }
+      }
+    }
   },
   "dependencies": {
     "example-library-vue2": "*",
