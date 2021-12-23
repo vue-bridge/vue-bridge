@@ -1,4 +1,5 @@
-// import { isVue2 } from 'vue-demi'
+/// <reference types="node" />
+
 import type { ComponentPublicInstance, ComponentOptionsBase } from 'vue'
 import {
   mount as _mount,

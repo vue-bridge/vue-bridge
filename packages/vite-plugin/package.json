@@ -21,7 +21,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^1.10.1",
+    "@vitejs/plugin-vue": "^2.0.1",
     "@vue/compiler-sfc": "^3.2.23",
     "vite-plugin-vue2": "^1.8.0",
     "vue-demi": "^0.12.1",
