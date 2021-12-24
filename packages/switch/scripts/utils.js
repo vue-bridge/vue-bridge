@@ -9,7 +9,7 @@ function switchVersion(version) {
   const exportsPath = version === 2 ? './vue2' : './vue3'
   const pkg = require(pkgPath)
 
-  if (!pkg.exports?.[exportsPath]) {
+  if (!pkg?.exports?.[exportsPath]) {
     throw new Error(
       `[@vue-bridge/switch] - Could not set up correct package exports for package ${pkg.name}:
         the "exports" field in its package.json is missing conditions for '${exportsPath}'.
@@ -22,10 +22,10 @@ function switchVersion(version) {
   pkg.exports['.'] = vueExports
   pkg.main = vueExports.require
   pkg.module = vueExports.import
-  // if (vueExports.types) {
-  //   pkg.types = vueExports.types
-  //   pkg.exports.types = vueExports.types
-  // }
+  if (vueExports.types) {
+    pkg.types = vueExports.types
+    // pkg.exports.types = vueExports.types
+  }
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2))
 }
 
