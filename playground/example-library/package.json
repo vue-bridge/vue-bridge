@@ -37,8 +37,11 @@
     "@vue-bridge/eslint-config": "*",
     "@vue-bridge/testing": "*",
     "@vue/compiler-sfc": "^3.2.23",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "jsdom": "^19.0.0",
     "typescript": "^4.5.2",
     "vite": "^2.6.14",
+    "vitest": ">=0.0.112",
     "vue": "^3.2.23",
     "vue-tsc": "^0.30.0"
   },

@@ -19,5 +19,8 @@
       "imports": "dist/index.es.js",
       "types": "dist/index.d.ts"
     }
+  },
+  "devDependencies": {
+    "vitest": "^0.0.112"
   }
 }
