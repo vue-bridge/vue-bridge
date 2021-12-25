@@ -5,8 +5,6 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "declaration": true,
-    
     "module": "CommonJS",
     "esModuleInterop": true,
     

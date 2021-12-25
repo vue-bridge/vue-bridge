@@ -1,25 +1,17 @@
 /// <reference types="node" />
 
 import type { ComponentPublicInstance, ComponentOptionsBase } from 'vue'
+import * as Vue from 'vue'
 import {
   mount as _mount,
   shallowMount as _shallowMount,
   MountingOptions,
   VueWrapper,
 } from '@vue/test-utils'
-// import * as testUtils from '@vue/test-utils'
+import * as testUtils from '@vue/test-utils'
 
-let version: string = ''
-try {
-  const vue = require('vue')
-  version = vue.version
-} catch {
-  /* eslint-disable-next-line no-empty */
-  console.warn('[@vue-bridge/testing] Vue version could not be determined')
-}
-
-export const isVue2 = version.startsWith('2.')
-export const isVue3 = version.startsWith('3.')
+export const isVue2 = 'createLocalVue' in testUtils
+export const isVue3 = !isVue2
 
 type Comp = ComponentPublicInstance<
   {},
@@ -45,7 +37,7 @@ interface Vue2Options {
   mocks?: any
 }
 
-export function mount<T extends Comp, P, D = {}>(
+function mountFn<T extends Comp, P, D = {}>(
   component: T,
   options: MountingOptions<P, D>
 ): ReturnType<typeof _mount> {
@@ -59,7 +51,8 @@ export function mount<T extends Comp, P, D = {}>(
     return _mount(component, options)
   }
 }
-export function shallowMount<T extends Comp, P, D = {}>(
+export const mount = mountFn as typeof _mount
+function shallowMountFn<T extends Comp, P, D = {}>(
   component: T,
   options: MountingOptions<P, D>
 ): ReturnType<typeof _shallowMount> {
@@ -72,6 +65,7 @@ export function shallowMount<T extends Comp, P, D = {}>(
     return _shallowMount(component, options)
   }
 }
+export const shallowMount = shallowMountFn as typeof _mount
 
 function patchProps<P, D = {}>(options: MountingOptions<P, D>) {
   if (options.props) {
@@ -138,3 +132,12 @@ function patchSlots<P, D = {}>(
     })
   }
 }
+
+type NextTick = <T = void>(
+  this: T,
+  fn?: ((this: T) => void) | undefined
+) => Promise<void>
+const nextTick: NextTick =
+  'nextTick' in Vue ? Vue.nextTick : ((Vue as any).default.nextTick as NextTick)
+
+export { nextTick }

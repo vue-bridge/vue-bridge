@@ -2,7 +2,6 @@
   "name": "@vue-bridge/testing",
   "version": "0.0.4",
   "description": "Wrapper over vue-test-utils to enable tests in cross-version Vue libraries",
-  "main": "dist/index.js",
   "author": "Thorsten Luenborg",
   "repository": {
     "type": "git",
@@ -10,15 +9,34 @@
     "directory": "packages/testing"
   },
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "dist/index.js",
+      "require": "dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "src"
+  ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && tsc --outfile dist/index.mjs --module es6 --declaration"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "tsup": "^5.11.9",
     "typescript": "^4.5.2",
-    "vite": "^2.6.14"
+    "vite": "^2.6.14",
+    "vue": "^3.2.26"
   },
   "peerDependencies": {
     "@vue/test-utils": "^1.2.1 || ^2.0.0-0"
