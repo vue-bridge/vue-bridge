@@ -16,9 +16,7 @@
     "build:playground": "lerna run build --scope '{app-*,example-library*}'",
     "build:docs": "lerna run build --scope 'docs'",
     "version": "pnpm changeset version",
-    "release": "pnpm build:packages && pnpm changeset publish",
-    "cypress": "cypress run --config-file cypress/cypress.json",
-    "cypress:open": "cypress open --config-file cypress/cypress.json"
+    "release": "pnpm build:packages && pnpm changeset publish"
   },
   "pnpm": {
     "overrides": {
