@@ -27,8 +27,7 @@
   },
   "dependencies": {
     "@vue-bridge/runtime": "*",
-    "tslib": "^2.0.0",
-    "vue-demi": "^0.12.1"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@vue-bridge/eslint-config": "*",

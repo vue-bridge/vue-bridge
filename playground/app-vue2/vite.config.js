@@ -23,6 +23,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['vue', '@vue-bridge/runtime', 'vue-demi', '@vue/composition-api'],
+    exclude: ['vue', '@vue-bridge/runtime', '@vue/composition-api'],
   },
 })

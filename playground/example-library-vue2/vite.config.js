@@ -32,12 +32,7 @@ export default defineConfig({
     minify: false,
     rollupOptions: {
       // TODO: these should be added by vite plugin
-      external: [
-        'vue',
-        'vue-demi',
-        '@vue/composition-api',
-        '@vue-bridge/runtime',
-      ],
+      external: ['vue', '@vue/composition-api', '@vue-bridge/runtime'],
     },
   },
   optimizeDeps: {
