@@ -192,12 +192,10 @@ importers:
       vite-plugin-vue2: ^1.2.4
       vitest: '>=0.0.112'
       vue: ^2.6.14
-      vue-demi: ^0.12.1
       vue-template-compiler: ^2.6
     dependencies:
       '@vue-bridge/runtime': link:../../packages/runtime
       tslib: 2.3.1
-      vue-demi: 0.12.1_36d2f728e2505d572049ec41bd4a1032
     devDependencies:
       '@vue-bridge/eslint-config': link:../../packages/eslint-config
       '@vue-bridge/testing': link:../../packages/testing
@@ -5388,22 +5386,6 @@ packages:
       vscode-pug-languageservice: 0.29.6
       vscode-typescript-languageservice: 0.29.6
     dev: true
-
-  /vue-demi/0.12.1_36d2f728e2505d572049ec41bd4a1032:
-    resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      '@vue/composition-api': 1.4.2_vue@2.6.14
-      vue: 2.6.14
-    dev: false
 
   /vue-demi/0.12.1_vue@2.6.14:
     resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
