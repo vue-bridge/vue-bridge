@@ -1,30 +1,29 @@
-/// <reference types="cypress" />
-import { mount } from '@cypress/vue'
+import { mount, nextTick } from '@vue-bridge/testing'
+import { describe, it, expect } from 'vitest'
 import Input from '../components/Input.vue'
 
 describe('Input', () => {
-  it('v-model works', () => {
+  it('v-model works', async () => {
     const newValue = 'Hello You!'
-    mount(Input, {
-      propsData: {
+    const wrapper = mount(Input, {
+      props: {
         modelValue: 'Hello World',
       },
     })
+    await nextTick()
 
-    cy.get('input').should('have.value', 'Hello World')
-    cy.get('input')
-      .clear()
-      .type(newValue)
-      .then(() => {
-        const wrapper = Cypress.vueWrapper
-        expect(wrapper.emitted('update:modelValue')?.length).to.eql(
-          newValue.length + 1
-        )
-        expect((wrapper.emitted('update:modelValue')?.[10] as any)?.[0]).to.eql(
-          'Hello You!'
-        )
-      })
+    const input = wrapper.find('input')
+    expect(wrapper.props().modelValue).toBe('Hello World')
+    expect(wrapper.vm.model).toBe('Hello World')
+    console.log(input.element.attributes)
+    expect(input!.element.value).toBe('Hello World')
+    input.setValue(newValue)
+    await nextTick()
+    expect(wrapper.emitted()['update:modelValue']?.length).toEqual(1)
+    expect((wrapper.emitted()['update:modelValue']?.[0] as any)?.[0]).toEqual(
+      newValue
+    )
   })
 
-  it.skip('v-model on input works')
+  it.todo('v-model on input works')
 })

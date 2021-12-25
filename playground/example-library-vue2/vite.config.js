@@ -2,20 +2,20 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import { createVuePlugin } from 'vite-plugin-vue2'
 
+const localResolve = (pkg) => path.resolve(__dirname, 'node_modules', pkg)
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [createVuePlugin()],
   resolve: {
     alias: {
-      // are we have Vue 2 and Vue 3 in this monorepo,
-      // we have to tell vite which package to use
-      vue: path.resolve(__dirname, 'node_modules/vue'),
+      // since we symlink the /src folder, we need to explicitly alias
+      // a bunch of deps to point to the right node_modules folder (the one in this workspace)
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
-      '@cypress/vue': path.resolve(__dirname, './node_modules/@cypress/vue'),
-      '@vue/test-utils': path.resolve(
-        __dirname,
-        './node_modules/@vue/test-utils'
-      ),
+      vue: localResolve('vue'),
+      '@vue-bridge/testing': localResolve('@vue-bridge/testing'),
+      '@vue/test-utils': localResolve('@vue/test-utils'),
+      vitest: localResolve('vitest'),
     },
   },
   server: {
@@ -42,5 +42,11 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['@vue/test-utils'],
+  },
+  test: {
+    environment: 'jsdom',
+    deps: {
+      inline: ['@vue-bridge/runtime', '@vue/composition-api'],
+    },
   },
 })

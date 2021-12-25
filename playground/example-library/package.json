@@ -25,7 +25,7 @@
   "scripts": {
     "watch": "vite build --watch",
     "build": "vite build",
-    "test": "cypress run-ct",
+    "test": "vitest --reporter=verbose",
     "test:open": "cypress open-ct"
   },
   "dependencies": {

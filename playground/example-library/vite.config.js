@@ -1,3 +1,4 @@
+import { join } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -13,7 +14,6 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/main.js',
-      // name: 'VueExampleLib',
       formats: ['es', 'cjs'],
     },
     minify: false,
@@ -23,5 +23,8 @@ export default defineConfig({
       },
       external: ['vue', '@vue/composition-api', '@vue-bridge/runtime'],
     },
+  },
+  test: {
+    environment: 'jsdom',
   },
 })
