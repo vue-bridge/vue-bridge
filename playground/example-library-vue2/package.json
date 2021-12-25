@@ -31,7 +31,6 @@
     "vue-demi": "^0.12.1"
   },
   "devDependencies": {
-    "@cypress/vue": "^2.2.4",
     "@vue-bridge/eslint-config": "*",
     "@vue-bridge/testing": "*",
     "@vue-bridge/vite-plugin": "*",
