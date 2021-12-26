@@ -25,12 +25,10 @@
   "scripts": {
     "watch": "vite build --watch",
     "build": "vite build",
-    "test": "vitest --reporter=verbose",
-    "test:open": "cypress open-ct"
+    "test": "vitest --reporter=verbose"
   },
   "dependencies": {
-    "@vue-bridge/runtime": "*",
-    "tslib": "^2.0.0"
+    "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.1",

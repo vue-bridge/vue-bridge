@@ -21,7 +21,7 @@ export default defineConfig({
       output: {
         exports: 'named',
       },
-      external: ['vue', '@vue/composition-api', '@vue-bridge/runtime'],
+      external: ['vue', '@vue-bridge/runtime'],
     },
   },
   test: {
