@@ -1,7 +1,7 @@
 import type { Plugin, UserConfig } from 'vite'
 import resolve from 'resolve-pkg'
 
-interface VueBridgeOptions {
+export interface VueBridgeOptions {
   vueVersion: '2' | '3'
   apply?: 'build' | 'serve'
   localizePackages?: string[] | false
@@ -13,13 +13,15 @@ export const defaultPackages = [
   'vue-demi',
   '@vue-bridge/testing',
   '@vue/test-utils',
-]
+  '@vue/composition-api',
+] as const
 
 export function vueBridge(options: VueBridgeOptions) {
   const compatPlugin: Plugin = {
     name: 'vue-bridge',
     enforce: 'pre',
     apply: options.apply ?? 'build',
+
     config() {
       // resolve all vue-related plugins to absolute paths
       // so symlinked src files don't resolve deps to the wrong node_modules
@@ -31,9 +33,10 @@ export function vueBridge(options: VueBridgeOptions) {
         }
       }
 
-      // TODO: inline packages in `test` config for vitest
+      // TODO: inline packages in `test` config for vitest?
       return addConfig
     },
+
     transform(code, id) {
       if (!id.endsWith('.vue')) return
       return transformVersionedStyleBlock(code, `v${options.vueVersion}`)
@@ -68,7 +71,12 @@ function resolveFullPathForPackages(options: VueBridgeOptions) {
   const alias: Record<string, string> = {}
   const packages = options.localizePackages || defaultPackages
   packages.forEach((pkg) => {
-    const fullPath = resolve(pkg)
+    let fullPath: string
+    try {
+      fullPath = resolve(pkg)
+    } catch (error) {
+      /* do nothing, dep seems not to be installed */
+    }
     if (fullPath) {
       alias[pkg] = fullPath
     }
