@@ -23,6 +23,6 @@
     "@vue-bridge/runtime": "*"
   },
   "devDependencies": {
-    "vitepress": "^0.20.1"
+    "vitepress": "^0.20.10"
   }
 }

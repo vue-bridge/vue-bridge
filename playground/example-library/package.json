@@ -38,10 +38,10 @@
     "@vue/test-utils": "^2.0.0-rc.18",
     "jsdom": "^19.0.0",
     "typescript": "^4.5.2",
-    "vite": "^2.6.14",
-    "vitest": ">=0.0.112",
+    "vite": "^2.7.7",
+    "vitest": "^0.0.118",
     "vue": "^3.2.23",
-    "vue-tsc": "^0.30.0"
+    "vue-tsc": "^0.30.1"
   },
   "peerDependencies": {
     "vue": "^3.0.5"

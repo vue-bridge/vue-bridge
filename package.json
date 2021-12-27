@@ -7,20 +7,20 @@
   "private": true,
   "scripts": {
     "docs:dev": "cd packages/docs && pnpm start",
-    "test": "pnpm test:2 && pnpm test:3",
+    "test": "pnpm run test --filter 'example-library' --parallel --aggregate-output",
     "test:2": "pnpm workspace example-library-vue2 test",
     "test:3": "pnpm workspace example-library test",
-    "lint": "lerna run lint -- --fix",
+    "lint": "pnpm run lint -r --if-present --parallel -- --fix",
     "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
-    "build:packages": "lerna run build --scope @vue-bridge/*",
-    "build:playground": "lerna run build --scope '{app-*,example-library*}'",
-    "build:docs": "lerna run build --scope 'docs'",
+    "build:packages": "pnpm run build --filter @vue-bridge/* --parallel --aggregate-output",
+    "build:playground": "pnpm run build --filter '{app-,example-library}*'",
+    "build:docs": "pnpm workspace docs build",
     "version": "pnpm changeset version",
-    "release": "pnpm build:packages && pnpm changeset publish"
+    "release": "pnpm test && pnpm build:packages && pnpm changeset publish"
   },
   "pnpm": {
     "overrides": {
-      "vscode-vue-languageservice": "0.29.6"
+      "vscode-vue-languageservice": "0.30.1"
     },
     "packageExtensions": {
       "vue-template-compiler": {
