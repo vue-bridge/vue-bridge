@@ -1,77 +1,78 @@
-import vue3 from '@vitejs/plugin-vue'
-import { createVuePlugin as vue2 } from 'vite-plugin-vue2'
-import type { VueViteOptions as Vue2Options } from 'vite-plugin-vue2'
-import type { Options as Vue3Options } from '@vitejs/plugin-vue'
-import type { Plugin } from 'vite'
-import { isVue2 } from 'vue-demi'
+import type { Plugin, UserConfig } from 'vite'
+import resolve from 'resolve-pkg'
 
-/**
- * Usage:
- * import Vue3Compat from 'vite-plugin-vue3-compat'
- *
- * plugins: [
- *   Vue3Compat(
- *     mainMode: 3,
- *     vue3PluginOptions: {}
- *     vue2PluginOptions: {}
- *   )
- * ]
- */
-
-interface VueCompatOptions {
-  mainMode: 2 | 3
-  vue3PluginOptions?: Vue3Options
-  vue2PluginOptions?: Vue2Options
+interface VueBridgeOptions {
+  vueVersion: '2' | '3'
+  apply?: 'build' | 'serve'
+  localizePackages?: string[] | false
 }
 
-export default function viteVueCompatPlugin(_options: VueCompatOptions) {
-  const {
-    vue2PluginOptions = {},
-    vue3PluginOptions = {},
-    ...options
-  } = _options
+export const defaultPackages = [
+  'vue',
+  '@vue-bridge/runtime',
+  'vue-demi',
+  '@vue-bridge/testing',
+  '@vue/test-utils',
+]
 
-  const vueCompatPlugin = createVueCompatPlugin(options)
-
-  const version = isVue2 ? 2 : 3
-  const vuePlugin =
-    version === 2 ? vue2(vue2PluginOptions) : vue3(vue3PluginOptions)
-
-  return [vueCompatPlugin, vuePlugin]
-}
-
-function createVueCompatPlugin(
-  options: Omit<VueCompatOptions, 'vue3PluginOptions' | 'vue2PluginOptions'>
-) {
+export function vueBridge(options: VueBridgeOptions) {
   const compatPlugin: Plugin = {
-    name: 'vue3-compat',
-    // @ts-expect-error
-    config(config) {
-      const mode = process.env.BUILD_TARGET_VUE || options.mainMode
-      const baseFileName =
-        (config.build?.lib && config.build.lib.fileName) ?? 'index'
-      const fileName =
-        mode === options.mainMode
-          ? baseFileName
-          : `vue${options.mainMode}/${baseFileName}`
+    name: 'vue-bridge',
+    enforce: 'pre',
+    apply: options.apply ?? 'build',
+    config() {
+      // resolve all vue-related plugins to absolute paths
+      // so symlinked src files don't resolve deps to the wrong node_modules
+      const addConfig: Partial<UserConfig> = {}
+      if (options.localizePackages !== false) {
+        const alias = resolveFullPathForPackages(options)
+        addConfig.resolve = {
+          alias,
+        }
+      }
 
-      return {
-        build: {
-          lib: {
-            fileName,
-          },
-          rollupOptions: {
-            external: ['@vue-bridge/runtime'],
-          },
-        },
-        resolve: {
-          alias: {
-            vue: mode === 2 ? 'vue' : 'vue3',
-          },
-        },
-      } // as UserConfig
+      // TODO: inline packages in `test` config for vitest
+      return addConfig
+    },
+    transform(code, id) {
+      if (!id.endsWith('.vue')) return
+      return transformVersionedStyleBlock(code, `v${options.vueVersion}`)
     },
   }
 
   return compatPlugin
+}
+
+const styleRE =
+  /<(style (?:.*?)?(v(?:2|3))(?:.*?)?>)(?:(?:\n|\r|.)*?)<\/style>\n?/gm
+
+function transformVersionedStyleBlock(code: string, version: 'v2' | 'v3') {
+  const results = [...code.matchAll(styleRE)]
+  if (!results.length) return code
+
+  // implementation:
+  // - remove style blocks of non-matching versions
+  results.forEach((result) => {
+    if (result[2] !== version) {
+      const n = (result[0].match(/\n/gm) ?? []).length
+      code.replace(result[0], '\n'.repeat(n))
+    } else {
+      code.replace(result[1], result[1].replace(version, ''))
+    }
+  })
+  // remove `v2`/`v3` attribute from remaining style blocks
+  return code
+}
+
+function resolveFullPathForPackages(options: VueBridgeOptions) {
+  const alias: Record<string, string> = {}
+  const packages = options.localizePackages || defaultPackages
+  packages.forEach((pkg) => {
+    const fullPath = resolve(pkg)
+    if (fullPath) {
+      alias[pkg] = fullPath
+    }
+  })
+
+  return alias
 }

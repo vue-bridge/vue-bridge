@@ -10,12 +10,23 @@
     "directory": "packages/vite-plugin"
   },
   "license": "MIT",
+  "type": "module",
   "main": "index.js",
-  "types": "./types",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "build": "tsc",
-    "build:w": "tsc --watch",
-    "prebuild": "vue-demi-switch 3"
+    "build": "tsup-node index.ts --format esm,cjs --dts",
+    "build:w": "pnpm build --watch"
   },
   "publishConfig": {
     "access": "public"
@@ -28,6 +39,8 @@
     "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
+    "resolve-pkg": "^2.0.0",
+    "tsup": "^5.11.9",
     "vite": "^2.6.14",
     "vue": "^3.2.23"
   },
