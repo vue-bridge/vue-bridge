@@ -1,4 +1,4 @@
-import type { ObjectEmitsOptions } from '@vue/runtime-core'
+import type { ObjectEmitsOptions } from 'vue'
 import { isVue2 } from './constants'
 
 const listenerRE = /^on[A-Z]/
