@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "docs:dev": "cd packages/docs && pnpm start",
+    "docs:dev": "cd docs && pnpm start",
     "test": "pnpm run test --filter 'example-library' --parallel --aggregate-output",
     "test:2": "pnpm workspace example-library-vue2 test",
     "test:3": "pnpm workspace example-library test",
