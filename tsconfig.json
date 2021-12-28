@@ -26,7 +26,8 @@
     "types": ["vite/client", "cypress"],
     "paths": {
       // "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
-      "@vue-bridge/testing": ["packages/testing/src/index.ts"]
+      "@vue-bridge/testing": ["packages/testing/src/index.ts"],
+      "virtual:vue": ["packages/runtime/node_modules/vue"]
     }
   },
   "include": [
@@ -34,8 +35,8 @@
     "/**/src/**/*.ts",
     "/**/src/**/*.js",
     "/**/src/**/*.vue",
-    "/packages/docs/**/*.vue",
-    "/packages/docs/**/*.js",
+    "/docs/**/*.vue",
+    "/docs/**/*.js",
     "/cypress/**/*.js"
   ]
 }

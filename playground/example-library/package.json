@@ -14,7 +14,8 @@
       "import": "./dist/example-library.es.js",
       "require": "./dist/example-library.cjs.js"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./src/": "./src/"
   },
   "files": [
     "src",

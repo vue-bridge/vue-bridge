@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      //'example-library': 'example-library/src/main.js',
+      'example-library': 'example-library/src/main.ts',
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue3',
     },
   },

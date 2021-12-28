@@ -9,7 +9,7 @@ const vueDemiPlugin: Plugin = {
   name: 'vue-demi-virtualizer',
   enforce: 'pre',
   resolveId(source, importer) {
-    if (source === 'vue-demi' && importer === dcPath) {
+    if (source === 'virtual:vue' && importer === dcPath) {
       return path.join(
         __dirname,
         `src/defineComponent/vue${isVue2 ? '2' : '3'}.ts`
