@@ -30,13 +30,11 @@ export default <UserConfig>{
       entry: 'src/main.ts',
       name: 'VueBridge',
       fileName: isVue2 ? 'index.vue2' : 'index.vue3',
-      formats: ['es', 'cjs'],
+      formats: ['es', 'cjs', 'iife'],
     },
     emptyOutDir: !isVue2,
-    minify: false,
     rollupOptions: {
-      external: ['vue', /*'vue-demi', */ '@vue/composition-api'],
-      treeshake: 'smallest',
+      external: ['vue', '@vue/composition-api'],
       output: {
         banner: `
         /**
@@ -47,6 +45,7 @@ export default <UserConfig>{
         exports: 'named',
         globals: {
           vue: 'Vue',
+          '@vue/composition-api': 'VueCompositionAPI',
         },
       },
     },
