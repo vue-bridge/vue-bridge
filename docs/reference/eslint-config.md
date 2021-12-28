@@ -2,14 +2,14 @@
 
 Vue-Bridge provides an eslint-config package that defines a bunch of rules that will help plugin authors to write cross-compatible code by warning when using incompatible features or APIs and enforcing the use of the right exports, i.e. using `defineComponent` from `'@vue-bridge/runtime'` over the normal version exported from `'vue'`
 
-## Requirements
+## Dependencies
 
-This package depends on [`eslint`](eslint.org) 7 and [`eslint-plugin-vue`](eslint.vuejs.org) version `7.13` or higher. You have to install these packages yourself.
+This package depends on [`eslint`](https://www.eslint.org) `^8.0.0` or higher and [`eslint-plugin-vue`](https://eslint.vuejs.org) version `^8.0.0` or higher. You have to install these packages yourself.
 
 ## Installation
 
 ```bash
-npm install -D @vue-bridge/eslint-config
+npm install -D @vue-bridge/eslint-config eslint eslint-plugin-vue
 ```
 
 Add to your eslint config:
@@ -21,9 +21,11 @@ module.exports = {
 }
 ```
 
-### Rules
+## Rules
 
 The following rules are used by this config:
+
+TODO: Go over these list, check completeness. Add links to eslint-vue docs.
 
 |Name                                   | from            |
 |---------------------------------------|-----------------|
@@ -41,4 +43,4 @@ The following rules are used by this config:
 
 ## Further Reading
 
-See the [Compatibility Listing](/reference/compatibility/) to learn in which situations the above rules are helpful.
+See the [Compatibility Listing](./compatibility/) to learn in which situations the above rules are helpful.

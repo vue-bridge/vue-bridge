@@ -25,15 +25,15 @@ The goal of this project is to make all of these points easier for Vue library a
 
 The easiest way to get started with vue-bridge is using our template, which comes with a bunch of options to adjust for JS/TS flavours and the like. It creates a project with all of the [Tooling](#tooling) packages pre-configured to write, test, build and publish cross-compatible Vue components/libraries.
 
-Check out the [Getting Started](../getting-started/) guide to dive right in with a QuickStart or learn more about it in the [Reference for the Template](../reference/).
+Check out the [Getting Started](../getting-started) guide to dive right in with a QuickStart or learn more about it in the [Reference for the Template](../reference/).
 
 #### Tooling 
 
 The Vue-Bridge project offers a couple of packages which solve different parts of the challenges that we talked about further up. All of them are pre-configured for you if you choose to start with our [template](#template).
 
-1. [`@vue-bridge/eslint-config`](../reference//eslint/) - A set of eslint rules that help you in avoiding incompatible features and other mistakes.
-2. [`@vue-bridge/runtime`](../reference/runtime/) A tiny Vue library that bridges a few API differences between Vue 2 and Vue 3 at runtime.
-3. [`@vue-bridge/testing`](../reference/testing/) - A wrapper around `@vue/testing-library`'s main functions: `mount()` and `shallowMount()`, allowing your tests to be run in both environments
+1. [`@vue-bridge/eslint-config`](../reference/eslint-config) - A set of eslint rules that help you in avoiding incompatible features and other mistakes.
+2. [`@vue-bridge/runtime`](../reference/runtime) A tiny Vue library that bridges a few API differences between Vue 2 and Vue 3 at runtime.
+3. [`@vue-bridge/testing`](../reference/testing) - A wrapper around `@vue/testing-library`'s main functions: `mount()` and `shallowMount()`, allowing your tests to be run in both environments
 4. [`@vue-bridge/switch`](#) (_**TDB*_) A small script that can adjust your package's entry points/exports automatically, depending on the Vue version installed in the current project.
 5. [`@vue-bridge/vite-plugin`](#) - (_**TDB*_) A Vite plugin that makes bundling your cross-compatible components for Vue 2 and Vue 3 easy
 
@@ -53,7 +53,7 @@ This project isn't necessarily a good fit for *your* kind of library. To judge w
 * have a small to medium sized library
 * don't need to use render functions
 * don't have any dependencies that are incompatible with one of the Vue versions
-* don't have a hard requirement on any of the [incompatible features](../compatibility/index.md)
+* don't have a hard requirement on any of the [incompatible features](../reference/compatibility/index.md)
 * want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
 
 Summary: if you want to write a vue library that is small in scope, doesn't rely on incompatible 

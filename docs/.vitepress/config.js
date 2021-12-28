@@ -13,7 +13,7 @@ module.exports = {
     nav: [
       {
         text: 'Getting Started',
-        link: '/getting-started/',
+        link: '/getting-started',
       },
       {
         text: 'Topics',
@@ -36,15 +36,15 @@ module.exports = {
           },
           {
             text: '@vue-bridge/runtime',
-            link: '/reference/runtime/',
+            link: '/reference/runtime',
           },
           {
             text: '@vue-bridge/eslint-config',
-            link: '/reference/eslint/',
+            link: '/reference/eslint-config',
           },
           {
             text: '@vue-bridge/testing',
-            link: '/reference/testing/',
+            link: '/reference/testing',
           },
           {
             text: '@vue-bridge/vite-plugin',
@@ -60,7 +60,7 @@ module.exports = {
     sidebar: {
       '/guides/': getGuidesSidebar(),
       '/topics/': getTopicsSidebar(),
-      '/reference/compatibility': getCompatSidebar(),
+      '/reference/': getCompatSidebar(),
     },
   },
 }
@@ -68,59 +68,71 @@ module.exports = {
 function getGuidesSidebar() {
   return [
     {
-      text: 'Introduction: Compatible Code',
-      link: '/guides/writing-compatible-code/',
+      text: 'About these Guides',
+      link: 'guides/',
     },
     {
-      text: 'How to do/use ...?',
+      text: 'Script',
       children: [
         {
-          text: 'component v-model',
-          link: 'guides/writing-code/v-model',
+          text: 'Reactivity Caveats',
+          link: '#',
+        },
+        {
+          text: 'v-model on components',
+          link: 'guides/script/v-model',
+        },
+        {
+          text: 'v-bind: Proper Binding',
+          link: '#',
+        },
+        {
+          text: 'emits: Declaring events',
+          link: '#',
+        },
+        {
+          text: '$attrs & $listeners',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Template',
+      children: [
+        {
+          text: 'Multiple Root Elements',
+          link: '',
         },
         {
           text: 'Transitions',
-          link: 'guides/writing-code/transitions',
+          link: 'guides/template/transitions',
+        },
+        {
+          text: 'v-if & v-for',
+          link: '#',
         },
       ],
     },
     {
-      text: 'Testing',
+      text: 'Styles',
       children: [
         {
-          text: 'Unit-Testing with Cypress',
+          text: 'Transition Styles',
           link: '#',
         },
         {
-          text: 'Unit-Testing with Jest',
-          link: '#',
-        },
-        {
-          text: 'E2E-Testing with Cypress',
+          text: '::v-deep vs. :deep()',
           link: '#',
         },
       ],
     },
     {
-      text: 'Building/Bundling',
+      text: 'Misc.',
       children: [
         {
-          text: 'Two separate packages',
-          link: '#',
-        },
-        {
-          text: 'One combined packages',
-          link: '#',
-        },
-        {
-          text: 'Raw .vue files',
-          link: '#',
+          text: '',
         },
       ],
-    },
-    {
-      text: 'Publishing',
-      children: [],
     },
   ]
 }
