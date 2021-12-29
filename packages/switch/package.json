@@ -1,6 +1,7 @@
 {
   "name": "@vue-bridge/switch",
   "version": "0.0.1",
+  "private": true,
   "description": "small executable to change package.json exports according to project's Vue major version",
   "author": "Thorsten Lünborg <t.luneborg@googlemail.com>",
   "repository": {

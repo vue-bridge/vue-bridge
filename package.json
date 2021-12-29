@@ -1,5 +1,5 @@
 {
-  "name": "@vue-bridge/monorepo",
+  "name": "vue-bridge-monorepo",
   "version": "0.1.0",
   "description": "A monorepo template for developing Vue libraries",
   "author": "Thorsten Lünborg <thorsten@linusb.org>",
@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "docs:dev": "cd docs && pnpm start",
-    "test": "pnpm run test --filter 'example-library' --parallel --aggregate-output",
+    "test": "pnpm run test --filter 'example-library*' --parallel --aggregate-output -- --run",
     "test:2": "pnpm workspace example-library-vue2 test",
     "test:3": "pnpm workspace example-library test",
     "lint": "pnpm run lint -r --if-present --parallel -- --fix",
