@@ -11,6 +11,7 @@ export default defineConfig({
     },
   },
   build: {
+    sourcemap: 'inline',
     lib: {
       entry: 'src/main.js',
       formats: ['es', 'cjs'],
