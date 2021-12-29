@@ -1,6 +1,6 @@
 {
   "name": "@vue-bridge/eslint-config",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "An eslint config that enables a set of helpful rules in projects using @vue-bridge/runtime",
   "repository": {
     "type": "git",

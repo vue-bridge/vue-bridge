@@ -1,5 +1,11 @@
 # @vue-bridge/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- 1fa34b8: Raise eslint dep versions to eslint 8
+
 ## 0.0.4
 
 ### Patch Changes
