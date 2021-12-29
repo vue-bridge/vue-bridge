@@ -41,27 +41,27 @@ importers:
       '@vue/composition-api': ^1.4.3
       tslib: ^2.0.0
       typescript: ^4.5.2
-      vite: ^2.7.7
+      vite: ^2.7.9
       vue: ^3.2.23
       vue-tsc: ^0.30.1
     dependencies:
       tslib: 2.3.1
     devDependencies:
-      '@vitejs/plugin-vue': 2.0.1_vite@2.7.7+vue@3.2.26
+      '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
       '@vue/composition-api': 1.4.3_vue@3.2.26
       typescript: 4.5.4
-      vite: 2.7.7
+      vite: 2.7.9
       vue: 3.2.26
       vue-tsc: 0.30.1_typescript@4.5.4
 
   packages/switch:
     specifiers:
       '@vitejs/plugin-vue': ^2.0.1
-      vite: ^2.7.7
+      vite: ^2.7.9
       vue: ^3.2.23
     devDependencies:
-      '@vitejs/plugin-vue': 2.0.1_vite@2.7.7+vue@3.2.26
-      vite: 2.7.7
+      '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
+      vite: 2.7.9
       vue: 3.2.26
 
   packages/testing:
@@ -69,13 +69,13 @@ importers:
       '@vue/test-utils': ^2.0.0-rc.18
       tsup: ^5.11.9
       typescript: ^4.5.2
-      vite: ^2.7.7
+      vite: ^2.7.9
       vue: ^3.2.26
     devDependencies:
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
       tsup: 5.11.9_typescript@4.5.4
       typescript: 4.5.4
-      vite: 2.7.7
+      vite: 2.7.9
       vue: 3.2.26
 
   packages/vite-plugin:
@@ -84,28 +84,28 @@ importers:
       '@vue/compiler-sfc': ^3.2.23
       resolve-pkg: ^2.0.0
       tsup: ^5.11.9
-      vite: ^2.7.7
+      vite: ^2.7.9
       vite-plugin-vue2: ^1.8.0
       vue: ^3.2.23
       vue-demi: ^0.12.1
       vue-template-compiler: ^2.6.14
     dependencies:
-      '@vitejs/plugin-vue': 2.0.1_vite@2.7.7+vue@3.2.26
+      '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
       '@vue/compiler-sfc': 3.2.26
-      vite-plugin-vue2: 1.9.0_f3c18d860277bda9e97d0e2319b5d30d
+      vite-plugin-vue2: 1.9.0_8ef3fc29348b7a9d3790b603714f5bb1
       vue-demi: 0.12.1_vue@3.2.26
       vue-template-compiler: 2.6.14
     devDependencies:
       resolve-pkg: 2.0.0
-      tsup: 5.11.9_typescript@4.5.4
-      vite: 2.7.7
+      tsup: 5.11.9
+      vite: 2.7.9
       vue: 3.2.26
 
   playground/app-vue2:
     specifiers:
       example-library-vue2: '*'
       typescript: ^4.5.2
-      vite: ^2.7.7
+      vite: ^2.7.9
       vite-plugin-vue2: ^1.7.2
       vue: 2.6.14
       vue-demi: ^0.12.1
@@ -117,8 +117,8 @@ importers:
       vue-demi: 0.12.1_vue@2.6.14
     devDependencies:
       typescript: 4.5.4
-      vite: 2.7.7
-      vite-plugin-vue2: 1.9.0_f3c18d860277bda9e97d0e2319b5d30d
+      vite: 2.7.9
+      vite-plugin-vue2: 1.9.0_8ef3fc29348b7a9d3790b603714f5bb1
       vue-template-compiler: 2.6.14
       vue-tsc: 0.30.1_typescript@4.5.4
 
@@ -128,17 +128,17 @@ importers:
       '@vue/compiler-sfc': ^3.2.23
       example-library: '*'
       typescript: ^4.5.2
-      vite: ^2.7.7
+      vite: ^2.7.9
       vue: ^3.2.23
       vue-tsc: ^0.30.1
     dependencies:
       example-library: link:../example-library
       vue: 3.2.26
     devDependencies:
-      '@vitejs/plugin-vue': 2.0.1_vite@2.7.7+vue@3.2.26
+      '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
       '@vue/compiler-sfc': 3.2.26
       typescript: 4.5.4
-      vite: 2.7.7
+      vite: 2.7.9
       vue-tsc: 0.30.1_typescript@4.5.4
 
   playground/example-library:
@@ -151,22 +151,22 @@ importers:
       '@vue/test-utils': ^2.0.0-rc.18
       jsdom: ^19.0.0
       typescript: ^4.5.2
-      vite: ^2.7.7
-      vitest: ^0.0.118
+      vite: ^2.7.9
+      vitest: ^0.0.120
       vue: ^3.2.23
       vue-tsc: ^0.30.1
     dependencies:
       '@vue-bridge/runtime': link:../../packages/runtime
     devDependencies:
-      '@vitejs/plugin-vue': 2.0.1_vite@2.7.7+vue@3.2.26
+      '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
       '@vue-bridge/eslint-config': link:../../packages/eslint-config
       '@vue-bridge/testing': link:../../packages/testing
       '@vue/compiler-sfc': 3.2.26
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
       jsdom: 19.0.0
       typescript: 4.5.4
-      vite: 2.7.7
-      vitest: 0.0.118_jsdom@19.0.0+vite@2.7.7
+      vite: 2.7.9
+      vitest: 0.0.120_jsdom@19.0.0+vite@2.7.9
       vue: 3.2.26
       vue-tsc: 0.30.1_typescript@4.5.4
 
@@ -181,9 +181,9 @@ importers:
       jsdom: ^19.0.0
       tslib: ^2.0.0
       typescript: ^4.5.2
-      vite: ^2.7.7
+      vite: ^2.7.9
       vite-plugin-vue2: ^1.2.4
-      vitest: ^0.0.118
+      vitest: ^0.0.120
       vue: ^2.6.14
       vue-template-compiler: ^2.6
     dependencies:
@@ -197,9 +197,9 @@ importers:
       '@vue/test-utils': 1.3.0_9065e7474e033a8e4b95615fc8e6c36c
       jsdom: 19.0.0
       typescript: 4.5.4
-      vite: 2.7.7
-      vite-plugin-vue2: 1.9.0_f3c18d860277bda9e97d0e2319b5d30d
-      vitest: 0.0.118_jsdom@19.0.0+vite@2.7.7
+      vite: 2.7.9
+      vite-plugin-vue2: 1.9.0_8ef3fc29348b7a9d3790b603714f5bb1
+      vitest: 0.0.120_jsdom@19.0.0+vite@2.7.9
       vue: 2.6.14
       vue-template-compiler: 2.6.14
 
@@ -1093,6 +1093,17 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 2.7.7
+      vue: 3.2.26
+    dev: true
+
+  /@vitejs/plugin-vue/2.0.1_vite@2.7.9+vue@3.2.26:
+    resolution: {integrity: sha512-wtdMnGVvys9K8tg+DxowU1ytTrdVveXr3LzdhaKakysgGXyrsfaeds2cDywtvujEASjWOwWL/OgWM+qoeM8Plg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      vite: ^2.5.10
+      vue: ^3.2.25
+    dependencies:
+      vite: 2.7.9
       vue: 3.2.26
 
   /@volar/code-gen/0.30.1:
@@ -4911,6 +4922,34 @@ packages:
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
 
+  /tsup/5.11.9:
+    resolution: {integrity: sha512-APFcd9qKblMVO35O5OyIcfa4lwBrVNinwtifUojO78I6j0aDhS4fQ06gq6vF1b/+Z83pYDWNb0R2fmO9PX3IVQ==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      bundle-require: 2.2.0_esbuild@0.14.8
+      cac: 6.7.12
+      chokidar: 3.5.2
+      debug: 4.3.3
+      esbuild: 0.14.8
+      execa: 5.1.1
+      globby: 11.0.4
+      joycon: 3.1.1
+      postcss-load-config: 3.1.0
+      resolve-from: 5.0.0
+      rollup: 2.61.1
+      source-map: 0.7.3
+      sucrase: 3.20.3
+      tree-kill: 1.2.2
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
   /tsup/5.11.9_typescript@4.5.4:
     resolution: {integrity: sha512-APFcd9qKblMVO35O5OyIcfa4lwBrVNinwtifUojO78I6j0aDhS4fQ06gq6vF1b/+Z83pYDWNb0R2fmO9PX3IVQ==}
     hasBin: true
@@ -5042,7 +5081,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-vue2/1.9.0_f3c18d860277bda9e97d0e2319b5d30d:
+  /vite-plugin-vue2/1.9.0_8ef3fc29348b7a9d3790b603714f5bb1:
     resolution: {integrity: sha512-4vmcoiOmOTGjRnA0hk8tHYqk96ZxRpe4AmeCqJJ8jQuNo+SDF1zXPyhxAUIK1tuK354No77WVHHIimVvZQuvIA==}
     peerDependencies:
       vite: ^2.0.0-beta.23
@@ -5068,7 +5107,7 @@ packages:
       rollup: 2.61.1
       slash: 3.0.0
       source-map: 0.7.3
-      vite: 2.7.7
+      vite: 2.7.9
       vue-template-compiler: 2.6.14
       vue-template-es2015-compiler: 1.9.1
     transitivePeerDependencies:
@@ -5076,6 +5115,30 @@ packages:
 
   /vite/2.7.7:
     resolution: {integrity: sha512-Nm4ingl//gMSj/p1aCBHuTc5Fd8W8Mwdci/HUvqCVq8xaJqF7z08S/LRq1M9kS0jRfJk1/f/CwUyQAr6YgsOLw==}
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.13.15
+      postcss: 8.4.5
+      resolve: 1.20.0
+      rollup: 2.62.0
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/2.7.9:
+    resolution: {integrity: sha512-CyopIJIRrc26Wnbkch5BCHFhQodzeV4jjSegLAEw1RImvXSuoOo2SfpEW9zRVi188WmjJwCqCaoG25C0r4nekw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -5119,8 +5182,8 @@ packages:
       - stylus
     dev: true
 
-  /vitest/0.0.118_jsdom@19.0.0+vite@2.7.7:
-    resolution: {integrity: sha512-2zBpowIaVAMPFB+/DkHFpt63QNXMz737dKTpLtC2t4RNUfLS4n+KKg14nFexj5VlhMf4ntSkrvDHnrE+6gFTmg==}
+  /vitest/0.0.120_jsdom@19.0.0+vite@2.7.9:
+    resolution: {integrity: sha512-puJ8I/FpRpCwif4z9hcZ55PY6oszZNw+1rMdY+YkbtcnCFnKt8sqREnLUDcsvcA8wbM5G//Oa5kohR6CTaXCUA==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
@@ -5143,7 +5206,7 @@ packages:
       local-pkg: 0.4.0
       tinypool: 0.0.6
       tinyspy: 0.2.6
-      vite: 2.7.7
+      vite: 2.7.9
     dev: true
 
   /void-elements/3.1.0:
