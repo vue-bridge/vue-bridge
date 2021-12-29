@@ -1,5 +1,19 @@
 # @vue-bridge/runtime
 
+## 1.0.0
+
+### Major Changes
+
+- 9b49b93: fix(attrsListenersMixin): refactored to normal object, exposes class and style as methods now
+  fix(types): properly expose all types, annotate customDirective types
+  feat(build): provide `iife` build for CDN usage
+  fix(lifecyleMixin): skip lifecycle checks in Vue3 build as they are unnecessary
+
+### Patch Changes
+
+- 60c75a0: fix(runtime): Add missing `App` type, improve Directive Types for better interop.
+- 0efced8: Switch to manually written, separate type declaration files for the Vue 2 and Vue 3 runtimes.
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @vue-bridge/testing
 
+## 0.1.0
+
+### Minor Changes
+
+- 85f91aa: Now offers esm and cjs entries and properly works with vitest
+
+### Patch Changes
+
+- 4687d93: fix: provide default value for mount functions
+
 ## 0.0.4
 
 ### Patch Changes
