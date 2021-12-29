@@ -1,6 +1,6 @@
 # @vue-bridge/runtime
 
-## 1.0.0
+## 0.0.6
 
 ### Major Changes
 
