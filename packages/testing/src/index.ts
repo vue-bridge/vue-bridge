@@ -39,7 +39,7 @@ interface Vue2Options {
 
 function mountFn<T extends Comp, P, D = {}>(
   component: T,
-  options: MountingOptions<P, D>
+  options: MountingOptions<P, D> = {}
 ): ReturnType<typeof _mount> {
   // console.log(component)
   if (isVue2) {
@@ -54,7 +54,7 @@ function mountFn<T extends Comp, P, D = {}>(
 export const mount = mountFn as typeof _mount
 function shallowMountFn<T extends Comp, P, D = {}>(
   component: T,
-  options: MountingOptions<P, D>
+  options: MountingOptions<P, D> = {}
 ): ReturnType<typeof _shallowMount> {
   if (isVue2) {
     patchProps(options)
