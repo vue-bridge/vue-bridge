@@ -15,7 +15,6 @@ describe('Input', () => {
     const input = wrapper.find('input')
     expect(wrapper.props().modelValue).toBe('Hello World')
     expect(wrapper.vm.model).toBe('Hello World')
-    console.log(input.element.attributes)
     expect(input!.element.value).toBe('Hello World')
     input.setValue(newValue)
     await nextTick()
@@ -24,6 +23,4 @@ describe('Input', () => {
       newValue
     )
   })
-
-  it.todo('v-model on input works')
 })
