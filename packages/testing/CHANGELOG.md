@@ -1,5 +1,11 @@
 # @vue-bridge/testing
 
+## 0.1.1
+
+### Patch Changes
+
+- efc2a56: Type fixes
+
 ## 0.1.0
 
 ### Minor Changes

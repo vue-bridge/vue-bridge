@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.7
+
+### Patch Changes
+
+- efc2a56: Type fixes
+
 ## 0.0.6
 
 ### Major Changes
