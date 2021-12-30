@@ -3,7 +3,8 @@ import {
   DirectiveOptions as DirectiveVue2,
   // @ts-ignore
   DirectiveFunction,
-  default as App,
+  // @ts-ignore
+  VueConstructor,
 } from 'vue'
 import { defineComponent as defineComponent$1 } from '../src/defineComponent/vue2'
 
@@ -34,4 +35,4 @@ export declare const attrsListenersMixin: typeof _attrsListenersMixin
 export declare const lifecycleMixin: typeof _lifecycleMixin
 export declare const setDeleteMixin: typeof _setDeleteMixin
 
-export { App }
+export type App = VueConstructor
