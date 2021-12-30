@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "watch": "vite build --watch",
-    "build": "vite build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "test": "vitest --reporter=verbose"
   },
   "dependencies": {
