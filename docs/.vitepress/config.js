@@ -72,11 +72,11 @@ function getGuidesSidebar() {
       link: 'guides/',
     },
     {
-      text: 'Script',
+      text: 'Component APIs',
       children: [
         {
           text: 'Reactivity Caveats',
-          link: '#',
+          link: 'guides/script/reactivity-caveats',
         },
         {
           text: 'v-model on components',
@@ -87,17 +87,17 @@ function getGuidesSidebar() {
           link: '#',
         },
         {
-          text: 'emits: Declaring events',
+          text: 'Native vs. Component Events',
           link: '#',
         },
         {
-          text: '$attrs & $listeners',
+          text: '$attrs, $listeners & inheritAttrs',
           link: '#',
         },
       ],
     },
     {
-      text: 'Template',
+      text: 'Template Syntax',
       children: [
         {
           text: 'Multiple Root Elements',
@@ -111,10 +111,14 @@ function getGuidesSidebar() {
           text: 'v-if & v-for',
           link: '#',
         },
+        {
+          text: 'Filters',
+          link: '#',
+        },
       ],
     },
     {
-      text: 'Styles',
+      text: 'Component styles',
       children: [
         {
           text: 'Transition Styles',
@@ -127,10 +131,40 @@ function getGuidesSidebar() {
       ],
     },
     {
-      text: 'Misc.',
+      text: 'Other Code Aspects',
       children: [
         {
-          text: '',
+          text: 'Custom Directives',
+          link: '#',
+        },
+        {
+          text: 'Teleport',
+          link: '#',
+        },
+        {
+          text: 'Plugin Install function',
+          link: '#',
+        },
+        {
+          text: 'Version-dependent code',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Unit Tests',
+      children: [
+        {
+          text: 'nextTick',
+        },
+      ],
+    },
+    {
+      text: 'Typescript',
+      children: [
+        {
+          text: 'Generating Type Declarations',
+          link: '#',
         },
       ],
     },

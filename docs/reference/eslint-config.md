@@ -17,7 +17,10 @@ Add to your eslint config:
 ```js
 // .eslintrc.js
 module.exports = {
-  extends: ['@vue-bridge/eslint-config']
+  extends: [
+    'eslint-plugin-vue',
+    '@vue-bridge/eslint-config'
+  ]
 }
 ```
 
