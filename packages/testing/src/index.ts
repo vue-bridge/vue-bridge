@@ -52,6 +52,7 @@ function mountFn<T extends Comp, P, D = {}>(
   }
 }
 export const mount = mountFn as typeof _mount
+
 function shallowMountFn<T extends Comp, P, D = {}>(
   component: T,
   options: MountingOptions<P, D> = {}
@@ -65,7 +66,7 @@ function shallowMountFn<T extends Comp, P, D = {}>(
     return _shallowMount(component, options)
   }
 }
-export const shallowMount = shallowMountFn as typeof _mount
+export const shallowMount = shallowMountFn as typeof _shallowMount
 
 function patchProps<P, D = {}>(options: MountingOptions<P, D>) {
   if (options.props) {
