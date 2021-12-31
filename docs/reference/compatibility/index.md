@@ -1,10 +1,11 @@
 # Compatibility Listing
 
+
 This Page details all of the differences between Vue 2 and 3 that you will have to be aware of and account for when writing cross-compatible code.
 
 Each of the points listed has it's own dedicated page explaining how to deal with it, and how to do so in the safest and easiest way possible.
 
-**Legend**
+## Legend
 
 | Badge          | Description                          |
 |----------------|--------------------------------------|

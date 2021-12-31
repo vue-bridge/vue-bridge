@@ -1,4 +1,5 @@
 ---
+page: true
 home: true
 heroImage: false
 heroAlt: Logo of this library

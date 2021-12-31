@@ -52,10 +52,6 @@ module.exports = {
           },
         ],
       },
-      {
-        text: 'FAQ',
-        link: '/faq',
-      },
     ],
     sidebar: {
       '/guides/': getGuidesSidebar(),
@@ -94,6 +90,10 @@ function getGuidesSidebar() {
           text: '$attrs, $listeners & inheritAttrs',
           link: '#',
         },
+        {
+          text: '$slots vs. $scopedSlots',
+          link: '#',
+        },
       ],
     },
     {
@@ -104,28 +104,32 @@ function getGuidesSidebar() {
           link: '',
         },
         {
-          text: 'Transitions',
-          link: 'guides/template/transitions',
+          text: 'v-if & v-for',
+          link: '#',
         },
         {
-          text: 'v-if & v-for',
+          text: 'v-for, template & keys',
           link: '#',
         },
         {
           text: 'Filters',
           link: '#',
         },
+        {
+          text: 'Styling Slots & children',
+          link: '#',
+        },
       ],
     },
     {
-      text: 'Component styles',
+      text: 'Builtin Components',
       children: [
         {
-          text: 'Transition Styles',
-          link: '#',
+          text: '<Transition(Group)>',
+          link: 'guides/template/transitions',
         },
         {
-          text: '::v-deep vs. :deep()',
+          text: 'Teleport',
           link: '#',
         },
       ],
@@ -138,15 +142,11 @@ function getGuidesSidebar() {
           link: '#',
         },
         {
-          text: 'Teleport',
-          link: '#',
-        },
-        {
           text: 'Plugin Install function',
           link: '#',
         },
         {
-          text: 'Version-dependent code',
+          text: 'Version-specific code',
           link: '#',
         },
       ],

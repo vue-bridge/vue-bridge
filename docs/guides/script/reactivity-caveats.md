@@ -1,3 +1,6 @@
+---
+aside: deep
+---
 # How do deal with Reactivity Caveats
 
 <!-- TODO: add Badges here? We need some kind of default overview setup -->
