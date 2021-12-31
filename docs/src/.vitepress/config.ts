@@ -290,7 +290,7 @@ export default defineConfig({
       host: true,
       fs: {
         // for when developing with locally linked theme
-        allow: ['../..'],
+        allow: ['../../..'],
       },
     },
     build: {
