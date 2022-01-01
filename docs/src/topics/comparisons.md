@@ -1,10 +1,10 @@
 # Comparisons
 
-## Compared to `@vue/compostion-api`
+## `@vue/compostion-api`
 
-## Compared to `vue-demi`
+## `vue-demi`
 
-## Compared to `@vue/compat`
+## `@vue/compat`
 
 The "Migration build" of Vue 3, aka `@vue/compat`, is meant to support the _transition_ from Vue 2 to Vue 3. It should be used *temporarily* while migrating a big app from Vue 2 to Vue 3. After you are done migrating to Vue 3, you remove `@vue/compat` from your setup and run on Vue 3 only. It also will be phased out from publishing around the end of 2021.
 

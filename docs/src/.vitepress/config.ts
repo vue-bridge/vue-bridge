@@ -145,9 +145,21 @@ function getGuidesSidebar() {
 
 function getTopicsSidebar() {
   return [
-    { text: 'Background', items: [] },
     {
-      text: 'Modules',
+      text: 'Background',
+      items: [
+        {
+          text: '"Bridging the Gap"',
+          link: '/topics/introduction-why-vue-bridge',
+        },
+        {
+          text: 'Comparisons',
+          link: '/topics/comparisons',
+        },
+      ],
+    },
+    {
+      text: 'Tasks',
       items: [
         {
           text: 'Project Setup',

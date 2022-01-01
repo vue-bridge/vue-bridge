@@ -1,10 +1,6 @@
 import { h, App } from 'vue'
 import { VPTheme, VTBadge } from '@vue/theme'
 import VBBadge from './components/Badge.vue'
-// import './styles/badges.css'
-// import './styles/utilities.css'
-// import './styles/inline-demo.css'
-// import './styles/options-boxes.css'
 
 export default Object.assign({}, VPTheme, {
   Layout: () => {

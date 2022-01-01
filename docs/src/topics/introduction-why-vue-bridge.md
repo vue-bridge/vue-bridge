@@ -1,4 +1,8 @@
-# _"Why Vue-Bridge?"_ - A brief introduction
+---
+aside: deep
+next: /topics/comparisons
+---
+# _"Bridging the gap"_ <br> Introducing VueBridge
 
 ## The challenge
 
@@ -48,29 +52,25 @@ _TBD_
 
 This project isn't necessarily a good fit for *your* kind of library. To judge wether or not this might be for you, see the following guidelines:
 
-### This project is generally for you if you:
+### It's for you if:
 
-* have a small to medium sized library
-* don't need to use render functions
-* don't have any dependencies that are incompatible with one of the Vue versions
-* don't have a hard requirement on any of the [incompatible features](../reference/compatibility/index.md)
-* want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
+* you have a small to medium sized library
+* you don't need to use render functions
+* you don't have any dependencies that are incompatible with one of the Vue versions
+* you don't have a hard requirement on any of the [incompatible features](../reference/compatibility/index.md)
+* you want to publish one package that can be consumed in both Vue 2 and Vue 3 projects.
 
 Summary: if you want to write a vue library that is small in scope, doesn't rely on incompatible 
 dependencies and are fine with a few rules to follow, this might be for you.
 
-### It will be easier to use this project if you:
+### It will be easier if:
 
-* are familiar with the differences between Vue 2 and Vue 3
-* know how to use and configure [Eslint](https://eslint.org)
-* feel comfortable configuring your build system (Vite, rollup, webpack)
+* you are familiar with the differences between Vue 2 and Vue 3
+* you know how to use and configure [Eslint](https://eslint.org)
+* you feel comfortable configuring your build system (Vite, rollup, webpack)
 
 
-### You might not need this at all if you:
+### You might not need this if:
 
 * want to write a Vue library that doesn't use/export components (only composition functions or other helpers, for example). Then [`vue-demi`](https://github.com/vueuse/vue-demi) might be all you need, or not even that.
-
-## How does this compare to ...?
-
-We have a separate [page for comparisons](./comparisons.md) with other packages like `@vue/compat`, `@vue/composition-api` and `vue-demi`
 
