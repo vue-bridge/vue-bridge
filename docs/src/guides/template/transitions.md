@@ -1,6 +1,9 @@
+---
+aside: deep
+---
 # How to use Transitions
 
-## CSS Styles
+## Transition Styles
 
 Vue 3 introduced a small change in the naming of CSS Transition classes:
 
@@ -15,7 +18,7 @@ Vue 3 introduced a small change in the naming of CSS Transition classes:
 }
 ```
 
-### Solution: Provide both
+It's easy enough to provide both selectors in your CSS - you just have to remember to do so.
 
 ```css
 .fade-enter, .fade-enter-from, .fade-leave-to {
@@ -23,16 +26,13 @@ Vue 3 introduced a small change in the naming of CSS Transition classes:
 }
 ```
 
-::: warning Self-discipline required
+## `<Transition>` as root
 
-This cross-version difference can't be detected by our eslint-config nor the runtime plugin. You have only yourself to ensure that styles for both versions are provided.
+In Vue 2, if you used a `<transition>` as the root element in a component, the transition would actually work and i.e. fade-in its content. IN vue 3, this no longer works like that, the transition only works if the content inside of it actually has a trigger for it, in the form of a `v-if` or `v-show`.
 
-:::
+You can read more about it here: [Vue 3 Migration Guide: "Transition as Root"](https://v3.vuejs.org/guide/migration/transition-as-root.html#overview)
 
-
-## `<Transition>` Component
-
-
+So for a cross-compatible component, you need to respect the Vue 3 behavior.
 
 ## `<TransitionGroup>` Component
 
@@ -42,7 +42,7 @@ But Vue 2's `<TransitionGroup>` still requires a root element, which by default 
 
 ### Solution
 
-When using `<TransitionGroup>`, it's recommended to always set the `tag` prop:
+When using `<TransitionGroup>`, it's necessary to always set the `tag` prop if you want to avoid differences in the generated HTML between Vue 2 and Vue 3:
 
 ```html
 <TransitionGroup 
@@ -54,8 +54,4 @@ When using `<TransitionGroup>`, it's recommended to always set the `tag` prop:
 ```
 However, if you can make sure that the missing root element in a Vue 3 environment won't affect the component's behavior/styling etc, you can also leave it out.
 
-::: warning Self-discipline required
-
-This cross-version difference can't be detected by our eslint-config nor the runtime plugin. You have only yourself to ensure that styles for both versions are provided.
-
-:::
+//TODO: Document alternative approach with version-spefic styling.

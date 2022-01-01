@@ -63,7 +63,7 @@ function getGuidesSidebar() {
         },
         {
           text: '$slots vs. $scopedSlots',
-          link: '#',
+          link: '/guides/script/slots',
         },
       ],
     },
@@ -72,7 +72,7 @@ function getGuidesSidebar() {
       items: [
         {
           text: 'Multiple Root Elements',
-          link: '',
+          link: '/guides/template/multiple-root-elements',
         },
         {
           text: 'v-if & v-for',
@@ -84,10 +84,10 @@ function getGuidesSidebar() {
         },
         {
           text: 'Filters',
-          link: '#',
+          link: 'guides/template/filters',
         },
         {
-          text: 'Styling Slots & items',
+          text: 'Styling Slots & deep descendants',
           link: '#',
         },
       ],

@@ -1,3 +1,6 @@
+---
+aside: deep
+---
 # Multiple Root Elements aka. Fragments
 
 In Vue 3, a component template can have multiple root elements: 
@@ -11,6 +14,8 @@ In Vue 3, a component template can have multiple root elements:
 
 In Vue 2, this simply isn't possible, so always use a single root element in your components.
 
+<!-- TODO: Alternative: version-specific templates? -->
+
 ## Eslint
 
 You can use `eslint-plugin-vue` to help you be consistent here:
@@ -23,3 +28,7 @@ rules: {
   'vue-no-multiple-template-root': 'error',
 }
 ```
+
+### `@vue-bridge/eslint-config`
+
+This rule is preconfigured in the VueBridge eslint config.
