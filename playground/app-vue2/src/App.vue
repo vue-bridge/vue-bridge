@@ -10,8 +10,9 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from '@vue-bridge/runtime'
 import { Input as ExampleInput, Switch as Switchx } from 'example-library-vue2'
-export default {
+export default defineComponent({
   name: 'App',
   data: () => ({
     msg: 'Hello Vue 2 with @vue-bridge/runtime',
@@ -21,7 +22,7 @@ export default {
     ExampleInput,
     Switchx,
   },
-}
+})
 </script>
 
 <style>

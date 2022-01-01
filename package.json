@@ -27,6 +27,22 @@
         "dependencies": {
           "vue": "^2.6"
         }
+      },
+      "@docsearch/react": {
+        "peerDependenciesMeta": {
+          "react": {
+            "optional": true
+          },
+          "react-dom": {
+            "optional": true
+          },
+          "@types/react": {
+            "optional": true
+          },
+          "@algolia/client-search": {
+            "optional": true
+          }
+        }
       }
     }
   },

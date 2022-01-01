@@ -11,7 +11,7 @@ export const setDeleteMixin = {
     // @ts-expect-error
     this.$delete = (obj: { [k: string]: any }, key: string | number) => {
       if (Array.isArray(obj)) {
-        obj.splice(+key)
+        obj.splice(+key, 1)
       } else {
         delete obj[key]
       }

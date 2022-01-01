@@ -6,8 +6,10 @@ module.exports = {
     'vue/no-invalid-model-keys': 'error',
     'vue/no-deprecated-v-bind-sync': 'error',
     'vue/no-deprecated-v-on-native-modifier': 'error',
+    'vue/no-deprecated-v-is': 'error',
     'vue/no-use-v-if-with-v-for': 'error',
     'vue/no-deprecated-filter': 'error',
+    'vue/require-component-is': 'error',
 
     // Other
     'vue/no-deprecated-dollar-listeners-api': 'error',
@@ -22,7 +24,13 @@ module.exports = {
             name: 'vue',
             importNames: ['defineComponent'],
             message:
-              "Please use `import { defineComponent } from '@vue-bridge/runtime'` instead.",
+              "Please use `import { defineComponent } from '@vue-bridge/runtime'` instead for cross-compatibility.",
+          },
+          {
+            name: 'vue',
+            importNames: ['App'],
+            message:
+              "Please use `import type { App } from '@vue-bridge/runtime'` instead for cross-compatibility.",
           },
           {
             name: '@vue/test-utils',
@@ -43,12 +51,12 @@ module.exports = {
         message: 'Please use $_listeners from attrsListenersMixin instead',
       },
       {
-        property: '$set',
-        message: 'Please use `set()` exported from `vue-demi`',
+        property: '$slots',
+        message: 'Please use $bridgeSlots instead for cross-compatibility',
       },
       {
-        property: '$delete',
-        message: 'Please use `del()` exported from `vue-demi`',
+        property: '$scopedSlots',
+        message: 'Please use $bridgeSlots instead',
       },
     ],
   },

@@ -16,7 +16,7 @@
   ],
   "main": "./dist/example-library-vue2.cjs.js",
   "module": "./dist/example-library-vue2.es.js",
-  "types": "./typings/main.d.ts",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/example-library-vue2.es.js",

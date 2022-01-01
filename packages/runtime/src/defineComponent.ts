@@ -5,6 +5,7 @@ import { isVue2 } from './constants'
 import { patchVModelProp } from './vModel'
 import { lifecycleMixin } from './lifecycleHooks'
 import { setDeleteMixin } from './set-delete'
+import { slotsMixin } from './slotsMixin'
 
 export const defineComponent: typeof _defineComponent = (component: any) => {
   if (typeof component === 'function') {
@@ -14,6 +15,7 @@ export const defineComponent: typeof _defineComponent = (component: any) => {
     }
   }
   component.mixins = component.mixins || []
+  component.mixins.push(slotsMixin)
   if (isVue2) {
     patchVModelProp(component)
     component.mixins.push(lifecycleMixin)
