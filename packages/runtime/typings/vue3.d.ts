@@ -3,11 +3,18 @@ import {
   DirectiveHook,
   VNode,
   App,
+  ComponentPublicInstance,
 } from 'vue'
 
 import { attrsListenersMixinVue3 as _attrsListenersMixin } from '../src/attrs-listeners'
 import { lifecycleMixin as _lifecycleMixin } from '../src/lifecycleHooks'
 import { setDeleteMixin as _setDeleteMixin } from '../src/set-delete'
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $bridgeSlots: ComponentPublicInstance['$slots']
+  }
+}
 
 export declare interface Directive<T = any, V = any> {
   /** @deprecated do not use, not supported by Vue 2 */
