@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 overrides:
   vscode-vue-languageservice: 0.30.1
 
-packageExtensionsChecksum: cbeb2a71dbfc541248fc2af1649899e5
+packageExtensionsChecksum: 1c6957ec6ed9db832e5e6656d8e80e15
 
 importers:
 
@@ -84,8 +84,10 @@ importers:
 
   packages/vite-plugin:
     specifiers:
+      '@types/debug': ^4.1.7
       '@vitejs/plugin-vue': ^2.0.1
       '@vue/compiler-sfc': ^3.2.23
+      debug: ^4.3.3
       resolve-pkg: ^2.0.0
       tsup: ^5.11.9
       vite: ^2.7.9
@@ -100,6 +102,8 @@ importers:
       vue-demi: 0.12.1_vue@3.2.26
       vue-template-compiler: 2.6.14
     devDependencies:
+      '@types/debug': 4.1.7
+      debug: 4.3.3
       resolve-pkg: 2.0.0
       tsup: 5.11.9_typescript@4.5.4
       vite: 2.7.9
@@ -153,6 +157,7 @@ importers:
       '@vue-bridge/eslint-config': '*'
       '@vue-bridge/runtime': '*'
       '@vue-bridge/testing': '*'
+      '@vue-bridge/vite-plugin': '*'
       '@vue/compiler-sfc': ^3.2.23
       '@vue/test-utils': ^2.0.0-rc.18
       jsdom: ^19.0.0
@@ -167,6 +172,7 @@ importers:
       '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
       '@vue-bridge/eslint-config': link:../../packages/eslint-config
       '@vue-bridge/testing': link:../../packages/testing
+      '@vue-bridge/vite-plugin': link:../../packages/vite-plugin
       '@vue/compiler-sfc': 3.2.26
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
       jsdom: 19.0.0
@@ -789,10 +795,13 @@ packages:
   /@docsearch/react/3.0.0-alpha.42:
     resolution: {integrity: sha512-1aOslZJDxwUUcm2QRNmlEePUgL8P5fOAeFdOLDMctHQkV2iTja9/rKVbkP8FZbIUnZxuuCCn8ErLrjD/oXWOag==}
     peerDependencies:
+      '@algolia/client-search': '*'
       '@types/react': '>= 16.8.0 < 18.0.0'
       react: '>= 16.8.0 < 18.0.0'
       react-dom: '>= 16.8.0 < 18.0.0'
     peerDependenciesMeta:
+      '@algolia/client-search':
+        optional: true
       '@types/react':
         optional: true
       react:
@@ -804,8 +813,6 @@ packages:
       '@algolia/autocomplete-preset-algolia': 1.5.0_algoliasearch@4.11.0
       '@docsearch/css': 3.0.0-alpha.42
       algoliasearch: 4.11.0
-    transitivePeerDependencies:
-      - '@algolia/client-search'
 
   /@emmetio/abbreviation/2.2.2:
     resolution: {integrity: sha512-TtE/dBnkTCct8+LntkqVrwqQao6EnPAs1YN3cUgxOxTaBlesBCY37ROUAVZrRlG64GNnVShdl/b70RfAI3w5lw==}
@@ -946,6 +953,12 @@ packages:
     resolution: {integrity: sha512-/ceqdqeRraGolFTcfoXNiqjyQhZzbINDngeoAq9GoHa8PPK1yNzTaxWjA6BFWp5Ua9JpXEMSS4s5i9tS0hOJtw==}
     dev: true
 
+  /@types/debug/4.1.7:
+    resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
+    dependencies:
+      '@types/ms': 0.7.31
+    dev: true
+
   /@types/is-ci/3.0.0:
     resolution: {integrity: sha512-Q0Op0hdWbYd1iahB+IFNQcWXFq4O0Q5MwQP7uN0souuQ4rPg1vEYcnIOfr1gY+M+6rc8FGoRaBO1mOOvL29sEQ==}
     dependencies:
@@ -958,6 +971,10 @@ packages:
 
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+    dev: true
+
+  /@types/ms/0.7.31:
+    resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
   /@types/node/12.20.38:

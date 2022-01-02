@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist",
     "module": "esnext",
     "moduleResolution": "node",
@@ -28,7 +28,7 @@
     "paths": {
       // "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
       "@vue-bridge/testing": ["packages/testing/src/index.ts"],
-      "virtual:vue": ["packages/runtime/node_modules/vue"]
+      "virtual-bridge:helpers/index": ["playground/examples-library/src/helpers/index.vue3.ts"]
     }
   },
   "include": [

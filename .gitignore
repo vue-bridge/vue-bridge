@@ -3,7 +3,7 @@
 node_modules
 dist
 
-packages/*/types
+playground/example-library/typings
 
 package-lock.json
 yarn.lock

@@ -2,11 +2,16 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "es6",
-    "baseUrl": ".",
+    "rootDir": "src",
     "outDir": "dist",
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "./typings"
+    "declarationDir": "./typings",
+
+    "baseUrl": ".",
+    "paths": {
+      "virtual-bridge:./helpers/index": ["src/components/helpers/index.vue3"]
+    }
   },
   "include": [
     "src/**/*.vue",

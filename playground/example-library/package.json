@@ -9,6 +9,7 @@
   },
   "main": "dist/example-library.cjs.js",
   "module": "dist/example-library.es.js",
+  "typings": "typings/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/example-library.es.js",
@@ -35,6 +36,7 @@
     "@vitejs/plugin-vue": "^2.0.1",
     "@vue-bridge/eslint-config": "*",
     "@vue-bridge/testing": "*",
+    "@vue-bridge/vite-plugin": "*",
     "@vue/compiler-sfc": "^3.2.23",
     "@vue/test-utils": "^2.0.0-rc.18",
     "jsdom": "^19.0.0",
