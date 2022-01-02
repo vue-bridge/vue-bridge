@@ -1,5 +1,11 @@
 # @vue-bridge/vite-plugin
 
+## 0.0.5
+
+### Patch Changes
+
+- ed63020: types(vite-plugin): explicitly expose typings in pkg.json
+
 ## 0.0.4
 
 ### Patch Changes
