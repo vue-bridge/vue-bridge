@@ -1,5 +1,11 @@
 # @vue-bridge/vite-plugin
 
+## 0.0.6
+
+### Patch Changes
+
+- dcd3594: Fix type error: localizeDeps needs to be optional
+
 ## 0.0.5
 
 ### Patch Changes
