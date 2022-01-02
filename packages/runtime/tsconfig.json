@@ -1,0 +1,16 @@
+
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["src/**/__tests__/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "types",
+    "importHelpers": false,
+    "paths": {
+      "virtual:vue": ["./src/defineComponent/vue3"]
+    }    
+  }
+}
