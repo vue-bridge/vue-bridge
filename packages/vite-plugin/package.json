@@ -31,44 +31,19 @@
     "access": "public"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^2.0.1",
-    "@vue/compiler-sfc": "^3.2.23",
-    "vite-plugin-vue2": "^1.8.0",
-    "vue-demi": "^0.12.1",
-    "vue-template-compiler": "^2.6.14"
+    "resolve-pkg": "^2.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
     "debug": "^4.3.3",
-    "resolve-pkg": "^2.0.0",
     "tsup": "^5.11.9",
-    "vite": "^2.7.9",
-    "vue": "^3.2.23"
+    "vite": "^2.7.9"
   },
   "peerDependencies": {
-    "@vitejs/plugin-vue": "^1.2.4",
-    "@vue/compiler-sfc": "^3.1.4",
-    "vite-plugin-vue2": "^1.8.0",
-    "vue": "^3.2.0 || ^2.6.x",
-    "vue-demi": "^0.11.0"
+    "vite": "^2.7.9"
   },
   "peerDependenciesMeta": {
-    "vue": {
-      "optional": true
-    },
-    "vue-demi": {
-      "optional": true
-    },
-    "@vitejs/plugin-vue": {
-      "optional": true
-    },
-    "@vue/compiler-sfc": {
-      "optional": true
-    },
-    "vite-plugin-vue2": {
-      "optional": true
-    },
-    "vue-template-compiler": {
+    "vite": {
       "optional": true
     }
   }
