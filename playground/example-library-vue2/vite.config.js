@@ -1,12 +1,17 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import { createVuePlugin } from 'vite-plugin-vue2'
-
+import { vueBridge } from '@vue-bridge/vite-plugin'
 const localResolve = (pkg) => path.resolve(__dirname, 'node_modules', pkg)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin()],
+  plugins: [
+    createVuePlugin(),
+    vueBridge({
+      vueVersion: '2',
+    }),
+  ],
   resolve: {
     alias: {
       // since we symlink the /src folder, we need to explicitly alias
@@ -42,6 +47,7 @@ export default defineConfig({
     environment: 'jsdom',
     deps: {
       inline: ['@vue-bridge/runtime', '@vue/composition-api'],
+      external: [''],
     },
   },
 })

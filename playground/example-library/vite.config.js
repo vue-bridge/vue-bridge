@@ -30,5 +30,8 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
+    deps: {
+      inline: [/^virtual-bridge:/],
+    },
   },
 })

@@ -31,7 +31,7 @@ export function vueBridge(options: VueBridgeOptions) {
   const compatPlugin: Plugin = {
     name: 'vue-bridge',
     enforce: 'pre',
-    apply: options.apply ?? 'build',
+    apply: options.apply,
 
     config() {
       // resolve all vue-related plugins to absolute paths
