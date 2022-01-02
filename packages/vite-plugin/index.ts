@@ -8,7 +8,7 @@ const debug = createLogger('vue-bridge')
 export interface VueBridgeOptions {
   vueVersion: '2' | '3'
   apply?: 'build' | 'serve'
-  localizeDeps: string[] | true
+  localizeDeps?: string[] | true
   projectRoot?: string // Directory containing package.json
 }
 
