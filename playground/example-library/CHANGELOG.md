@@ -1,5 +1,12 @@
 # example-library
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [fa3fd32]
+  - @vue-bridge/runtime@0.0.8
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "app-vue2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": "true",
   "scripts": {
     "dev": "vue-demi-switch 2 && vite --open --port 3001",

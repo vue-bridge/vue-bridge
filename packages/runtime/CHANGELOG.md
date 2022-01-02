@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.8
+
+### Patch Changes
+
+- fa3fd32: vite-plugin: initial version ready for release - also added a small slots polyfill to runtime
+
 ## 0.0.7
 
 ### Patch Changes
