@@ -1,6 +1,6 @@
 {
   "name": "@vue-bridge/vite-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vite Plugin to build Vue libraries for both Vue 2 and Vue 3",
   "author": "Thorsten Luenborg",
   "repository": {
