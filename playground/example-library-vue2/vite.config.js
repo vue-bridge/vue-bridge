@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite'
-import path from 'path'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import { vueBridge } from '@vue-bridge/vite-plugin'
-const localResolve = (pkg) => path.resolve(__dirname, 'node_modules', pkg)
 
 // https://vitejs.dev/config/
 export default defineConfig({
