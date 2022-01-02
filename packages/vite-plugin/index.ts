@@ -9,17 +9,8 @@ export interface VueBridgeOptions {
   vueVersion: '2' | '3'
   apply?: 'build' | 'serve'
   localizeDeps: string[] | true
-  projectRoot?: string // Diectory containing package.json
+  projectRoot?: string // Directory containing package.json
 }
-
-export const defaultPackages = [
-  'vue',
-  '@vue-bridge/runtime',
-  'vue-demi',
-  '@vue-bridge/testing',
-  '@vue/test-utils',
-  '@vue/composition-api',
-] as const
 
 const isVirtualBridge = (source: string) =>
   source.startsWith('virtual-bridge:') || source.startsWith('v-bridge:')

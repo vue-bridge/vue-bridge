@@ -12,6 +12,7 @@
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
