@@ -33,19 +33,27 @@ export function vueBridge(options: VueBridgeOptions) {
     enforce: 'pre',
     apply: options.apply,
 
-    config() {
+    config(config) {
       // resolve all vue-related plugins to absolute paths
       // so symlinked src files don't resolve deps to the wrong node_modules
       const addConfig: Partial<UserConfig> = {}
       if (options.localizeDeps) {
         const alias = resolveFullPathForPackages(options)
+        debug('config aliases generated:', alias)
+
         addConfig.resolve = {
-          alias,
+          alias: {
+            ...alias,
+            ...config.resolve?.alias,
+          },
         }
       }
 
       // TODO: inline packages in `test` config for vitest?
       return addConfig
+    },
+    configResolved(config) {
+      debug('config aliases resolved:', config.resolve.alias)
     },
 
     async resolveId(source, importer) {
@@ -116,7 +124,7 @@ function resolveFullPathForPackages(options: VueBridgeOptions) {
   const deps: string[] = []
   if (options.localizeDeps === true) {
     const { dependencies, devDependencies } = require(path.join(
-      options.projectRoot ?? '.',
+      options.projectRoot ?? process.cwd(),
       './package.json'
     ))
     deps.push(...Object.keys(dependencies), ...Object.keys(devDependencies))

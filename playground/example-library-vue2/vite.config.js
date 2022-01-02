@@ -10,6 +10,7 @@ export default defineConfig({
     createVuePlugin(),
     vueBridge({
       vueVersion: '2',
+      localizeDeps: true,
     }),
   ],
   resolve: {
@@ -17,10 +18,6 @@ export default defineConfig({
       // since we symlink the /src folder, we need to explicitly alias
       // a bunch of deps to point to the right node_modules folder (the one in this workspace)
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
-      vue: localResolve('vue'),
-      '@vue-bridge/testing': localResolve('@vue-bridge/testing'),
-      '@vue/test-utils': localResolve('@vue/test-utils'),
-      vitest: localResolve('vitest'),
     },
   },
   server: {
