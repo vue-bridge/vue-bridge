@@ -25,18 +25,18 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup-node index.ts --format esm,cjs --dts",
+    "build": "tsup index.ts --format esm,cjs --dts",
     "build:w": "pnpm build -- --watch"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "resolve-pkg": "^2.0.0"
+    "resolve-pkg": "^2.0.0",
+    "debug": "^4.3.3"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
-    "debug": "^4.3.3",
     "tsup": "^5.11.9",
     "vite": "^2.7.9"
   },

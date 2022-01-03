@@ -24,6 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "jsx": "preserve",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "types": ["vite/client"],
     "paths": {
       // "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
