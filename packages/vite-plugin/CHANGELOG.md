@@ -1,5 +1,11 @@
 # @vue-bridge/vite-plugin
 
+## 0.0.7
+
+### Patch Changes
+
+- 8edd148: fix(vite-plugin): ensure JSON import is ESM compatible
+
 ## 0.0.6
 
 ### Patch Changes
