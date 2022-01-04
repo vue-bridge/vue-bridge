@@ -92,10 +92,10 @@ importers:
       tsup: ^5.11.9
       vite: ^2.7.9
     dependencies:
+      debug: 4.3.3
       resolve-pkg: 2.0.0
     devDependencies:
       '@types/debug': 4.1.7
-      debug: 4.3.3
       tsup: 5.11.9_typescript@4.5.4
       vite: 2.7.9
 
@@ -2472,7 +2472,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decamelize-keys/1.1.0:
     resolution: {integrity: sha1-0XGoeTMlKAfrPLYdwcFEXQeN8tk=}
@@ -4153,7 +4152,6 @@ packages:
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /mz/2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
