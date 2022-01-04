@@ -20,11 +20,11 @@ This can seem like a lot, so make sure to read the Guide to learn how to navigat
 
 These concern features / syntax that is straight up incompatible, though some have workarounds.
 
-- Don' use [Multiple Root elements / Fragments](./multiple-root-elements.md) <eslint />
+- Don' use [Multiple Root elements / Fragments](/guides/template/multiple-root-elements.md) <eslint />
 - Don't use [`v-model:arg` & `v-bind.sync`](./v-model-arg-sync.md) <eslint />
 - Don't use [`v-on.native` (removed in Vue 3)](./v-on-native.md) <eslint />
 - [Don't use template `ref` on `v-for` element](./ref-v-for.md) <discipline />
--  Don't use [Filters (removed in Vue 3)](./filter.md) <eslint />
+-  Don't use [Filters (removed in Vue 3)](/guides/template/filters.md) <eslint />
 
 ## 🛠 Compatibility achievable
 

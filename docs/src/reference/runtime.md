@@ -52,7 +52,7 @@ export default defineConfig({
 })
 ```
 
-If you use [`@vue-bridge/vite-plugin`](./vite-plugin.md), this will be configured for you.
+If you use [`@vue-bridge/vite-plugin`](#), this will be configured for you.
 
 ### CDN
 

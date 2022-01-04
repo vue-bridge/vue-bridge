@@ -20,7 +20,7 @@ Then there a number of small changes in the public APIs that we have to account 
 
 ::: info Compatibility Listing
 
-You can read a full listing of all important compatibility aspects in our [Compatibility Listing](../compatibility/index.md), which provides you with a detailed overview as well as per-change instructions on how to deal with them.
+You can read a full listing of all important compatibility aspects in our [Compatibility Listing](#), which provides you with a detailed overview as well as per-change instructions on how to deal with them.
 
 We strongly recommend you take the time to read through them to get a feeling for the scope and nature of these differences.
 
@@ -28,7 +28,7 @@ We strongly recommend you take the time to read through them to get a feeling fo
 
 ## Tooling support for cross-compatibility
 
-If you have read through the [Compatibility Listing](../compatibility/index.md), you will have noticed that a lot the the points listed there are marked to be supported by either <eslint /> and/or <plugin />. Here's what that means:
+If you have read through the [Compatibility Listing](#), you will have noticed that a lot the the points listed there are marked to be supported by either <eslint /> and/or <plugin />. Here's what that means:
 
 * `@vue-bridge/eslint-config` provides a bunch of rules that will give you linter warnings/errors when using features or APIs that are not cross-compatible. An example would be to warn you that you can't use multiple root elements in a template, which is only supported in Vue 3.
 * `@vue-bridge/runtime` is a tiny runtime library that you will include in your project, which will ensure cross-compatibility for a bunch of APIs that work/look a bit different between Vue 2 and 3 - and example would be prop and event names to support `v-model` on a component.
@@ -84,13 +84,13 @@ You can learn more about the ways in which `defineComponent()` supports cross-co
 
 ## Dealing with Pitfalls
 
-There are some compatibility differences on the [Compatibility Listing](../compatibility/index.md) that can not be supported by tooling as of now (marked with <discipline /> or <pitfall />). You will have to ensure cross-compatibility yourself by properly testing your code for both versions.
+There are some compatibility differences on the [Compatibility Listing](#) that can not be supported by tooling as of now (marked with <discipline /> or <pitfall />). You will have to ensure cross-compatibility yourself by properly testing your code for both versions.
 
 Some of them are kind of edge cases or very simple and obvious fixes. But there are some rather important ones which we will cover now.
 
 ::: info
 
-We have a chapter about [Testing Cross-Compatibility](./testing-cross-compatibility.md) which explains in detail how you can run your unit tests with both Vue 2 and Vue 3. This is important to make sure that you properly dealt with these compatibility differences for both versions.
+We have a chapter about [Testing Cross-Compatibility](#) which explains in detail how you can run your unit tests with both Vue 2 and Vue 3. This is important to make sure that you properly dealt with these compatibility differences for both versions.
 
 :::
 
@@ -165,7 +165,7 @@ export default {
 
 ::: info Learn more
 
-Be sure to read the page in the [compatiblity Listing about custom directives](../compatibility/custom-directives.md) as there are some other things to keep an eye out for, such as a few lifecycle hooks that are only available in Vue 2 or Vue 3, and therefore should not be used.
+Be sure to read the page in the [compatiblity Listing about custom directives](#) as there are some other things to keep an eye out for, such as a few lifecycle hooks that are only available in Vue 2 or Vue 3, and therefore should not be used.
 
 ::: 
 
