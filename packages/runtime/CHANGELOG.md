@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.10
+
+### Patch Changes
+
+- 4533fa6: fix pkg json exports
+
 ## 0.0.9
 
 ### Patch Changes
