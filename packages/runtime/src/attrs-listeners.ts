@@ -1,18 +1,17 @@
-import type { ObjectEmitsOptions } from 'vue'
 import { isVue2 } from './constants'
+
+type ObjectEmitsOptions = Record<string, ((...args: any[]) => any) | null>
 
 const listenerRE = /^on[A-Z]/
 
 export const attrsListenersMixinVue2 = {
-  computed: {
+  methods: {
     $_attrs() {
       return (this as any).$attrs
     },
     $_listeners() {
       return (this as any).$listeners
     },
-  },
-  methods: {
     $_class() {
       return ''
     },
@@ -23,7 +22,7 @@ export const attrsListenersMixinVue2 = {
 }
 
 export const attrsListenersMixinVue3 = {
-  computed: {
+  methods: {
     $_attrs() {
       const attrs = (this as Record<string, any>).$attrs
       const _attrs: Record<string, any> = {}
@@ -35,9 +34,9 @@ export const attrsListenersMixinVue3 = {
       return _attrs
     },
     $_listeners() {
-      const emitsOptions = ((this as any)._ as any)
-        .emitsOptions as ObjectEmitsOptions
-      const attrs = (this as Record<string, any>).$attrs
+      const self = this as Record<string, any>
+      const emitsOptions = (self._ as any).emitsOptions as ObjectEmitsOptions
+      const attrs = self.$attrs
       const listeners: Record<string, () => void> = {}
       Object.keys(attrs).forEach((key: string) => {
         if (listenerRE.test(key)) {
@@ -49,8 +48,6 @@ export const attrsListenersMixinVue3 = {
       })
       return listeners
     },
-  },
-  methods: {
     $_class(): string {
       return (this as any).$attrs.class
     },
