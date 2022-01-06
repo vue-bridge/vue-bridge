@@ -6,7 +6,7 @@ import { defineComponent as defineComponent$1 } from "vue";
 const isVue2 = false;
 const listenerRE = /^on[A-Z]/;
 const attrsListenersMixinVue3 = {
-  computed: {
+  methods: {
     $_attrs() {
       const attrs = this.$attrs;
       const _attrs = {};
@@ -18,8 +18,9 @@ const attrsListenersMixinVue3 = {
       return _attrs;
     },
     $_listeners() {
-      const emitsOptions = this._.emitsOptions;
-      const attrs = this.$attrs;
+      const self = this;
+      const emitsOptions = self._.emitsOptions;
+      const attrs = self.$attrs;
       const listeners = {};
       Object.keys(attrs).forEach((key) => {
         if (listenerRE.test(key)) {
@@ -30,9 +31,7 @@ const attrsListenersMixinVue3 = {
         }
       });
       return listeners;
-    }
-  },
-  methods: {
+    },
     $_class() {
       return this.$attrs.class;
     },

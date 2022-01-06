@@ -5,15 +5,13 @@
 import { defineComponent as defineComponent$1 } from "@vue/composition-api";
 const isVue2 = true;
 const attrsListenersMixinVue2 = {
-  computed: {
+  methods: {
     $_attrs() {
       return this.$attrs;
     },
     $_listeners() {
       return this.$listeners;
-    }
-  },
-  methods: {
+    },
     $_class() {
       return "";
     },
