@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.9
+
+### Patch Changes
+
+- 492038c: Fixing some problems with runtime's attrsListenersMixin concerning types and reactivity
+
 ## 0.0.8
 
 ### Patch Changes
