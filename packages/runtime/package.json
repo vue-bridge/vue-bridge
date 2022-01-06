@@ -10,23 +10,27 @@
     "directory": "packages/runtime"
   },
   "license": "MIT",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
+  "main": "./dist/index.vue3.cjs.js",
+  "module": "./dist/index.vue3.es.js",
+  "unpkg": "./dist/index.vue3.iife.js",
+  "jsdelivr": "./dist/index.vue3.iife.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./typings/vue3.dt.s"
+      "types": "./typings/vue3.dt.s",
+      "import": "./dist/index.vue3.es.js",
+      "require": "./dist/index.vue3.cjs.js"
     },
     "./vue2": {
+      "types": "./typings/vue2.dt.s",
+      "script": "./dist/index.vue2.iife.js",
       "import": "./dist/index.vue2.es.js",
-      "require": "./dist/index.vue2.cjs.js",
-      "types": "./typings/vue2.dt.s"
+      "require": "./dist/index.vue2.cjs.js"
     },
     "./vue3": {
+      "types": "./typings/vue3.dt.s",
+      "script": "./dist/index.vue2.iife.js",
       "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.js",
-      "types": "./typings/vue3.dt.s"
+      "require": "./dist/index.vue3.cjs.js"
     },
     "./*": "./*"
   },
