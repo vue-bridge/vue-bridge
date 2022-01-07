@@ -32,13 +32,13 @@
     "access": "public"
   },
   "dependencies": {
-    "resolve-pkg": "^2.0.0",
-    "debug": "^4.3.3"
+    "debug": "^4.3.3",
+    "resolve-pkg": "^2.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
-    "tsup": "^5.11.9",
-    "vite": "^2.7.9"
+    "tsup": "^5.11.10",
+    "vite": "^2.7.10"
   },
   "peerDependencies": {
     "vite": "^2.7.9"

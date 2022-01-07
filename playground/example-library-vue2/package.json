@@ -36,9 +36,9 @@
     "@vue/test-utils": "^1.3.0",
     "jsdom": "^19.0.0",
     "typescript": "^4.5.2",
-    "vite": "^2.7.9",
-    "vite-plugin-vue2": "^1.2.4",
-    "vitest": "^0.0.120",
+    "vite": "^2.7.10",
+    "vite-plugin-vue2": "^1.9.2",
+    "vitest": "^0.0.136",
     "vue": "^2.6.14",
     "vue-template-compiler": "^2.6"
   },

@@ -25,9 +25,9 @@
   "devDependencies": {
     "@vue-bridge/vite-plugin": "*",
     "typescript": "^4.5.2",
-    "vite": "^2.7.9",
-    "vite-plugin-vue2": "^1.7.2",
+    "vite": "^2.7.10",
+    "vite-plugin-vue2": "^1.9.2",
     "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.30.1"
+    "vue-tsc": "^0.30.2"
   }
 }
