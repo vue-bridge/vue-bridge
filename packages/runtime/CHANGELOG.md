@@ -1,5 +1,16 @@
 # @vue-bridge/runtime
 
+## 0.0.11
+
+### Patch Changes
+
+- 456333f: Multiple fixes and reduction of exports:
+
+  - remove `lifecycleMixin` - now done as a patch during `defineComponent()`
+  - remove `setDeleteMixin` - doesn't make much sense to have separate
+  - fix/refactor `attrsListenersMixin` - now caches content, exposes all APIs as functions, no computed
+  - fix types for `$bridgeSlots`
+
 ## 0.0.10
 
 ### Patch Changes
