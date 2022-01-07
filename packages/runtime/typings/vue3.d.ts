@@ -7,8 +7,6 @@ import {
 } from 'vue'
 
 import { attrsListenersMixinVue3 as _attrsListenersMixin } from '../src/attrs-listeners'
-import { lifecycleMixin as _lifecycleMixin } from '../src/lifecycleHooks'
-import { setDeleteMixin as _setDeleteMixin } from '../src/set-delete'
 
 declare module 'vue' {
   interface ComponentCustomProperties {
@@ -42,7 +40,5 @@ export declare const defineComponent: typeof defineComponent$1
 
 // Mixins
 export declare const attrsListenersMixin: typeof _attrsListenersMixin
-export declare const lifecycleMixin: typeof _lifecycleMixin
-export declare const setDeleteMixin: typeof _setDeleteMixin
 
 export { App }

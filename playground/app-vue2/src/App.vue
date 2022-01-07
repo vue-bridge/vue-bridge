@@ -3,7 +3,12 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld :msg="msg" />
     <!-- <ExampleInput v-model="msg" /> -->
-    <ExampleInput v-model="msg" />
+    <ExampleInput
+      v-model="msg"
+      class="test1"
+      style="padding-top: 10px"
+      id="test-id"
+    />
     <Switchx />
   </div>
 </template>

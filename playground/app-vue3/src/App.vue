@@ -1,7 +1,12 @@
 <template>
   <div>
     <label for="custom-input">Input:</label>
-    <CustomInput id="custom-input" v-model="text" />
+    <CustomInput
+      id="custom-input"
+      v-model="text"
+      class="test"
+      style="padding-top: 10px"
+    />
     <hr />
     <p data-test-text>Text from input: {{ text }}</p>
     <hr />

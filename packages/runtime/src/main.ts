@@ -1,7 +1,5 @@
 export type { App } from 'vue'
 export { attrsListenersMixin } from './attrs-listeners'
-export { lifecycleMixin } from './lifecycleHooks'
-export { setDeleteMixin } from './set-delete'
 export { defineDirective } from './customDirectives'
 export { defineComponent } from './defineComponent'
 export { isVue2 } from './constants'

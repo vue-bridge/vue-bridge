@@ -1,10 +1,16 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 const { createVuePlugin } = require('vite-plugin-vue2')
+import { vueBridge } from '@vue-bridge/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin()],
+  plugins: [
+    createVuePlugin(),
+    vueBridge({
+      vueVersion: '2',
+    }),
+  ],
   resolve: {
     alias: {
       // this is just necessary because we have both Vue 2 and 3 in this monorepo
@@ -23,6 +29,11 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['vue', '@vue-bridge/runtime', '@vue/composition-api'],
+    exclude: [
+      'vue',
+      '@vue-bridge/runtime',
+      '@vue/composition-api',
+      'example-library-vue2',
+    ],
   },
 })

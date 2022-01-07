@@ -5,6 +5,7 @@ import { testString } from 'virtual-bridge:./helpers/index'
 export default defineComponent({
   name: 'Input',
   mixins: [attrsListenersMixin],
+  inheritAttrs: false,
   props: {
     modelValue: {
       type: String,
@@ -14,6 +15,9 @@ export default defineComponent({
   data: () => ({
     testString,
   }),
+  beforeUnmount() {
+    console.log('unmounting')
+  },
   computed: {
     model: {
       get(): string | undefined {
@@ -27,9 +31,9 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div>
+  <div v-on="$_nativeOn()" :class="$_class()" :style="$_style()">
     <label for="input">
-      <input type="text" v-model="model" /> {{ testString }}
+      <input v-bind="$_attrs()" type="text" v-model="model" /> {{ testString }}
     </label>
   </div>
 </template>

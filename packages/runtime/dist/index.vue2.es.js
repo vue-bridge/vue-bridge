@@ -17,39 +17,13 @@ const attrsListenersMixinVue2 = {
     },
     $_style() {
       return "";
+    },
+    $_nativeOn() {
+      return {};
     }
   }
 };
 const attrsListenersMixin = attrsListenersMixinVue2;
-const lifecycleMixin = {
-  beforeCreate() {
-    {
-      const options = this.$options;
-      if (options.beforeUnmount) {
-        options.beforeDestroy = options.beforeUnmount;
-        delete options.beforeUnmount;
-      }
-      if (options.unmounted) {
-        options.destroyed = options.unmounted;
-        delete options.unmounted;
-      }
-    }
-  }
-};
-const setDeleteMixin = {
-  beforeCreate() {
-    this.$set = (obj, key, value) => {
-      obj[key] = value;
-    };
-    this.$delete = (obj, key) => {
-      if (Array.isArray(obj)) {
-        obj.splice(+key, 1);
-      } else {
-        delete obj[key];
-      }
-    };
-  }
-};
 const map = {
   beforeMount: "bind",
   beforeCreate: null,
@@ -102,10 +76,22 @@ function checkModelOptions(model) {
     throw new Error("[@vue-bridge/runtime]: don't use the `model` option on components. this plugin needs to override it to ensure v-model cross-compat");
   }
 }
+const patchLifecycleHooks = (options) => {
+  {
+    if (options.beforeUnmount) {
+      options.beforeDestroy = options.beforeUnmount;
+      delete options.beforeUnmount;
+    }
+    if (options.unmounted) {
+      options.destroyed = options.unmounted;
+      delete options.unmounted;
+    }
+  }
+};
 const slotsMixin = {
   beforeCreate() {
     {
-      Object.defineProperty(this, "$allSlots", {
+      Object.defineProperty(this, "$bridgeSlots", {
         get() {
           return this.$scopedSlots;
         }
@@ -124,8 +110,8 @@ const defineComponent = (component) => {
   component.mixins.push(slotsMixin);
   {
     patchVModelProp(component);
-    component.mixins.push(lifecycleMixin);
+    patchLifecycleHooks(component);
   }
   return defineComponent$1(component);
 };
-export { attrsListenersMixin, defineComponent, defineDirective, isVue2, lifecycleMixin, setDeleteMixin };
+export { attrsListenersMixin, defineComponent, defineDirective, isVue2 };

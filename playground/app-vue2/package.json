@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "private": "true",
   "scripts": {
-    "dev": "vue-demi-switch 2 && vite --open --port 3001",
+    "dev": "vite --open --port 3001",
     "build": "vite build",
     "serve": "vite preview"
   },
@@ -23,6 +23,7 @@
     "vue": "2.6.14"
   },
   "devDependencies": {
+    "@vue-bridge/vite-plugin": "*",
     "typescript": "^4.5.2",
     "vite": "^2.7.9",
     "vite-plugin-vue2": "^1.7.2",

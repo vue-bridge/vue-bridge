@@ -5,32 +5,24 @@
 import { defineComponent as defineComponent$1 } from "vue";
 const isVue2 = false;
 const listenerRE = /^on[A-Z]/;
+const isOn = (v) => !!v.match(listenerRE);
+const CACHE = "__vb_alCache";
 const attrsListenersMixinVue3 = {
+  beforeCreate() {
+    this[CACHE] = generateData(this);
+  },
+  beforeUpdate() {
+    this[CACHE] = generateData(this);
+  },
   methods: {
     $_attrs() {
-      const attrs = this.$attrs;
-      const _attrs = {};
-      Object.keys(attrs).forEach((key) => {
-        if (key !== "class" && key !== "style" && !listenerRE.test(key)) {
-          _attrs[key] = attrs[key];
-        }
-      });
-      return _attrs;
+      return this[CACHE].attrs;
     },
     $_listeners() {
-      const self = this;
-      const emitsOptions = self._.emitsOptions;
-      const attrs = self.$attrs;
-      const listeners = {};
-      Object.keys(attrs).forEach((key) => {
-        if (listenerRE.test(key)) {
-          const listener = lowerFirstChar(key.replace(/^on/, ""));
-          if (!emitsOptions[listener]) {
-            listeners[listener];
-          }
-        }
-      });
-      return listeners;
+      return this[CACHE].listeners;
+    },
+    $_nativeOn() {
+      return this[CACHE].nativeOn;
     },
     $_class() {
       return this.$attrs.class;
@@ -40,15 +32,38 @@ const attrsListenersMixinVue3 = {
     }
   }
 };
-const attrsListenersMixin = attrsListenersMixinVue3;
-function lowerFirstChar(v) {
-  const first = v.slice(0, 1).toLowerCase();
-  return first + v.slice(1);
-}
-const lifecycleMixin = {
-  beforeCreate() {
+function generateData(vm) {
+  const $attrs = vm.$attrs;
+  const emits = Object.keys(vm._.emitsOptions || {});
+  const rawProps = vm._.vnode.props;
+  const attrs = {};
+  const listeners = {};
+  const nativeOn = {};
+  for (const key in $attrs) {
+    if (isOn(key)) {
+      nativeOn[key] = $attrs[key];
+    } else if (key !== "class" && key !== "style") {
+      attrs[key] = $attrs[key];
+    }
   }
-};
+  emits.forEach((_key) => {
+    const key = "on" + _key[0].toUpperCase() + _key.slice(1);
+    if (rawProps[key]) {
+      listeners[key] = rawProps[key];
+    }
+  });
+  return {
+    attrs,
+    listeners,
+    nativeOn
+  };
+}
+const attrsListenersMixin = attrsListenersMixinVue3;
+function defineDirective(directiveConfig) {
+  {
+    return directiveConfig;
+  }
+}
 const setDeleteMixin = {
   beforeCreate() {
     this.$set = (obj, key, value) => {
@@ -63,15 +78,10 @@ const setDeleteMixin = {
     };
   }
 };
-function defineDirective(directiveConfig) {
-  {
-    return directiveConfig;
-  }
-}
 const slotsMixin = {
   beforeCreate() {
     {
-      Object.defineProperty(this, "$allSlots", {
+      Object.defineProperty(this, "$bridgeSlots", {
         get() {
           return this.$slots;
         }
@@ -93,4 +103,4 @@ const defineComponent = (component) => {
   }
   return defineComponent$1(component);
 };
-export { attrsListenersMixin, defineComponent, defineDirective, isVue2, lifecycleMixin, setDeleteMixin };
+export { attrsListenersMixin, defineComponent, defineDirective, isVue2 };
