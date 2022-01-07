@@ -10,7 +10,14 @@ export interface VueBridgeOptions {
   vueVersion: '2' | '3'
   apply?: 'build' | 'serve'
   localizeDeps?: string[] | true
-  projectRoot?: string // Directory containing package.json
+  /**
+   * Directory containing package.json
+   */
+  projectRoot?: string
+  /**
+   * Aliases to recognize in v-bridge: virtual paths, i.e. "@/" for "v-bridge:@/bridges/my-file.js"
+   */
+  aliases?: string[]
 }
 
 const isVirtualBridge = (source: string) =>
@@ -52,7 +59,10 @@ export function vueBridge(options: VueBridgeOptions) {
       if (!isVirtualBridge(source)) return null
       let [, virtualPath] = source.match(virtualBridgeRESingle)
       debug('initial: ', source, virtualPath)
-      if (virtualPath.startsWith('.')) {
+      if (
+        virtualPath.startsWith('.') ||
+        options.aliases?.some((a) => virtualPath.startsWith(a))
+      ) {
         const fileExt = (virtualPath.match(fileExtRE) ?? [])[1]
         if (fileExt) {
           virtualPath = virtualPath.replace(
@@ -60,7 +70,7 @@ export function vueBridge(options: VueBridgeOptions) {
             '.vue' + options.vueVersion + fileExt
           )
         } else {
-          // likely a .ts file which don't have a file extensions in impor paths
+          // likely a .ts file which don't have a file extensions in import paths
           virtualPath = virtualPath + '.vue' + options.vueVersion
         }
       }

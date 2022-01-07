@@ -7,10 +7,12 @@ export default defineConfig({
     vue(),
     vueBridge({
       vueVersion: '3',
+      aliases: ['@/'],
     }),
   ],
   resolve: {
     alias: {
+      '@/': new URL('./src/', import.meta.url).pathname,
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue3',
     },
   },
