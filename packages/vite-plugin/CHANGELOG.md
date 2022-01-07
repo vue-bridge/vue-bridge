@@ -1,5 +1,11 @@
 # @vue-bridge/vite-plugin
 
+## 0.0.8
+
+### Patch Changes
+
+- 08b3d72: feat: use aliases in v-bridge: paths. Alias patterns must be provided in plugin options.
+
 ## 0.0.7
 
 ### Patch Changes

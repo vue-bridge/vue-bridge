@@ -9,6 +9,7 @@ export default defineConfig({
     vueBridge({
       vueVersion: '2',
       localizeDeps: true,
+      aliases: ['@/'],
     }),
   ],
   resolve: {
@@ -16,6 +17,7 @@ export default defineConfig({
       // since we symlink the /src folder, we need to explicitly alias
       // a bunch of deps to point to the right node_modules folder (the one in this workspace)
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
+      '@/': new URL('./src/', import.meta.url).pathname,
     },
   },
   server: {

@@ -79,7 +79,7 @@ export function vueBridge(options: VueBridgeOptions) {
       const resolvedPath = await this.resolve(virtualPath, importer, {
         skipSelf: true,
       })
-      debug('resolved:', resolvedPath.id)
+      debug('resolved:', resolvedPath?.id)
       return resolvedPath
     },
 
