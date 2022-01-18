@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
-    "tsup": "^5.11.10",
-    "vite": "^2.7.10"
+    "tsup": "^5.11.11",
+    "vite": "^2.7.12"
   },
   "peerDependencies": {
     "vite": "^2.7.9"
