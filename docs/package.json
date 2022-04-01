@@ -25,6 +25,6 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "vitepress": "^0.22.2"
+    "vitepress": "^0.22.3"
   }
 }
