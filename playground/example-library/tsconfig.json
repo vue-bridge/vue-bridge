@@ -10,9 +10,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "virtual-bridge:./helpers/index": ["src/components/helpers/index.vue3"],
+      "@/*?v-bridge": ["src/*.vue3"],
       "@/*": ["src/*"],
-      "v-bridge:@/*": ["src/*.vue3"]
     }
   },
   "include": [

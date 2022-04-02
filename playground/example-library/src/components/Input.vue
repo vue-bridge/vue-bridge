@@ -1,7 +1,8 @@
 <script lang="ts">
 import { defineComponent, attrsListenersMixin } from '@vue-bridge/runtime'
 // This import will be resolved to ./helpers/index/vue3 by the vite-plugin
-import { testString } from 'v-bridge:@/components/helpers/index'
+// import { testString } from 'v-bridge:@/components/helpers/index'
+import { testString } from '@/components/helpers/index?v-bridge'
 export default defineComponent({
   name: 'Input',
   mixins: [attrsListenersMixin],
