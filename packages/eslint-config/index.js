@@ -35,7 +35,7 @@ module.exports = {
           {
             name: '@vue/test-utils',
             message:
-              'Please use `@vue-bridge/testing` instead. It provides a cross-compat version of test-utils`',
+              'Please use `@vue-bridge/testing` instead. It provides a cross-compatible version of test-utils that works for both Vue 2 and Vue 3.`',
           },
         ],
       },
@@ -44,11 +44,13 @@ module.exports = {
       'error',
       {
         property: '$attrs',
-        message: 'Please use $_attrs from attrsListenersMixin instead',
+        message:
+          "Please use $_attrs from vue-bridge's attrsListenersMixin instead for cross-compatibility",
       },
       {
         property: '$listeners',
-        message: 'Please use $_listeners from attrsListenersMixin instead',
+        message:
+          'Please use $_listeners from attrsListenersMixin instead for cross-compatibility',
       },
       {
         property: '$slots',
@@ -56,7 +58,7 @@ module.exports = {
       },
       {
         property: '$scopedSlots',
-        message: 'Please use $bridgeSlots instead',
+        message: 'Please use $bridgeSlots instead for cross-compatibility',
       },
     ],
   },
