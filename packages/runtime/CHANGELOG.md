@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.0.12
+
+### Patch Changes
+
+- c173053: feat: support cross-compatible slots through `this.$bridgeSlots`
+
 ## 0.0.11
 
 ### Patch Changes

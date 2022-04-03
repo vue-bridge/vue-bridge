@@ -1,5 +1,12 @@
 # @vue-bridge/vite-plugin
 
+## 0.1.0
+
+### Minor Changes
+
+- 79974c6: - BREAKING: version-aware file paths now require a ?v-bridge query param, instead of the v-bridge: prefix
+  - internal refactor: split different features into 3 separate plugins.
+
 ## 0.0.8
 
 ### Patch Changes

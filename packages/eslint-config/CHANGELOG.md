@@ -1,5 +1,11 @@
 # @vue-bridge/eslint-config
 
+## 0.1.1
+
+### Patch Changes
+
+- ca4a286: reworded some of the rule warning texts
+
 ## 0.1.0
 
 ### Minor Changes

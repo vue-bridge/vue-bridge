@@ -1,5 +1,12 @@
 # @vue-bridge/testing
 
+## 0.1.2
+
+### Patch Changes
+
+- 1ccc26d: - Make types more solid
+  - make vue an explicit, but optional peerDep
+
 ## 0.1.1
 
 ### Patch Changes
