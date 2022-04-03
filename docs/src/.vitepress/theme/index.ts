@@ -1,5 +1,5 @@
 import { h, App } from 'vue'
-import { VPTheme, VTBadge } from '@vue/theme'
+import { VPTheme } from '@vue/theme'
 import VBBadge from './components/Badge.vue'
 
 export default Object.assign({}, VPTheme, {
@@ -11,7 +11,7 @@ export default Object.assign({}, VPTheme, {
     })
   },
   enhanceApp({ app }: { app: App }) {
-    app.component('Badge', VTBadge)
+    // app.component('Badge', VTBadge)
     app.component('Info', (props, { slots }) =>
       h(VBBadge, { type: 'info', ...props }, slots)
     )

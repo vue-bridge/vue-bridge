@@ -14,7 +14,7 @@
     "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
     "build:packages": "pnpm run build --filter @vue-bridge/* --parallel --aggregate-output",
     "build:playground": "pnpm run build --filter '{app-,example-library}*'",
-    "build:docs": "pnpm workspace docs build",
+    "build:docs": "pnpm build --filter 'docs'",
     "version": "pnpm changeset version",
     "release": "pnpm test && pnpm build:packages && pnpm changeset publish"
   },
