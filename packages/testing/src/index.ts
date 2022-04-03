@@ -1,6 +1,5 @@
 /// <reference types="node" />
 
-import type { ComponentPublicInstance, ComponentOptionsBase } from 'vue'
 import * as Vue from 'vue'
 import {
   mount as _mount,
@@ -12,20 +11,6 @@ import * as testUtils from '@vue/test-utils'
 
 export const isVue2 = 'createLocalVue' in testUtils
 export const isVue3 = !isVue2
-
-type Comp = ComponentPublicInstance<
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  false,
-  ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>
->
-
 interface Vue2Options {
   components?: any
   plugins?: any
@@ -37,33 +22,35 @@ interface Vue2Options {
   mocks?: any
 }
 
-function mountFn<T extends Comp, P, D = {}>(
-  component: T,
-  options: MountingOptions<P, D> = {}
+function mountFn(
+  component: any,
+  options: any // MountingOptions<P, D> = {}
 ): ReturnType<typeof _mount> {
   // console.log(component)
   if (isVue2) {
     patchProps(options)
     patchGlobals(options)
-    return patchUnMount(_mount(component, options))
+    return patchUnMount(_mount(component, options)) as ReturnType<typeof _mount>
   } else {
     patchSlots(options)
-    return _mount(component, options)
+    return _mount(component, options) as ReturnType<typeof _mount>
   }
 }
 export const mount = mountFn as typeof _mount
 
-function shallowMountFn<T extends Comp, P, D = {}>(
-  component: T,
-  options: MountingOptions<P, D> = {}
+function shallowMountFn(
+  component: any,
+  options: any
 ): ReturnType<typeof _shallowMount> {
   if (isVue2) {
     patchProps(options)
     patchGlobals(options)
-    return patchUnMount(_shallowMount(component, options))
+    return patchUnMount(_shallowMount(component, options)) as ReturnType<
+      typeof _shallowMount
+    >
   } else {
     patchSlots(options)
-    return _shallowMount(component, options)
+    return _shallowMount(component, options) as ReturnType<typeof _shallowMount>
   }
 }
 export const shallowMount = shallowMountFn as typeof _shallowMount
@@ -117,7 +104,7 @@ function patchGlobals<P, D = {}>(options: MountingOptions<P, D> & Vue2Options) {
   }
 }
 
-function patchUnMount<T extends Comp>(wrapper: VueWrapper<T>) {
+function patchUnMount(wrapper: VueWrapper<any>) {
   // @ts-expect-error
   wrapper.unmount = () => wrapper.destroy()
   return wrapper
