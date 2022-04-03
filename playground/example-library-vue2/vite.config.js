@@ -9,21 +9,12 @@ export default defineConfig({
     vueBridge({
       vueVersion: '2',
       localizeDeps: true,
-      aliases: ['@/'],
     }),
   ],
   resolve: {
     alias: {
-      // since we symlink the /src folder, we need to explicitly alias
-      // a bunch of deps to point to the right node_modules folder (the one in this workspace)
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
       '@/': new URL('./src/', import.meta.url).pathname,
-    },
-  },
-  server: {
-    fs: {
-      strict: false,
-      // allow: ['../example-library/src', '../../node_modules/', './cypress'],
     },
   },
   build: {
@@ -33,18 +24,23 @@ export default defineConfig({
     },
     minify: false,
     rollupOptions: {
-      // TODO: these should be added by vite plugin
       external: ['vue', '@vue/composition-api', '@vue-bridge/runtime'],
     },
-  },
-  optimizeDeps: {
-    include: ['@vue/test-utils'],
   },
   test: {
     environment: 'jsdom',
     deps: {
-      inline: ['@vue-bridge/runtime', '@vue/composition-api'],
-      external: [''],
+      inline: [
+        // '@vue-bridge/runtime',
+        // '@vue-bridge/runtime/vue2',
+        // regex needed, as with a string it checks for `node_modules/${package}`
+        // and this is a local workspace package.
+        /packages\/testing\/dist/,
+        '@vue/testing-utils',
+        '@vue/composition-api',
+        // 'vue',
+      ],
+      // external: [],
     },
   },
 })

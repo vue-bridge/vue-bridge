@@ -7,6 +7,7 @@ export default defineConfig({
     vue(),
     vueBridge({
       vueVersion: '3',
+      localizeDeps: true,
       aliases: ['@/'],
     }),
   ],
@@ -33,7 +34,9 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     deps: {
-      inline: [/^virtual-bridge:/],
+      inline: [
+        /packages\/testing\/dist/
+      ],
     },
   },
 })
