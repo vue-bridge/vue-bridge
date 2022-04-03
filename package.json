@@ -13,14 +13,14 @@
     "lint": "pnpm run lint -r --if-present --parallel -- --fix",
     "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
     "build:packages": "pnpm run build --filter @vue-bridge/* --parallel --aggregate-output",
-    "build:playground": "pnpm run build --filter '{app-,example-library}*'",
+    "build:playground": "pnpm run build --filter '...example-library*'",
     "build:docs": "pnpm build --filter 'docs'",
     "version": "pnpm changeset version",
     "release": "pnpm test && pnpm build:packages && pnpm changeset publish"
   },
   "pnpm": {
     "overrides": {
-      "vscode-vue-languageservice": "0.31.4"
+      "vscode-vue-languageservice": "0.33.10"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -46,9 +46,13 @@
     "@changesets/cli": "^2.22.0",
     "@linusborg/eslint-config": "^0.2.1",
     "@types/node": "^16.11.26",
+    "cypress": "^9.5.3",
     "eslint": "^8.12.0",
     "prettier": "^2.6.1",
     "tslib": "^2.0.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "vite": "^2.9.1",
+    "vitest": "^0.8.1",
+    "vue-tsc": "^0.33.9"
   }
 }

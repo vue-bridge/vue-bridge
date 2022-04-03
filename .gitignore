@@ -6,6 +6,8 @@ node_modules
 /docs/**/dist
 packages/*/dist
 !packages/runtime/dist
+packages/runtime/dist/index.cjs.js
+packages/runtime/dist/index.es.js
 playground/*/dist
 
 playground/example-library/typings
