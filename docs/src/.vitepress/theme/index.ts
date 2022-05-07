@@ -1,7 +1,6 @@
 import { h, App } from 'vue'
 import { VPTheme } from '@vue/theme'
 import VBBadge from './components/Badge.vue'
-
 export default Object.assign({}, VPTheme, {
   Layout: () => {
     // @ts-ignore
@@ -16,7 +15,7 @@ export default Object.assign({}, VPTheme, {
       h(VBBadge, { type: 'info', ...props }, slots)
     )
     app.component('eslint', (props, { slots }) =>
-      h(VBBadge, { type: 'info', ...props }, '🔍 Eslint')
+      h(VBBadge, { type: 'info', ...props }, { default: () => '🔍 Eslint' })
     )
     app.component('plugin', (props, { slots }) =>
       h(VBBadge, { type: 'success', ...props }, '✅ Plugin')

@@ -1,5 +1,5 @@
 ---
-aside: deep
+outline: deep
 ---
 # How to use component `v-model`
 

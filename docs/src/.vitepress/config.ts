@@ -46,12 +46,12 @@ function getGuidesSidebar() {
           link: 'guides/script/reactivity-caveats',
         },
         {
-          text: 'v-model on components',
-          link: 'guides/script/v-model',
+          text: 'Lifecycle Hooks',
+          link: 'guides/script/lifecycle-hooks',
         },
         {
-          text: 'v-bind: Proper Binding',
-          link: '#',
+          text: 'v-model on components',
+          link: 'guides/script/v-model',
         },
         {
           text: 'Native vs. Component Events',
@@ -76,7 +76,7 @@ function getGuidesSidebar() {
         },
         {
           text: 'v-if & v-for',
-          link: '#',
+          link: '/guides/template/v-if-v-for',
         },
         {
           text: 'v-for, template & keys',
@@ -85,6 +85,10 @@ function getGuidesSidebar() {
         {
           text: 'Filters',
           link: 'guides/template/filters',
+        },
+        {
+          text: 'v-bind: Order Priority',
+          link: 'guides/template/v-bind',
         },
         {
           text: 'Styling Slots & deep descendants',
@@ -96,7 +100,7 @@ function getGuidesSidebar() {
       text: 'Builtin Components',
       items: [
         {
-          text: '<Transition(Group)>',
+          text: 'Transition/TransitionGroup',
           link: 'guides/template/transitions',
         },
         {
@@ -110,7 +114,7 @@ function getGuidesSidebar() {
       items: [
         {
           text: 'Custom Directives',
-          link: '#',
+          link: '/guides/other/custom-directives',
         },
         {
           text: 'Plugin Install function',
@@ -146,10 +150,15 @@ function getGuidesSidebar() {
 function getTopicsSidebar() {
   return [
     {
-      text: 'Background',
+      text: 'Introduction',
+      link: '/topics',
+      items: [],
+    },
+    {
+      text: 'Understanding',
       items: [
         {
-          text: '"Bridging the Gap"',
+          text: '"Why Vue-Bridge?"',
           link: '/topics/introduction-why-vue-bridge',
         },
         {
@@ -159,11 +168,11 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Tasks',
+      text: 'Focus Areas/Concepts',
       items: [
         {
           text: 'Project Setup',
-          link: '#',
+          link: '/topics/project-setup',
         },
         {
           text: 'Writing the code',
@@ -179,6 +188,23 @@ function getTopicsSidebar() {
         },
         {
           text: 'Publishing packages',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Adoption Strategies',
+      items: [
+        {
+          text: 'Greenfield Projects',
+          link: '#',
+        },
+        {
+          text: 'Expanding a Vue 2 Library',
+          link: '#',
+        },
+        {
+          text: 'Expanding from a Vue 3 Library',
           link: '#',
         },
       ],

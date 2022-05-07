@@ -1,5 +1,5 @@
 ---
-aside: deep
+outline: deep
 ---
 # How do deal with Reactivity Caveats
 
@@ -28,7 +28,7 @@ export default {
 }
 ```
 
-If you are familiar with Vue 2, you like are familiar with how to deal with these: Use `$set` and `$delete`, for the most part:
+Vue 2 exposes helpers to deal with these caveats - `this.$set()` and `this.$delete()`:
 
 ```js
 export default {
@@ -56,15 +56,10 @@ However, two things make this a bit of a challenge:
 
 ## Recommendations
 
-You should always respect the caveats that exist in Vue 2, and thus, use `$set` and `$delete` where necessary.
+1. Since `this.$set()` and `this.$delete()` are missing from Vue 3, but needed for Vue 2, we need replacements.
+2. Write unit tests!
 
-### Unit Testing for both Versions
-
-You should test your components - obviously. And to make sure they behave the same in Vue 2 and Vue 3, we strongly recommend that you run your unit tests against both versions with the help of `@vue-bridge/testing`.
-
-This is of course a good recommendation for a lot of the cross-compatibility challenges we have documented in this guide, but it's especially important when it comes to the Reactivity which is central to Vue.
-
-### `$set/$delete` Polyfill via `@vue-bridge/runtime`
+### `$set/$delete` Polyfill via `@vue-bridge/runtime` (Options API)
 
 
 Concerning Vue3, `@vue-bridge/runtime` can help with the missing methods: When you define your component with its `defineComponent` export will add these missing methods to the component when building our component for Vue 3.
@@ -86,6 +81,38 @@ export default defineComponent({
   }
 })
 ```
+
+### `set/del` helpers from `vue-demi` (Composition API)
+
+If you are using composition-api in your library, you are surely using `vue-demi`to get it working in both Vue 2 and Vue 3. `vue-demi` exposes `set()` and `del()` helpers that work just like `$set()` and `$delete()` in Options API:
+
+```js
+import { defineComponent } from '@vue-bridge/runtime'
+import { reactive, set, del } from 'vue-demi'
+
+export default defineComponent({
+  data: () => ({
+    obj: {
+      existingProperty: 'value'
+    }
+  }),
+  setup() {
+    const obj = reactive({
+      existingProperty: 'value'
+    })
+    set(obj, 'newProperty', 'value')
+    del(obj, 'existingProperty')
+  }
+})
+```
+
+### Unit Testing for both Versions
+
+You should test your components - obviously. And to make sure they behave the same in Vue 2 and Vue 3, we strongly recommend that you run your unit tests against both versions with the help of `@vue-bridge/testing`.
+
+This is of course a good recommendation for a lot of the cross-compatibility challenges we have documented in this guide, but it's especially important when it comes to the Reactivity which is central to Vue.
+
+
 ## Further Reading
 
 * [Topic: Unit Testing](#) <!-- TODO: Link -->

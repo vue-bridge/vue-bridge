@@ -4,13 +4,13 @@ The Topics Section is all about learning, deep understanding, the big picture. E
 
 ## List of Topics
 
-<!-- this could be made prettier with card components and a grid -->
+<!-- TODO: this could be made prettier with card components and a grid -->
 
 * Introduction
   * Why Vue-Bridge?
   * Comparisons
   * Workflow
-  * General Project setup recommendations
+  * Migration Strategies for Vue 2 Libraries
 * Focus Areas
   * On Writing cross-compatible components.
   * On Unit testing your code.

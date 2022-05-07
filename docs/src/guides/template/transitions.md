@@ -3,7 +3,7 @@ aside: deep
 ---
 # How to use Transitions
 
-## Transition Styles
+## #1: Transition Styles
 
 Vue 3 introduced a small change in the naming of CSS Transition classes:
 
@@ -26,7 +26,7 @@ It's easy enough to provide both selectors in your CSS - you just have to rememb
 }
 ```
 
-## `<Transition>` as root
+## #2: Transition as root
 
 In Vue 2, if you used a `<transition>` as the root element in a component, the transition would actually work and i.e. fade-in its content. IN vue 3, this no longer works like that, the transition only works if the content inside of it actually has a trigger for it, in the form of a `v-if` or `v-show`.
 
@@ -34,7 +34,7 @@ You can read more about it here: [Vue 3 Migration Guide: "Transition as Root"](h
 
 So for a cross-compatible component, you need to respect the Vue 3 behavior.
 
-## `<TransitionGroup>` Component
+## #3: TransitionGroup Root
 
 In Vue 3, components no longer need a single root element. Consequently, `<TransitionGroup>` components also no longer require this and will not wrap their children in a root node by default.
 

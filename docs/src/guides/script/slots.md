@@ -1,7 +1,7 @@
 ---
 aside: deep
 ---
-# Normal vs. scoped slots
+# `$slots` vs. ``$scopedSlots`
 
 Programmatic access to slots is a bit different in both Versions. This page explains those differences and how to deal with them.
 
@@ -9,7 +9,7 @@ Programmatic access to slots is a bit different in both Versions. This page expl
 
 In Vue 2, you have two kinds of slots, normal ones, accessible through `this.$slots` and so-called scoped slots, accessible through `this.$scopedSlots`.
 
-In Vue 3, on the other hand, slots were unified, all slots are now "scoped" - but the API to access them is now `this.$slots`
+In Vue 3, on the other hand, slots were unified: all slots are now "scoped", and the API to access them is now `this.$slots`
 
 ## Solution
 
@@ -28,7 +28,7 @@ const hasDefaultSlot = isVue2
   : !!this.$slots.default
 ```
 
-### `@vue-bridge/runtime` upport
+### `@vue-bridge/runtime` Support
 
 The runtime plugin can make this a bit shorter with the provided `$bridgeSlots`:
 

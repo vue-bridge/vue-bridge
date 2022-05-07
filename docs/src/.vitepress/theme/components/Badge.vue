@@ -4,18 +4,25 @@ export default defineComponent({
   name: 'Badge',
   props: {
     type: String, // info, warn, error, success
-    text: String
+    text: String,
+    label: String,
+    description: String,
   }
 })
 </script>
 <template>
-  <span :class="['badge', type]">
+  <span 
+    :class="['badge', type]"
+    :aria-label="label || text || null"
+    :aria-description="description"
+  >
     <template v-if="text">
       {{ text }}
     </template>
     <slot v-else />
   </span>
 </template>
+
 <style lang="postcss" scoped>
   .badge {
     display: inline-block;

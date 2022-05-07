@@ -2,7 +2,7 @@
 aside: deep
 next: /topics/comparisons
 ---
-# _"Bridging the gap"_ <br> Introducing VueBridge
+# _"Bridging the gap"_ <br> Why VueBridge?
 
 ## The challenge
 

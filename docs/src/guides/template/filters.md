@@ -1,7 +1,9 @@
 ---
-aside: deep
+outline: deep
 ---
 # Filters 
+
+## Challenge
 
 Vue 2 supports filters:
 
@@ -9,13 +11,13 @@ Vue 2 supports filters:
 <p>the price is {{ price | toCurrency }}</p>
 ```
 
-But this feature got removed in Vue 3.
+This feature got removed in Vue 3, so you can't use it in your library's codebase.
 
-## Alternatives
+## Solutions
 
 ### Local Filters
 
-You can use computed properties or normal methods to do the same thing filers do, just with a different syntax:
+You can use computed properties or normal methods to do the same thing filters do, just with a different syntax:
 
 ```html
 <template>
@@ -74,7 +76,7 @@ Usage in a template:
 
 ## Eslint
 
-::: info
+::: info @vue-bridge/eslint-config
   Preconfigured for you when using [`@vue-bridge/eslint-config`](/reference/eslint-config)
 :::
 
