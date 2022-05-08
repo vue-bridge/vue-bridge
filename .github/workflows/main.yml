@@ -45,7 +45,7 @@ jobs:
         run: pnpm install
 
       - name: Build packages
-        run: pnpm build
+        run: pnpm build-ci
 
       - name: Run unit tests
         run: pnpm test -- --coverage
