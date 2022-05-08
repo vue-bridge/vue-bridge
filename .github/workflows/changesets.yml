@@ -1,3 +1,4 @@
+name: Release PR (Changesets)
 on:
  push:
    branches:
@@ -20,8 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       
-      - name: Install pnpm
-        uses: pnpm/action-setup@2.0.1
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
         id: pnpm-install
         with: 
           version: 6
