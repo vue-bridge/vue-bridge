@@ -1,4 +1,4 @@
-name: Unit Test
+name: Unit Tests
 on: [push]
 jobs:
   test:
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       
       - name: Install pnpm
         uses: pnpm/action-setup@2.1
