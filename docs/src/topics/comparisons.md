@@ -26,7 +26,7 @@ import { ref } from 'vue-demi'
 
 and in a Vue 2 or Vue 3 project, you will get the `ref()` function. 
 
-It's genius. And this particular mechanism is the inspiration for a lot of what we do in `@vue-bridge/runtime`. We even use vue-demi under the hood, but only for it's `defineComponent` option. And you can [use `vue-demi` alongside  `@vue-bridge/runtime`](/TODO)), because both provide different benefits that compliment each other if you want to use composition API in your cross-compatible copmponents:
+It's genius. And this particular mechanism is the inspiration for a lot of what we do in `@vue-bridge/runtime`. We even use vue-demi under the hood, but only for it's `defineComponent` option. And you can [use `vue-demi` alongside  `@vue-bridge/runtime`](#/TODO)), because both provide different benefits that compliment each other if you want to use composition API in your cross-compatible copmponents:
 
 |Feature|`vue-demi`|`@vue-bridge/*`|
 |-------|----------|---------------------|

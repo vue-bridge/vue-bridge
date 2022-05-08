@@ -23,7 +23,7 @@ These concern features / syntax that is straight up incompatible, though some ha
 - Don' use [Multiple Root elements / Fragments](/guides/template/multiple-root-elements.md) <eslint />
 - Don't use [`v-model:arg` & `v-bind.sync`](./v-model-arg-sync.md) <eslint />
 - Don't use [`v-on.native` (removed in Vue 3)](./v-on-native.md) <eslint />
-- [Don't use template `ref` on `v-for` element](./ref-v-for.md) <discipline />
+- Don't use template `ref` on `v-for` element <discipline />
 -  Don't use [Filters (removed in Vue 3)](/guides/template/filters.md) <eslint />
 
 ## 🛠 Compatibility achievable
@@ -55,6 +55,6 @@ This section covers featues that are mostly the same in Vue 2/3, but have some s
 - `v-model` prop and event names (patched for Vue 2 by plugin) <plugin />
 - `this.$set` / `this.$delete` (removed in Vue 3) <plugin /> 
 - Some Component Lifecycle Hooks (patched for Vue 2 by this plugin) <plugin />
-- [Custom Directives (Lifecycle hook names patched for Vue 2 by plugin)](./custom-directives.md) <plugin />
+- Custom Directives (Lifecycle hook names patched for Vue 2 by plugin)<plugin />
 - TODO: `defineAsyncComponent()` (only exists in Vue 3) <eslint /><plugin />
 
