@@ -2,7 +2,7 @@
 [build]
   # ignore = "./scripts/docs-check.sh"
   publish = "docs/src/.vitepress/dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && cd docs && npm run build"
+  command = "npx pnpm@6 i --store=node_modules/.pnpm-store && cd docs && npm run build"
 
 [build.environment]
     NODE_VERSION = "16"
