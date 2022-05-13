@@ -150,13 +150,13 @@ function getGuidesSidebar() {
 function getTopicsSidebar() {
   return [
     {
-      text: 'Introduction',
-      link: '/topics',
-      items: [],
-    },
-    {
-      text: 'Understanding',
+      text: 'Background',
       items: [
+        {
+          text: 'Introduction',
+          link: '/topics/',
+          items: [],
+        },
         {
           text: '"Why Vue-Bridge?"',
           link: '/topics/introduction-why-vue-bridge',
@@ -168,7 +168,7 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Focus Areas/Concepts',
+      text: 'Learning',
       items: [
         {
           text: 'Project Setup',
@@ -176,19 +176,19 @@ function getTopicsSidebar() {
         },
         {
           text: 'Writing the code',
-          link: '#',
+          link: '/topics/writing-components',
         },
         {
           text: 'Testing the code',
-          link: '#',
+          link: '/topics/testing-components',
         },
         {
           text: 'Bundling the code',
-          link: '#',
+          link: '/topics/bundling',
         },
         {
           text: 'Publishing packages',
-          link: '#',
+          link: '/topics/publishing',
         },
       ],
     },
@@ -197,15 +197,15 @@ function getTopicsSidebar() {
       items: [
         {
           text: 'Greenfield Projects',
-          link: '#',
+          link: '/topics/adoption-greenfield',
         },
         {
           text: 'Expanding a Vue 2 Library',
-          link: '#',
+          link: '/topics/adoption-from-vue2',
         },
         {
-          text: 'Expanding from a Vue 3 Library',
-          link: '#',
+          text: 'Expanding a Vue 3 Library',
+          link: '/topics/adoption-from-vue3',
         },
       ],
     },
