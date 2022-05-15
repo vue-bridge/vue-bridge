@@ -1,4 +1,9 @@
+---
+outline:deep
+---
 # `@vue-bridge/runtime`
+
+![current npm version](https://img.shields.io/npm/v/@vue-bridge/runtime) ![NPM](https://img.shields.io/npm/l/@vue-bridge/runtime) ![npm bundle size (min+zip)](https://img.shields.io/bundlephobia/minzip/@vue-bridge/runtime) ![npm downloads per month](https://img.shields.io/npm/dm/@vue-bridge/runtime)
 
 This package provides runtime conversions for a bunch of APIS between Vue 2 and Vue 3.
 

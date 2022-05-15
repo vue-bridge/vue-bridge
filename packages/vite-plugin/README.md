@@ -1,6 +1,10 @@
 # `@vue-bridge/vite-plugin`
 
+![current npm version](https://img.shields.io/npm/v/@vue-bridge/vite-plugin) ![NPM](https://img.shields.io/npm/l/@vue-bridge/vite-plugin) ![npm downloads per month](https://img.shields.io/npm/dm/@vue-bridge/vite-plugin)
+
 > A Vite plugin that make building for Vue 2 and Vue 3 easier.
+
+https://vue-bridge-docs.netlify.app/reference/vite-plugin
 
 ## Features - Overview
 

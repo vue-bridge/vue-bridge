@@ -1,6 +1,11 @@
 # `@vue-bridge/runtime`
 
+![current npm version](https://img.shields.io/npm/v/@vue-bridge/runtime) ![NPM](https://img.shields.io/npm/l/@vue-bridge/runtime) ![npm bundle size (min+zip)](https://img.shields.io/bundlephobia/minzip/@vue-bridge/runtime) ![npm downloads per month](https://img.shields.io/npm/dm/@vue-bridge/runtime)
+
 > Runtime Core library of the VueBridge Project
+
+https://vue-bridge-docs.netlify.app/reference/runtime
+
 
 ## What this is
 

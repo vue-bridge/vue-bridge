@@ -297,8 +297,8 @@ export default defineConfig({
     socialLinks: [
       // { icon: 'languages', link: '/translations/' },
       { icon: 'github', link: 'https://github.com/vue-bridge/' },
-      { icon: 'twitter', link: 'https://twitter.com/vue-bridge' },
-      { icon: 'discord', link: 'https://discord.com/invite/HBherRA' },
+      { icon: 'twitter', link: 'https://twitter.com/vuebridge' },
+      { icon: 'discord', link: 'https://discord.gg/JTkXgNy3sx' },
     ],
 
     nav,
