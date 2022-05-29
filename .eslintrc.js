@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   extends: ['@linusborg'],
-  ignorePatterns: ['!docs/.vitepress'],
+  ignorePatterns: ['!docs/src/.vitepress'],
   overrides: [
     {
       files: ['*.js'],

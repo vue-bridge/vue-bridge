@@ -4,6 +4,7 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
+    "Avenir",
     "compat"
   ],
   "peacock.color": "#42b983",

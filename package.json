@@ -41,7 +41,7 @@
   },
   "engines": {
     "node": ">=16",
-    "pnpm": "6"
+    "pnpm": ">=7"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"

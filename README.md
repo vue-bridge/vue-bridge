@@ -12,22 +12,24 @@ You can find out more about the project by visiting the website at https://www.v
 
 This monorepo contains the following packages:
 
-- `@vue-bridge/eslint-config` -> `packages/eslint-config`
-- `@vue-bridge/runtime` -> `packages/runtime`
-- `@vue-bridge/testing` -> `packages/testing`
-- `@vue-bridge/vite-plugin` -> `packages/vite-plugin`
+- docs -> `/docs`
+
+- `@vue-bridge/eslint-config` -> `/packages/eslint-config`
+- `@vue-bridge/runtime` -> `/packages/runtime`
+- `@vue-bridge/testing` -> `/packages/testing`
+- `@vue-bridge/vite-plugin` -> `/packages/vite-plugin`
 - ...maybe more later
 
 We also have a "`/playground`folder where these packages are tested:
-- `example-library`: Building a libary with/for Vue 3
-- `example-library-vue2`: Building the same src files as a library with/for Vue 2
-- `app-vue3` - Vue 3demo app consuming `example-library`
-- `app-vue2` - Vue 2 demo app consuming `example-library-vue2``
+- `./app-vue3` - Vue 3demo app consuming `example-library`
+- `./app-vue2` - Vue 2 demo app consuming `example-library-vue2`
+- `./example-library`: Building a libary with/for Vue 3
+- `./example-library-vue2`: Building the same src files as a library with/for Vue 2
 
-We run unit- and e2e tests in these repositories to test the packages in real usecases.
+We run unit- (TODO: and e2e) tests in these repositories to test the packages in real usecases.
 
 It also contains the docs for the whole project -> `/docs`
 
 ### Contributing
 
-You can find technical information about the repo setup and how to work with it [here](DEVELOPER_NOTES.md). Also note the [Contribution guidelines](.github/CONTRIBUTING.md) and the [Code of Conduct](.github/COC.md).
+You can find technical information about the repo setup and how to work with it [here](DEVELOPER_NOTES.md). Also note the [Contribution guidelines](./CONTRIBUTING.md) and the [Code of Conduct](./CODE_OF_CONDUCT.md).
