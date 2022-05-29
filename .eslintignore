@@ -3,5 +3,6 @@ packages/*/dist
 packages/*/dist-compat
 packages/*/typings
 playground/*/typings
+!docs
+docs/vitepress/dist
 node_modules/
-!docs/.vitepress/theme.index.ts
