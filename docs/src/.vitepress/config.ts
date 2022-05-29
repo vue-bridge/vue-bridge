@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import { defineConfig } from 'vitepress'
 import baseConfig from '@vue/theme/config'
 
