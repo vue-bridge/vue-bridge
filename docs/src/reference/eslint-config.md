@@ -3,8 +3,11 @@ outline:deep
 ---
 # `@vue-bridge/eslint-config`
 
-![current npm version](https://img.shields.io/npm/v/@vue-bridge/eslint-config) ![NPM](https://img.shields.io/npm/l/@vue-bridge/eslint-config) ![npm downloads per month](https://img.shields.io/npm/dm/@vue-bridge/eslint-config)
-
+<div style="display: flex; justify-items: start; gap: 5px">
+  <img src="https://img.shields.io/npm/v/@vue-bridge/eslint-config" alt="current npm version" />
+  <img src="https://img.shields.io/npm/l/@vue-bridge/eslint-config" alt="licence - MIT" />
+  <img src="https://img.shields.io/npm/dm/@vue-bridge/eslint-config" alt="npm downloads per month" />
+</div>
 
 Vue-Bridge provides an eslint-config package that defines a bunch of rules that will help plugin authors to write cross-compatible code by warning when using incompatible features or APIs and enforcing the use of the right exports, i.e. using `defineComponent` from `'@vue-bridge/runtime'` over the normal version exported from `'vue'`
 

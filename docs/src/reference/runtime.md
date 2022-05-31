@@ -1,9 +1,15 @@
 ---
 outline:deep
 ---
+
 # `@vue-bridge/runtime`
 
-![current npm version](https://img.shields.io/npm/v/@vue-bridge/runtime) ![NPM](https://img.shields.io/npm/l/@vue-bridge/runtime) ![npm bundle size (min+zip)](https://img.shields.io/bundlephobia/minzip/@vue-bridge/runtime) ![npm downloads per month](https://img.shields.io/npm/dm/@vue-bridge/runtime)
+<div style="display: flex; justify-items: start; gap: 5px">
+  <img alt="current npm version" src="https://img.shields.io/npm/v/@vue-bridge/runtime">
+  <img alt="license - MIT" src="https://img.shields.io/npm/l/@vue-bridge/runtime">
+  <img alt="npm bundle size (min+gzip)" src="https://img.shields.io/bundlephobia/minzip/@vue-bridge/runtime">
+  <img alt="npm downloads per month" src="https://img.shields.io/npm/dm/@vue-bridge/runtime">
+</div>
 
 This package provides runtime conversions for a bunch of APIS between Vue 2 and Vue 3.
 

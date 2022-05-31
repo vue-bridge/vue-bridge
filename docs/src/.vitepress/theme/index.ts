@@ -1,25 +1,22 @@
-import { h, App, nextTick } from 'vue'
-import { VPTheme } from '@vue/theme'
+import { h, App } from 'vue'
+import Theme from 'vitepress/theme'
 import VBBadge from './components/Badge.vue'
-export default Object.assign({}, VPTheme, {
+export default Object.assign({}, Theme, {
   Layout: () => {
     // @ts-ignore
-    nextTick(() => {
-      if (typeof document !== 'undefined') {
-        const el = document && document.querySelector('.VPNavBarTitle > span')
-        if (el) {
-          el.innerText = 'Vue-Bridge'
-        }
-        const svg = document && document.querySelector('.VPNavBarTitle > svg')
-        if (svg) {
-          svg.remove()
-        }
-      }
-    })
-    return h(VPTheme.Layout, null, {
-      // banner: () => h(Banner),
-      // 'sidebar-top': () => h(PreferenceSwitch),
-    })
+    // nextTick(() => {
+    //   if (typeof document !== 'undefined') {
+    //     const el = document && document.querySelector('.VPNavBarTitle > span')
+    //     if (el) {
+    //       el.innerText = 'Vue-Bridge'
+    //     }
+    //     const svg = document && document.querySelector('.VPNavBarTitle > svg')
+    //     if (svg) {
+    //       svg.remove()
+    //     }
+    //   }
+    // })
+    return h(Theme.Layout)
   },
   enhanceApp({ app }: { app: App }) {
     // app.component('Badge', VTBadge)

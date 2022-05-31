@@ -11,9 +11,13 @@ The Topics Section is all about learning, deep understanding, the big picture. E
   * Comparisons
   * Workflow
   * Migration Strategies for Vue 2 Libraries
-* Focus Areas
+* Learning
   * On Writing cross-compatible components.
   * On Unit testing your code.
   * On building your project.
   * On publishing your project.
+* Adoption Strategies
+  * Greenfield project
+  * Adding Vue 3 support to an existing Vue 2 library
+  * Adding Vue 2 support to an existing Vue 3 library
 

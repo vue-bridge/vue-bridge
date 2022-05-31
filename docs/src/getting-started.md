@@ -18,13 +18,22 @@ If you want to learn more about the why and how of Vue-Bridge and decide wether 
 ## Quickstart with a template
 
 
-The quickest and easiest way is to clone one of our templates on github. We currently have two templates, but are working on more. In the future, we are planning to have a project initializer similar to `create-vue`, provided we have the demand from the community and the resources to write and maintain it.
+The quickest and easiest way is to clone one of our templates on github. We currently have two templates, but are working on more. In the future, we are also considering a project initializer similar to [`create-vue`](https://githubcom/vuejs/create-vue), provided we have the demand from the community and the resources to write and maintain it.
 
-### Monorepo template
+::: tip Contributors wanted!
+
+Creating templates is a lot of work, and it's especially challenging to come of with different templates for all of the use cases out there as one person like doesn't have experience with all of those.
+
+That's why we are looking for contributors willing to work on other templates besides the one(s) we do provide right now. Please contact us on Twitter (https://twitter.com/VueBridge)
+
+:::
+
+### Workspaces&Typescript Template
 
 Repository: https://github.com/vue-bridge/template-monorepo
 
-Features:
+<details>
+<summary>Click here to see the list of features</summary>
 
 * Workspaces with PNPM
 * Build, Test and Publish a component library for both Vue 2 and Vue 3 from one codebase
@@ -38,7 +47,9 @@ Features:
 * @vue-bridge/vite-plugin : Vite plugin for build-time optimizations
 * @vue-bridge/testing : Harmonized API for @vue/test-utils versions 1 and 2
 
-Installation
+</details>
+
+#### Installation
 
 Install the template by running the following command in a folder of your choice:
 
@@ -47,10 +58,16 @@ Install the template by running the following command in a folder of your choice
 npx degit vue-bridge/template-monorepo
 # create in a new subfolder called "my-library":
 npx degit vue-bridge/template-monorepo my-library
-````
+```
 ...or just click the big green button labeled "use this template" in the github repo.
 
+### Workspaces&Javascript
+
+For now, please use the "Workspaces&Typescript" template above and follow the README intructions on how to remove Typescript from it.
 ### Single-Package template
 
+> TBD
 ## Learning path to your own setup
+
+> TBD
 

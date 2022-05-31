@@ -1,7 +1,7 @@
-import { defineConfig } from 'vitepress'
-import baseConfig from '@vue/theme/config'
+import { defineConfig, DefaultTheme } from 'vitepress'
+// import baseConfig from '@vue/theme/config'
 
-const nav = [
+const nav: DefaultTheme.Config['nav'] = [
   {
     text: 'Getting Started',
     link: '/getting-started',
@@ -19,22 +19,27 @@ const nav = [
   {
     text: 'Reference',
     activeMatch: `^/reference/`,
-    items: getReferenceSidebar(),
+    // @ts-expect-error - Type error in new theme
+    items: getReferencesDropDownMenu(),
   },
 ]
 
 export const sidebar = {
   '/guides/': getGuidesSidebar(),
   '/topics/': getTopicsSidebar(),
-  '/reference/': getReferenceSidebar(),
+  '/reference/': getReferencesDropDownMenu(),
 }
 
 function getGuidesSidebar() {
   return [
     {
       text: 'Introduction',
-      link: 'guides/',
-      items: [],
+      items: [
+        {
+          text: 'How-To Guides',
+          link: '/guides/',
+        },
+      ],
     },
     {
       text: 'Component APIs',
@@ -53,11 +58,11 @@ function getGuidesSidebar() {
         },
         {
           text: 'Native vs. Component Events',
-          link: '#',
+          link: '/guides/script/native-vs-component-events',
         },
         {
           text: '$attrs, $listeners & inheritAttrs',
-          link: '#',
+          link: '/guides/script/listeners-attrs-inheritAttrs',
         },
         {
           text: '$slots vs. $scopedSlots',
@@ -88,10 +93,6 @@ function getGuidesSidebar() {
           text: 'v-bind: Order Priority',
           link: 'guides/template/v-bind',
         },
-        {
-          text: 'Styling Slots & deep descendants',
-          link: '#',
-        },
       ],
     },
     {
@@ -103,13 +104,17 @@ function getGuidesSidebar() {
         },
         {
           text: 'Teleport',
-          link: '#',
+          link: 'guides/template/teleport',
         },
       ],
     },
     {
       text: 'Other Code Aspects',
       items: [
+        {
+          text: 'Styling Slots & deep descendants',
+          link: '/guides/other/styling-deep-selector',
+        },
         {
           text: 'Custom Directives',
           link: '/guides/other/custom-directives',
@@ -127,6 +132,10 @@ function getGuidesSidebar() {
     {
       text: 'Unit Tests',
       items: [
+        {
+          text: 'mount & shallowMount',
+          link: '#',
+        },
         {
           text: 'nextTick',
           link: '#',
@@ -210,7 +219,7 @@ function getTopicsSidebar() {
   ]
 }
 
-function getReferenceSidebar() {
+function getReferencesDropDownMenu() {
   return [
     {
       text: 'Packages',
@@ -259,12 +268,11 @@ function getReferenceSidebar() {
 }
 
 export default defineConfig({
-  extends: baseConfig,
+  // extends: baseConfig,
 
   lang: 'en-US',
-  title: 'VueBridge',
-  description:
-    'VueBridge - creating cross-compatible component libraries for Vue 2 and 3',
+  title: 'Vue-Bridge',
+  description: 'Creating interoperable component libraries for Vue 2 and 3',
 
   head: [
     ['meta', { name: 'twitter:site', content: '@vue-bridge' }],
@@ -278,8 +286,21 @@ export default defineConfig({
   // },
 
   themeConfig: {
-    logo: '/logo.svg',
-    repo: 'vue-bridge/vue-bridge',
+    logo: '/logo.png',
+
+    editLink: {
+      repo: 'vue-bridge/vue-bridge',
+      branch: 'main',
+      dir: 'docs/src',
+      text: 'Suggest change to this page',
+    },
+
+    socialLinks: [
+      // { icon: 'languages', link: '/translations/' },
+      { icon: 'github', link: 'https://github.com/vue-bridge/' },
+      { icon: 'twitter', link: 'https://twitter.com/vuebridge' },
+      { icon: 'discord', link: 'https://discord.gg/JTkXgNy3sx' },
+    ],
 
     // algolia: {
     //   indexName: 'vuejs-v3',
@@ -292,22 +313,13 @@ export default defineConfig({
     //   placement: 'vuejsorg'
     // },
 
-    socialLinks: [
-      // { icon: 'languages', link: '/translations/' },
-      { icon: 'github', link: 'https://github.com/vue-bridge/' },
-      { icon: 'twitter', link: 'https://twitter.com/vuebridge' },
-      { icon: 'discord', link: 'https://discord.gg/JTkXgNy3sx' },
-    ],
-
     nav,
     sidebar,
 
     footer: {
-      license: {
-        text: 'MIT License',
-        link: 'https://opensource.org/licenses/MIT',
-      },
-      copyright: 'Copyright © 2014-2021 Thorsten Lünborg',
+      message: 'Released under the MIT license',
+      copyright:
+        'Copyright © 2021-present Thorsten Lünborg and VueBridge Contributors',
     },
   },
 
@@ -315,20 +327,20 @@ export default defineConfig({
     define: {
       __VUE_OPTIONS_API__: false,
     },
-    optimizeDeps: {
-      // exclude: ['@vue/repl']
-    },
+    // optimizeDeps: {
+    // exclude: ['@vue/repl']
+    // },
     // @ts-ignore
-    ssr: {
-      // external: ['@vue/repl']
-    },
-    server: {
-      host: true,
-      fs: {
-        // for when developing with locally linked theme
-        allow: ['../../..'],
-      },
-    },
+    // ssr: {
+    // external: ['@vue/repl']
+    // },
+    // server: {
+    //   host: true,
+    //   fs: {
+    //     // for when developing with locally linked theme
+    //     allow: ['../../..'],
+    //   },
+    // },
     build: {
       minify: 'terser',
       chunkSizeWarningLimit: Infinity,
