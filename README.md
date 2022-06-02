@@ -2,6 +2,10 @@
 
 > Monorepo for main `@vue-bridge/*` packages and docs
 
+> **Warning**
+> this project is still under heavy development and not recommended to be used in production
+> We are also looking for contributors and co-maintainers to get a stable version out in the very near future.
+
 ## What is Vue-Bridge?
 
 Vue-Bridge is a project aiming to provide a consolidated guide and toolbox for authors of Vue.js components and libraries who want to build these in a way that works with both Vue 2 and Vue 3.
