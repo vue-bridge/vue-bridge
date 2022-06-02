@@ -14,13 +14,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /getting-started/
+      link: /getting-started
     - theme: alt
       text: Why VueBridge?
-      link: /topics/introduction-why-vue-bridge/
+      link: /topics/introduction-why-vue-bridge
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vue-bridghe/vue-bridge
+      link: https://github.com/vue-bridge/vue-bridge
 
 features:
   - icon: 🪄

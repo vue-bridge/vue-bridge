@@ -112,7 +112,7 @@ function getGuidesSidebar() {
       text: 'Other Code Aspects',
       items: [
         {
-          text: 'Styling Slots & deep descendants',
+          text: 'Styling Slots & deep children',
           link: '/guides/other/styling-deep-selector',
         },
         {
@@ -134,11 +134,11 @@ function getGuidesSidebar() {
       items: [
         {
           text: 'mount & shallowMount',
-          link: '#',
+          link: 'guides/unit-testing/mount',
         },
         {
           text: 'nextTick',
-          link: '#',
+          link: 'guides/unit-testing/next-tick',
         },
       ],
     },
@@ -221,6 +221,15 @@ function getTopicsSidebar() {
 
 function getReferencesDropDownMenu() {
   return [
+    {
+      text: 'Overview',
+      items: [
+        {
+          text: 'Overview',
+          link: '/reference/',
+        },
+      ],
+    },
     {
       text: 'Packages',
       items: [
