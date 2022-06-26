@@ -8,8 +8,8 @@
   "scripts": {
     "docs:dev": "cd docs && pnpm dev",
     "test": "pnpm --filter 'example-library*' --parallel --aggregate-output run test --run",
-    "test:2": "pnpm workspace example-library-vue2 test",
-    "test:3": "pnpm workspace example-library test",
+    "test:2": "pnpm --filter 'example-library-vue2' test",
+    "test:3": "pnpm --filter 'example-library' test",
     "lint": "pnpm -r --if-present --parallel run lint --fix",
     "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
     "build-ci": "pnpm build:packages && pnpm build:playground",
@@ -34,7 +34,7 @@
     "packageExtensions": {
       "vue-template-compiler": {
         "dependencies": {
-          "vue": "^2.6"
+          "vue": "^2.7.0-0"
         }
       }
     }

@@ -8,9 +8,6 @@
     "rootDir": "src",
     "declaration": true,
     "declarationDir": "types",
-    "importHelpers": false,
-    "paths": {
-      "virtual:vue": ["./src/defineComponent/vue3"]
-    }    
+    "importHelpers": false 
   }
 }

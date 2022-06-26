@@ -18,7 +18,7 @@ var __spreadValues = (a, b) => {
  *  Copyright 2022 Thorsten Luenborg 
  *  @license MIT
 **/
-import { defineComponent as defineComponent$1 } from "@vue/composition-api";
+import { defineComponent as defineComponent$1 } from "vue";
 const isVue2 = true;
 const attrsListenersMixinVue2 = {
   methods: {

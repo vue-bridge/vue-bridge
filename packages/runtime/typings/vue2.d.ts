@@ -7,7 +7,7 @@ import {
   VueConstructor,
   VNode,
 } from 'vue'
-import { defineComponent as defineComponent$1 } from '../src/defineComponent/vue2'
+import { defineComponent as defineComponent$1 } from 'vue'
 
 import { attrsListenersMixinVue2 as _attrsListenersMixin } from '../src/attrs-listeners'
 

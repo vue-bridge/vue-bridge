@@ -1,6 +1,6 @@
 // We use 'vue-demi' as a virtual module here, it will be dynamically replaced with the right
 // import from the ./defineComponent/ folder during build.
-import { defineComponent as _defineComponent } from 'virtual:vue'
+import { defineComponent as _defineComponent } from 'vue'
 import { isVue2 } from './constants'
 import { patchVModelProp } from './vModel'
 import { patchLifecycleHooks } from './lifecycleHooks'
