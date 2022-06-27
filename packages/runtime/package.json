@@ -16,7 +16,7 @@
   "jsdelivr": "./dist-vue3/index.iife.js",
   "exports": {
     ".": {
-      "types": "./dist-vue3/index.dt.s",
+      "types": "./dist-vue3/index.d.ts",
       "import": "./dist-vue3/index.es.js",
       "require": "./dist-vue3/index.cjs.js"
     },
