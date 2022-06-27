@@ -11,25 +11,25 @@
   },
   "license": "MIT",
   "main": "./dist-vue3/index.cjs.js",
-  "module": "./dist-vue3/index.es.js",
+  "module": "./dist-vue3/index.es.mjs",
   "unpkg": "./dist-vue3/index.iife.js",
   "jsdelivr": "./dist-vue3/index.iife.js",
   "exports": {
     ".": {
       "types": "./dist-vue3/index.d.ts",
-      "import": "./dist-vue3/index.es.js",
+      "import": "./dist-vue3/index.es.mjs",
       "require": "./dist-vue3/index.cjs.js"
     },
     "./vue2": {
       "types": "./dist-vue2/index.dt.s",
       "script": "./dist-vue2/index.iife.js",
-      "import": "./dist-vue2/index.es.js",
+      "import": "./dist-vue2/index.es.mjs",
       "require": "./dist-vue2/index.cjs.js"
     },
     "./vue3": {
       "types": "./dist-vue3/index.dt.s",
       "script": "./dist-vue3/index.iife.js",
-      "import": "./dist-vue3/index.es.js",
+      "import": "./dist-vue3/index.es.mjs",
       "require": "./dist-vue3/index.cjs.js"
     },
     "./*": "./*"

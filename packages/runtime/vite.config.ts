@@ -18,7 +18,7 @@ export default <UserConfig>{
     lib: {
       entry: 'src/main.ts',
       name: 'VueBridge',
-      fileName: 'index',
+      fileName: (format) => `index.${format}.${format === 'es' ? 'mjs' : 'js'}`,
       formats: ['es', 'cjs', 'iife'],
     },
     emptyOutDir: !isVue2,
