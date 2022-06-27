@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
-import { createVuePlugin } from 'vite-plugin-vue2'
+import vue from '@vitejs/plugin-vue2'
 import { vueBridge } from '@vue-bridge/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    createVuePlugin(),
+    vue(),
     vueBridge({
       vueVersion: '2',
       localizeDeps: true,
