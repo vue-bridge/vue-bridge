@@ -1,10 +1,15 @@
 import { UserConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 
 const isVue2 = !!process.env.BUILD_TARGET_V2
+const vueVersion = isVue2 ? 2 : 3
 
 export default <UserConfig>{
-  plugins: [vue()],
+  resolve: {
+    alias: {
+      '~bridges/': `./src/bridges/vue${vueVersion}/`,
+      '~/': './src',
+    },
+  },
   define: {
     __VUE_BRIDGE_TARGET_VERSION__: isVue2 ? 2 : 3,
   },
