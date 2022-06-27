@@ -5,9 +5,10 @@ node_modules
 /dist
 /docs/**/dist
 packages/*/dist
-!packages/runtime/dist
-packages/runtime/dist/index.cjs.js
-packages/runtime/dist/index.es.js
+packages/runtime/dist-vue2
+packages/runtime/dist-vue3
+packages/runtime/types-vue2
+packages/runtime/types-vue3
 playground/*/dist
 
 playground/example-library/typings

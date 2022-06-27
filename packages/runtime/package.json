@@ -10,31 +10,31 @@
     "directory": "packages/runtime"
   },
   "license": "MIT",
-  "main": "./dist/index.vue3.cjs.js",
-  "module": "./dist/index.vue3.es.js",
-  "unpkg": "./dist/index.vue3.iife.js",
-  "jsdelivr": "./dist/index.vue3.iife.js",
+  "main": "./dist-vue3/index.cjs.js",
+  "module": "./dist-vue3/index.es.js",
+  "unpkg": "./dist-vue3/index.iife.js",
+  "jsdelivr": "./dist-vue3/index.iife.js",
   "exports": {
     ".": {
-      "types": "./typings/vue3.dt.s",
-      "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.js"
+      "types": "./dist-vue3/index.dt.s",
+      "import": "./dist-vue3/index.es.js",
+      "require": "./dist-vue3/index.cjs.js"
     },
     "./vue2": {
-      "types": "./typings/vue2.dt.s",
-      "script": "./dist/index.vue2.iife.js",
-      "import": "./dist/index.vue2.es.js",
-      "require": "./dist/index.vue2.cjs.js"
+      "types": "./dist-vue2/index.dt.s",
+      "script": "./dist-vue2/index.iife.js",
+      "import": "./dist-vue2/index.es.js",
+      "require": "./dist-vue2/index.cjs.js"
     },
     "./vue3": {
-      "types": "./typings/vue3.dt.s",
-      "script": "./dist/index.vue2.iife.js",
-      "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.js"
+      "types": "./dist-vue3/index.dt.s",
+      "script": "./dist-vue3/index.iife.js",
+      "import": "./dist-vue3/index.es.js",
+      "require": "./dist-vue3/index.cjs.js"
     },
     "./*": "./*"
   },
-  "typings": "typings/vue3.d.ts",
+  "typings": "dist-vue3/index.d.ts",
   "files": [
     "bin",
     "dist",
@@ -48,12 +48,15 @@
     "vue-bridge-switch": "bin/vue-bridge-switch.js"
   },
   "scripts": {
-    "build": "pnpm build:v3 && pnpm build:v2",
-    "build:v3": "vite build",
-    "build:v3:w": "vite build --watch",
-    "build:v2": "BUILD_TARGET_V2=1 vite build",
-    "build:v2:w": "BUILD_TARGET_V2=1 vite build --watch",
-    "build:types": "rollup --config ../../config/rollup.types.config.js",
+    "build": "pnpm build-v3 && rimraf dist-vue2 && pnpm build-v2 && pnpm rollup-types",
+    "build-v3": "vite build && pnpm build-types-v3",
+    "build-v3-w": "vite build --watch",
+    "build-v2": "BUILD_TARGET_V2=1 vite build && pnpm build-types-v2",
+    "build-v2-w": "BUILD_TARGET_V2=1 vite build --watch",
+    "build-types": "pnpm build-types-v3 && pnpm build-types-v2 && pnpm rollup-types",
+    "build-types-v3": "vue-tsc --emitDeclarationOnly",
+    "build-types-v2": "vue-tsc -p tsconfig.vue2.json --emitDeclarationOnly",
+    "rollup-types": "rollup -c rollup.config.types.js && rimraf types-vue2 types-vue3",
     "lint": "eslint 'src/**/*.{ts,vue}'",
     "postinstall": "node ./scripts/postinstall.js"
   },
@@ -64,9 +67,13 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@vue/composition-api": "^1.6.3",
-    "vue": "^3.2.37"
+    "@vue-bridge/vite-plugin": "workspace:*",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-dts": "^4.2.2",
+    "typescript": "^4.7.4",
+    "vue": "^3.2.37",
+    "vue2": "npm:vue@^2.7.0-0"
   },
   "peerDependencies": {
     "vue": "^2.7.0-0 || >=3.2.0"

@@ -14,10 +14,11 @@ export default <UserConfig>{
     __VUE_BRIDGE_TARGET_VERSION__: isVue2 ? 2 : 3,
   },
   build: {
+    outDir: isVue2 ? 'dist-vue2' : 'dist-vue3',
     lib: {
       entry: 'src/main.ts',
       name: 'VueBridge',
-      fileName: isVue2 ? 'index.vue2' : 'index.vue3',
+      fileName: 'index',
       formats: ['es', 'cjs', 'iife'],
     },
     emptyOutDir: !isVue2,
