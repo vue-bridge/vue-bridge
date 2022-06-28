@@ -1,24 +1,14 @@
 import { isVue2 } from './constants'
+// import { set, del } from 'v-bridge:set-delete'
+import { set, del } from '~bridges/set-delete.ts'
 
 export const setDeleteMixin = isVue2
   ? {}
   : {
       beforeCreate() {
         // @ts-expect-error
-        this.$set = (
-          obj: { [k: string]: any },
-          key: string | number,
-          value: any
-        ) => {
-          obj[key] = value
-        }
+        this.$set = set
         // @ts-expect-error
-        this.$delete = (obj: { [k: string]: any }, key: string | number) => {
-          if (Array.isArray(obj)) {
-            obj.splice(+key, 1)
-          } else {
-            delete obj[key]
-          }
-        }
+        this.$delete = del
       },
     }

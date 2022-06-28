@@ -23,7 +23,7 @@ export function defineDirective<T, V>(
     Object.keys(directiveConfig).forEach((hook) => {
       const newName = map[hook as keyof typeof map]
       if (newName) {
-        // @ts-expect-error - Because of mismatching hook names between Vue 2 / 3 Directives
+        // @ts-ignore - Because of mismatching hook names between Vue 2 / 3 Directives
         newDirective[newName] = wrapDirectiveHook(directiveConfig[hook])
       }
     })

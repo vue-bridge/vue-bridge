@@ -6,9 +6,9 @@ const { switchVersion } = require('./utils')
 
 if (!Vue || typeof Vue.version !== 'string') {
   console.warn(
-    '[@vue-bridge/runtime] Vue is not found. Please run "npm install vue" to install.'
+    '[@vue-bridge/runtime] Vue was not found. Please install Vue version ^2.7.0 || >= 3.2'
   )
-} else if (Vue.version.startsWith('2.')) {
+} else if (Vue.version.startsWith('2.7')) {
   switchVersion(2)
 } else if (Vue.version.startsWith('3.')) {
   switchVersion(3)

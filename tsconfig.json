@@ -27,9 +27,7 @@
     "allowSyntheticDefaultImports": true,
     "types": ["vite/client"],
     "paths": {
-      // "@vue-bridge/runtime": ["packages/runtime/src/main.ts"],
-      "@vue-bridge/testing": ["packages/testing/src/index.ts"],
-      "virtual-bridge:helpers/index": ["playground/examples-library/src/helpers/index.vue3.ts"]
+      "@vue-bridge/testing": ["packages/testing/src/index.ts"]
     }
   },
   "include": [

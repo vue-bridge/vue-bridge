@@ -1,5 +1,9 @@
 dist/
 packages/*/dist
+packages/runtime/dist-vue2
+packages/runtime/dist-vue3
+packages/runtime/types-vue2
+packages/runtime/types-vue3
 packages/*/dist-compat
 packages/*/typings
 playground/*/typings
