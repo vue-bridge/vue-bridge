@@ -6,9 +6,16 @@ const vuePath = new URL(
   'node_modules/vue/dist/vue.runtime.common.js',
   import.meta.url
 ).href
-console.log(vuePath)
+
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    // @ts-expect-error - doesn't like the type for whatever reason
+    vue(),
+  ],
+  define: {
+    __VUE_TARGET_VERSION__: JSON.stringify('2'),
+    'process.env.NODE_ENV': '"test"',
+  },
   resolve: {
     alias: {
       vue: vuePath,

@@ -2,13 +2,17 @@
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 
-const vuePath = new URL(
-  'node_modules/vue/dist/vue.runtime.common.js',
-  import.meta.url
-).href
-console.log(vuePath)
+const vuePath = new URL('node_modules/vue/index.mjs', import.meta.url).href
+
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    // @ts-expect-error - doesn't like the type for whatever reason
+    vue(),
+  ],
+  define: {
+    __VUE_TARGET_VERSION__: JSON.stringify('3'),
+    'process.env.NODE_ENV': '"test"',
+  },
   resolve: {
     alias: {
       vue: vuePath,
@@ -16,6 +20,7 @@ export default defineConfig({
         'node_modules/@vue/test-utils',
         import.meta.url
       ).href,
+      '@vue-bridge/runtime': '@vue-bridge/runtime/vue3',
     },
   },
   optimizeDeps: {

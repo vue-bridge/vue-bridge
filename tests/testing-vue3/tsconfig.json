@@ -6,9 +6,8 @@
     "baseUrl": ".",
     "skipLibCheck": true,
     "paths": {
-      "@vue-bridge/runtime": ["@vue-bridge/runtime/vue3"],
-      "@/*?v-bridge": ["src/*.vue2"],
-      "vue": ["node_modules/vue"]
+      "@vue-bridge/runtime": ["@vue-bridge/runtime/vue3"]
+      // "vue": ["node_modules/vue"]
     }
   },
   "include": [
@@ -16,6 +15,7 @@
     "fixtures/**/*.ts",
     "tests/**/*.spec.ts",
     "src/**/*.d.ts",
+    "env.d.ts",
     "vitest.config.ts"
   ]
 }

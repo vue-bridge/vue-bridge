@@ -5,5 +5,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <GlobalComponent />
+  <div>
+    <GlobalComponent />
+  </div>
 </template>
