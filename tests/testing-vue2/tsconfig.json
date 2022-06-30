@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./typings",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@vue-bridge/runtime": ["@vue-bridge/runtime/vue2"],
+      "@/*?v-bridge": ["src/*.vue2"],
+    }
+  },
+  "include": [
+    "fixtures/**/*.vue",
+    "fixtures/**/*.ts",
+    "tests/**/*.spec.ts",
+    "src/**/*.d.ts",
+    "vitest.config.ts"
+  ]
+}

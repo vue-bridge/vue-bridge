@@ -1,6 +1,5 @@
 /// <reference types="node" />
 
-import * as Vue from 'vue'
 import {
   mount as _mount,
   shallowMount as _shallowMount,
@@ -8,6 +7,8 @@ import {
   VueWrapper,
 } from '@vue/test-utils'
 import * as testUtils from '@vue/test-utils'
+
+export { flushPromises } from './utils/flushPromises'
 
 export const isVue2 = 'createLocalVue' in testUtils
 export const isVue3 = !isVue2
@@ -24,7 +25,7 @@ interface Vue2Options {
 
 function mountFn(
   component: any,
-  options: any // MountingOptions<P, D> = {}
+  options: any = {} // MountingOptions<P, D> = {}
 ): ReturnType<typeof _mount> {
   // console.log(component)
   if (isVue2) {
@@ -68,25 +69,27 @@ function patchGlobals<P, D = {}>(options: MountingOptions<P, D> & Vue2Options) {
   //@ts-expect-error - this is a Vue 2 API
   const { createLocalVue } = testUtils
   const localVue = createLocalVue()
+  // @ts-ignore - not known to Vue 3 / TU 2
+  options.localVue = localVue
   if (options.global) {
     if (options.global.components) {
-      Object.entries(options.components).forEach(([name, component]) => {
+      Object.entries(options.global.components).forEach(([name, component]) => {
         localVue.component(name, component)
       })
     }
     if (options.global.directives) {
-      Object.entries(options.directives).forEach(([name, directive]) => {
+      Object.entries(options.global.directives).forEach(([name, directive]) => {
         localVue.directive(name, directive)
       })
     }
     if (options.global.plugins) {
-      Object.entries(options.plugins).forEach(([name, plugin]) => {
+      Object.entries(options.global.plugins).forEach(([name, plugin]) => {
         localVue.use(name, plugin)
       })
     }
     if (options.global.mixins) {
-      Object.entries(options.mixins).forEach(([name, mixin]) => {
-        localVue.mixin(name, mixin)
+      options.global.mixins.forEach((mixin) => {
+        localVue.mixin(mixin)
       })
     }
 
@@ -111,6 +114,7 @@ function patchUnMount(wrapper: VueWrapper<any>) {
 }
 
 function patchSlots<P, D = {}>(
+  // in Vue 3 , we only have slots, so scopedSlots have to merged with those.
   options: MountingOptions<P, D> & { scopedSlots?: any }
 ) {
   if (options.scopedSlots) {
@@ -121,11 +125,18 @@ function patchSlots<P, D = {}>(
   }
 }
 
-type NextTick = <T = void>(
-  this: T,
-  fn?: ((this: T) => void) | undefined
-) => Promise<void>
-const nextTick: NextTick =
-  'nextTick' in Vue ? Vue.nextTick : ((Vue as any).default.nextTick as NextTick)
+export function enableAutoUnmount(hook: Function) {
+  return isVue2
+    ? // @ts-ignore
+      testUtils.enableAutoUnmount(hook)
+    : // @ts-ignore
+      testUtils.enableAutoDestroy(hook)
+}
 
-export { nextTick }
+export function disableAutoUnmount() {
+  isVue2
+    ? // @ts-ignore
+      testUtils.disableAutoUnmount()
+    : // @ts-ignore
+      testUtils.disableAutoDestroy()
+}

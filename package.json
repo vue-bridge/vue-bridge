@@ -21,7 +21,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vscode-vue-languageservice": "0.33.10"
+      "vscode-vue-languageservice": "0.38.2"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
