@@ -83,8 +83,8 @@ function patchGlobals<P, D = {}>(options: MountingOptions<P, D> & Vue2Options) {
       })
     }
     if (options.global.plugins) {
-      Object.entries(options.global.plugins).forEach(([name, plugin]) => {
-        localVue.use(name, plugin)
+      Object.entries(options.global.plugins).forEach(([plugin, ...options]) => {
+        localVue.use(plugin, ...options)
       })
     }
     if (options.global.mixins) {
