@@ -231,9 +231,8 @@ describe('Basic Test-Utils APIs', () => {
   describe('slots', () => {
     const Comp = defineComponent({
       render() {
-        const slot = this.$slots.default
-        const vnodes: VNode[] =
-          typeof slot === 'function' ? (slot as Function)() : slot
+        const slot = (this.$bridgeSlots as any).default
+        const vnodes: VNode[] = slot()
         return h('div', {}, vnodes)
       },
     })
@@ -249,6 +248,16 @@ describe('Basic Test-Utils APIs', () => {
       )
     })
 
-    test.todo('scopedSlots')
+    test('scopedSlots', async () => {
+      const wrapper = mount(Comp, {
+        scopedSlots: {
+          default: `<span>Text Slot</span>`,
+        },
+      })
+
+      expect(wrapper.element.outerHTML).toMatchInlineSnapshot(
+        '"<div><span>Text Slot</span></div>"'
+      )
+    })
   })
 })
