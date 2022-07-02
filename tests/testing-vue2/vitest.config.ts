@@ -35,9 +35,6 @@ export default defineConfig({
     ],
   },
   test: {
-    include: [
-      '../testing-vue2/tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-    ],
     environment: 'jsdom',
     deps: {
       inline: true, // [/@vue-bridge\/testing/, /@vue\/test-utils/, 'vue'],
