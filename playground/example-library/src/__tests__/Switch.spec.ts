@@ -1,6 +1,6 @@
-import { mount, nextTick } from '@vue-bridge/testing'
+import { mount } from '@vue-bridge/testing'
 // import { mount } from '@vue/test-utils'
-// import { nextTick } from 'vue'
+import { nextTick } from 'vue'
 import { describe, expect, test } from 'vitest'
 import SwitchVue from '../components/Switch.vue'
 

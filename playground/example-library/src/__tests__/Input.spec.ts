@@ -1,4 +1,5 @@
-import { mount, nextTick } from '@vue-bridge/testing'
+import { mount } from '@vue-bridge/testing'
+import { nextTick } from 'vue'
 import { describe, it, expect } from 'vitest'
 import Input from '../components/Input.vue'
 
