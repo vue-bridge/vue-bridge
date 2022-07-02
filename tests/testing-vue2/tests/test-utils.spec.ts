@@ -173,7 +173,8 @@ describe('Basic Test-Utils APIs', () => {
         }
         app.mixin({
           created() {
-            mixinSpy()(this as any).testPluginMixin = message
+            mixinSpy()
+            ;(this as any).testPluginMixin = message
           },
           render: () => h('div', 'Hello'),
         })
