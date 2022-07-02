@@ -1,6 +1,19 @@
 import { describe, expect, test, vi } from 'vitest'
-import { computed, ObjectDirective, reactive } from 'vue'
-import { isVue2, set, del, defineDirective } from '@vue-bridge/runtime'
+import {
+  computed,
+  defineComponent,
+  nextTick,
+  ObjectDirective,
+  reactive,
+} from 'vue'
+import {
+  isVue2,
+  set,
+  del,
+  defineDirective,
+  attrsListenersMixin,
+} from '@vue-bridge/runtime'
+import { mount } from '@vue-bridge/testing'
 
 describe('Runtime: Basics', () => {
   test('version flags work', () => {
@@ -82,4 +95,73 @@ describe('Runtime: defineDirective', () => {
     expect(spy).toHaveBeenCalledWith(4)
   })
 })
-describe.todo('Runtime: attrsListeners', () => {})
+describe('Runtime: attrsListeners', () => {
+  test('$bridgeAttrs()', async () => {
+    const ChildComp = defineComponent({
+      mixins: [attrsListenersMixin],
+      props: ['message'],
+      template: `<div v-bind="$bridgeAttrs()"></div>`,
+      inheritAttrs: false,
+    })
+
+    const wrapper = mount(ChildComp, {
+      props: {
+        message: 'test message',
+      },
+      attrs: {
+        id: 'test-id1',
+      },
+    })
+
+    expect(wrapper.element.outerHTML).toMatchInlineSnapshot(
+      `"<div id=\\"test-id1\\"></div>"`
+    )
+  })
+
+  test('$bridgeClass() & $bridgeStyle()', async () => {
+    const ChildComp = defineComponent({
+      mixins: [attrsListenersMixin],
+      template: `<div v-bind:class="$bridgeClass()" v-bind:style="$bridgeStyle()"></div>`,
+    })
+
+    const wrapper = mount(ChildComp, {
+      props: {
+        message: 'test message',
+      },
+      attrs: {
+        class: 'test-class',
+        style: 'opacity: 0;',
+      },
+    })
+
+    expect(wrapper.element.outerHTML).toMatchInlineSnapshot(
+      '"<div class=\\"test-class\\" style=\\"opacity: 0;\\" message=\\"test message\\"></div>"'
+    )
+  })
+
+  test('$bridgeNativeOn()', async () => {
+    const ChildComp = defineComponent({
+      mixins: [attrsListenersMixin],
+      emits: ['change'], // unrelated changes
+      template: `<div v-on="$bridgeNativeOn()"></div>`,
+      inheritAttrs: false,
+    })
+    const spy = vi.fn()
+    const Comp = {
+      components: { ChildComp },
+      methods: {
+        spy,
+      },
+      template: `<div><child-comp v-on:click${
+        isVue2 ? '.native' : ''
+      }="spy"></child-comp></div>`,
+    }
+
+    const wrapper = mount(Comp)
+    expect(wrapper.exists()).toBe(true)
+    const child = wrapper.findComponent(ChildComp)
+    child.trigger('click')
+    await nextTick()
+    expect(spy).toHaveBeenCalledOnce()
+  })
+})
