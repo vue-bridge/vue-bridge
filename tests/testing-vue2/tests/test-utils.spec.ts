@@ -160,6 +160,8 @@ describe('Basic Test-Utils APIs', () => {
     })
 
     test('global.plugins', async () => {
+      const mixinSpy = vi.fn()
+
       const plugin: PluginFunction<{ message?: string }> = (
         app: App,
         { message } = {}
@@ -171,7 +173,7 @@ describe('Basic Test-Utils APIs', () => {
         }
         app.mixin({
           created() {
-            ;(this as any).testPluginMixin = message
+            mixinSpy()(this as any).testPluginMixin = message
           },
           render: () => h('div', 'Hello'),
         })
@@ -182,9 +184,11 @@ describe('Basic Test-Utils APIs', () => {
           plugins: [[plugin, { message }]],
         },
       })
+      await nextTick()
       const { vm } = wrapper
-      expect((vm as any).testPluginMixin).toBe(message)
       expect((vm as any).$test).toBe(message)
+      expect(mixinSpy).toHaveBeenCalled()
+      expect((vm as any).testPluginMixin).toBe(message)
     })
   })
 
