@@ -9,7 +9,8 @@
     "vue": "^2.7.0-0"
   },
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint '{tests,fixtures}/**/*.{ts,vue}'"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "^1.1.1",

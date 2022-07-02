@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --open --port 3001",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint 'src/**/*.{ts,vue}'"
   },
   "pnpm": {
     "packageExtensions": {

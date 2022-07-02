@@ -27,6 +27,7 @@
   "scripts": {
     "watch": "vite build --watch",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "lint": "eslint 'src/**/*.{ts,vue}'",
     "test": "vitest --reporter=verbose"
   },
   "dependencies": {
