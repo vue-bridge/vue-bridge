@@ -56,6 +56,7 @@ describe('Runtime: defineDirective', () => {
     const spy = vi.fn()
     let binding: any = null
     const directive = defineDirective({
+      // @ts-ignore - expected Vue2/3 Type conflict
       beforeMount(el: any, _binding: any) {
         binding = _binding
         spy(arguments.length)

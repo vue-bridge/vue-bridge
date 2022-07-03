@@ -159,7 +159,8 @@ describe('Basic Test-Utils APIs', () => {
       )
     })
 
-    test.skip('global.plugins', async () => {
+    // FIXME: This one test always fails in CI. No idea why. none.
+    test('global.plugins', async () => {
       const mixinSpy = vi.fn()
 
       const plugin: PluginFunction<{ message?: string }> = (
@@ -176,7 +177,6 @@ describe('Basic Test-Utils APIs', () => {
             mixinSpy()
             ;(this as any).testPluginMixin = message
           },
-          render: () => h('div', 'Hello'),
         })
       }
       const message = 'success'
@@ -187,6 +187,7 @@ describe('Basic Test-Utils APIs', () => {
       })
       await nextTick()
       const { vm } = wrapper
+      console.log(Object.keys(vm))
       expect(mixinSpy).toHaveBeenCalled()
       expect((vm as any).$test).toBe(message)
       expect((vm as any).testPluginMixin).toBe(message)
