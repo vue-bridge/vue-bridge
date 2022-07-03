@@ -13,7 +13,7 @@
     "lint": "eslint '{tests,fixtures}/**/*.{ts,vue}'"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue2": "^1.1.1",
+    "@vitejs/plugin-vue2": "^1.1.2",
     "jsdom": "^20.0.0",
     "vite": "^2.9.13",
     "vue-template-compiler": "^2.7.0"
