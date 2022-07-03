@@ -1,5 +1,20 @@
 # @vue-bridge/runtime
 
+## 0.1.0
+
+### Minor Changes
+
+- 9726a14: Minimum peer dep version for Vue 2 raised to Vue 2.7 for runtime and testing packages
+
+  - runtime now properly generates types for both Vue versions
+  - runtime no longer depends on `@vue/composition-api as a peer dependency
+
+### Patch Changes
+
+- ffc664d: fix: Vue 2 v-model works with array-style props definition
+- ffc664d: attrs-listeners-mixin: fix handling of emits option as array
+  attrs-listeners-mixin: fix navtiveOn event handling
+
 ## 0.0.12
 
 ### Patch Changes

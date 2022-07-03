@@ -1,5 +1,18 @@
 # @vue-bridge/testing
 
+## 0.2.0
+
+### Minor Changes
+
+- 9726a14: Minimum peer dep version for Vue 2 raised to Vue 2.7 for runtime and testing packages
+
+  - runtime now properly generates types for both Vue versions
+  - runtime no longer depends on `@vue/composition-api as a peer dependency
+
+### Patch Changes
+
+- ffc664d: fixing Vue 2 compat for MountOptions.global
+
 ## 0.1.2
 
 ### Patch Changes
