@@ -27,14 +27,14 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: [
-      '@vue-bridge/runtime',
-      '@vue-bridge/runtime/vue2',
-      '@vue-bridge/testing',
-      '@vue/test-utils',
-      'vue',
-      'vue-template-compiler',
-    ],
+    // exclude: [
+    // '@vue-bridge/runtime',
+    // '@vue-bridge/runtime/vue2',
+    // '@vue-bridge/testing',
+    // '@vue/test-utils',
+    // 'vue',
+    // 'vue-template-compiler',
+    // ],
   },
   test: {
     environment: 'jsdom',

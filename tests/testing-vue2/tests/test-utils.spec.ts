@@ -122,7 +122,7 @@ describe('Basic Test-Utils APIs', () => {
         defineComponent({
           render: () => h('div', 'Hello'),
           mounted() {
-            // @ts-expect-error property is unknown
+            // @ts-ignore property is unknown
             this.$myFunction()
           },
         }),
