@@ -159,7 +159,7 @@ describe('Basic Test-Utils APIs', () => {
       )
     })
 
-    test('global.plugins', async () => {
+    test.skip('global.plugins', async () => {
       const mixinSpy = vi.fn()
 
       const plugin: PluginFunction<{ message?: string }> = (
