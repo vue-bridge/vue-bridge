@@ -5,11 +5,12 @@ node_modules
 /dist
 /docs/**/dist
 packages/*/dist
+playground/*/dist
+
 packages/runtime/dist-vue2
 packages/runtime/dist-vue3
 packages/runtime/types-vue2
 packages/runtime/types-vue3
-playground/*/dist
 
 playground/example-library/typings
 

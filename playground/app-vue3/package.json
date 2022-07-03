@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint 'src/**/*.{ts,vue}'"
   },
   "dependencies": {
     "example-library": "*",
@@ -16,7 +17,7 @@
     "@vue-bridge/vite-plugin": "*",
     "@vue/compiler-sfc": "^3.2.37",
     "typescript": "^4.7.4",
-    "vite": "^2.9.12",
+    "vite": "^2.9.13",
     "vue-tsc": "^0.38.2"
   }
 }

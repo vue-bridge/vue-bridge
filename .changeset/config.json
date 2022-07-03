@@ -11,6 +11,8 @@
     "app-vue2",
     "app-vue3",
     "example-library",
-    "example-library-vue2"
+    "example-library-vue2",
+    "testing-vue2",
+    "testing-vue3"
   ]
 }

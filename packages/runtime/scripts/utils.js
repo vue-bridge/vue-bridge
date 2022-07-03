@@ -10,7 +10,7 @@ function switchVersion(version) {
   const pkg = require(pkgPath)
 
   pkg.main = `./dist-vue${version}/index.cjs.js`
-  pkg.module = `./dist-vue${version}/index.es.js`
+  pkg.module = `./dist-vue${version}/index.es.mjs`
   pkg.exports['.'].types = `./dist-vue${version}/index.d.ts`
   pkg.exports['.'].require = pkg.main
   pkg.exports['.'].import = pkg.module

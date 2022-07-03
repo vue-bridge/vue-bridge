@@ -14,7 +14,9 @@ function hasvModelEvent(emits: string[] | Record<string, any> = []): boolean {
 }
 
 function hasVModelProp(props = {}) {
-  return Object.prototype.hasOwnProperty.call(props, 'modelValue')
+  return Array.isArray(props)
+    ? props.includes('modelValue')
+    : Object.prototype.hasOwnProperty.call(props, 'modelValue')
 }
 
 function checkModelOptions(model: any) {

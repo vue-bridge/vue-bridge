@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "docs:dev": "cd docs && pnpm dev",
-    "test": "pnpm --filter 'example-library*' --parallel --aggregate-output run test --run",
-    "test:2": "pnpm --filter 'example-library-vue2' test",
-    "test:3": "pnpm --filter 'example-library' test",
+    "test": "pnpm --filter 'example-library*' --filter 'testing-vue*' --parallel --aggregate-output run test --run",
+    "test:play:2": "pnpm --filter 'example-library-vue2' test",
+    "test:play:3": "pnpm --filter 'example-library' test",
     "lint": "pnpm -r --if-present --parallel run lint --fix",
     "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
     "build-ci": "pnpm build:packages && pnpm build:playground",
@@ -21,7 +21,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vscode-vue-languageservice": "0.33.10"
+      "vscode-vue-languageservice": "0.38.2"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -54,13 +54,13 @@
     "@linusborg/eslint-config": "^0.2.1",
     "@types/node": "^16.11.41",
     "cypress": "^10.2.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "simple-git-hooks": "^2.8.0",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
-    "vite": "^2.9.12",
+    "vite": "^2.9.13",
     "vitest": "^0.16.0",
     "vue-tsc": "^0.38.2"
   }

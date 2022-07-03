@@ -32,9 +32,10 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div v-on="$_nativeOn()" :class="$_class()" :style="$_style()">
+  <div v-on="$bridgeNativeOn()" :class="$bridgeClass()" :style="$bridgeStyle()">
     <label for="input">
-      <input v-bind="$_attrs()" type="text" v-model="model" /> {{ testString }}
+      <input v-bind="$bridgeAttrs()" type="text" v-model="model" />
+      {{ testString }}
     </label>
   </div>
 </template>

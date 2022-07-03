@@ -8,19 +8,19 @@ type Listeners = Record<string, (...args: any[]) => void>
 
 export const attrsListenersMixinVue2 = {
   methods: {
-    $_attrs(): Attrs {
+    $bridgeAttrs(): Attrs {
       return (this as any).$attrs
     },
-    $_listeners(): Listeners {
+    $bridgeListeners(): Listeners {
       return (this as any).$listeners
     },
-    $_class(): string {
+    $bridgeClass(): string {
       return ''
     },
-    $_style(): string {
+    $bridgeStyle(): string {
       return ''
     },
-    $_nativeOn(): Listeners {
+    $bridgeNativeOn(): Listeners {
       return {}
     },
   },
@@ -34,19 +34,19 @@ export const attrsListenersMixinVue3 = {
     this[CACHE] = generateData(this)
   },
   methods: {
-    $_attrs(this: any): Attrs {
+    $bridgeAttrs(this: any): Attrs {
       return this[CACHE].attrs
     },
-    $_listeners(this: any): Listeners {
+    $bridgeListeners(this: any): Listeners {
       return this[CACHE].listeners
     },
-    $_nativeOn(this: any): Listeners {
+    $bridgeNativeOn(this: any): Listeners {
       return this[CACHE].nativeOn
     },
-    $_class(this: any): string {
+    $bridgeClass(this: any): string {
       return this.$attrs.class
     },
-    $_style(this: any): string {
+    $bridgeStyle(this: any): string {
       return this.$attrs.style
     },
   },
@@ -59,7 +59,10 @@ interface Data {
 }
 function generateData(vm: any): Data {
   const $attrs = vm.$attrs as Attrs
-  const emits = Object.keys(vm._.emitsOptions || {}) as string[]
+  const emitsOptions: string[] | Record<string, any> = vm._.emitsOptions || []
+  const emits = Array.isArray(emitsOptions)
+    ? emitsOptions
+    : Object.keys(emitsOptions)
   const rawProps = vm._.vnode.props as Record<string, any>
 
   const attrs: Attrs = {}
@@ -67,7 +70,8 @@ function generateData(vm: any): Data {
   const nativeOn: Listeners = {}
   for (const key in $attrs) {
     if (isOn(key)) {
-      nativeOn[key] = $attrs[key] as any
+      const _key = key[2].toLowerCase() + key.slice(3)
+      nativeOn[_key] = $attrs[key] as any
     } else if (key !== 'class' && key !== 'style') {
       attrs[key] = $attrs[key]
     }

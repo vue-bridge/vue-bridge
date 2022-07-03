@@ -40,6 +40,7 @@ function wrapDirectiveHook<V>(hookFn: DirectiveHook): DirectiveHook {
     oldVNode: VNode | null
   ) => {
     const instance = (newVNode as any).context
+    // @ts-ignore - Vue 2/3 type conflict
     binding.instance = instance
     return hookFn(el, binding, newVNode, oldVNode)
   }
