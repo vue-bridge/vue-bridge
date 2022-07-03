@@ -21,14 +21,14 @@
     "@vue-bridge/runtime": "*",
     "@vue/composition-api": "^1.6.3",
     "example-library-vue2": "*",
-    "vue": "^2.7.0-0"
+    "vue": "^2.7.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "^1.1.0",
     "@vue-bridge/vite-plugin": "*",
     "typescript": "^4.7.4",
     "vite": "^2.9.12",
-    "vue-template-compiler": "^2.7.0-0",
+    "vue-template-compiler": "^2.7.0",
     "vue-tsc": "^0.38.2"
   }
 }
