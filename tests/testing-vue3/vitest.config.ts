@@ -5,10 +5,7 @@ import vue from '@vitejs/plugin-vue'
 const vuePath = new URL('node_modules/vue/index.mjs', import.meta.url).href
 
 export default defineConfig({
-  plugins: [
-    // @ts-expect-error - doesn't like the type for whatever reason
-    vue(),
-  ],
+  plugins: [vue()],
   define: {
     __VUE_TARGET_VERSION__: JSON.stringify('3'),
     'process.env.NODE_ENV': '"test"',
@@ -24,7 +21,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@vue/test-utils', '@vue-bridge/testing'],
+    // exclude: ['@vue/test-utils', '@vue-bridge/testing'],
   },
   test: {
     include: [
