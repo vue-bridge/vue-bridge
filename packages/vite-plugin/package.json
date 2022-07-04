@@ -32,6 +32,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@swc/core": "^1.2.208",
     "debug": "^4.3.4",
     "resolve-pkg": "^2.0.0"
   },

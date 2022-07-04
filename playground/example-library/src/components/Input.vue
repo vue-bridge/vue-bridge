@@ -16,7 +16,7 @@ export default defineComponent({
   data: () => ({
     testString,
   }),
-  beforeUnmount() {
+  async beforeUnmount() {
     console.log('unmounting')
   },
   computed: {
