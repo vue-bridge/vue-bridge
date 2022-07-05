@@ -37,7 +37,8 @@
   "typings": "dist-vue3/index.d.ts",
   "files": [
     "bin",
-    "dist",
+    "dist-vue2",
+    "dist-vue3",
     "src",
     "typings",
     "scripts",
