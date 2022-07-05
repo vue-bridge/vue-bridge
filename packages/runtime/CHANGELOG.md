@@ -1,5 +1,11 @@
 # @vue-bridge/runtime
 
+## 0.1.1
+
+### Patch Changes
+
+- 82bf09b: fix: add missing new dist-vue\* directories to package.json's `files` field
+
 ## 0.1.0
 
 ### Minor Changes
