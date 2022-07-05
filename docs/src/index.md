@@ -23,22 +23,22 @@ hero:
       link: https://github.com/vue-bridge/vue-bridge
 
 features:
+  - icon: ☁️
+    title: Lightweight Runtime
+    details: tiny (max. 800b gzip) runtime library that ponyfills commonly used Vue 2/3 APIs for interop.
+  - icon: 📦
+    title: Universal Build Plugin
+    details: Build-Time toolkit to simplify building your library for both Vue 2 and Vue 3. (Vite only for now)
+  - icon: 🔩
+    title: Eslint support
+    details: an eslint preset that helps you avoid common mistakes when writing interoperable code.
   - icon: 🪄
     title: Quickstart with Templates
-    details: Start projects easily with pre-configured templates
-  - icon: 🔦
-    title: Typescript support
-    details: Template support Type generation  for both versions.
+    details: Start projects easily with pre-configured templates, no setup or configuration necessary.
   - icon: 🗂
     title: Extensive Documentation
     details: Our docs provide quick How.Ton guides as well as background info for all aspects of interoperable libraries.
-  - icon: ☁️
-    title: Lightweight Runtime
-    details: tiny (max. 600b gzip) runtime library polyfills commonly used APIs that are different in Vue 2 and Vue 3
-  - icon: 📦
-    title: Universal Build Plugin
-    details: Optimize your code for Vue 2 or Vue 3 at build-time with ease.
-  - icon: 🔩
-    title: Eslint support
-    details: Let eslint help you avoid mistakes in making your library interoperable.
+  - icon: 🔦
+    title: Typescript support
+    details: Template support Type generation  for both versions.
 ---

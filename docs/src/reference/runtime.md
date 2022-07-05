@@ -1,5 +1,5 @@
 ---
-outline:deep
+outline: deep
 ---
 
 # `@vue-bridge/runtime`
@@ -11,19 +11,16 @@ outline:deep
   <img alt="npm downloads per month" src="https://img.shields.io/npm/dm/@vue-bridge/runtime">
 </div>
 
-This package provides runtime conversions for a bunch of APIS between Vue 2 and Vue 3.
+This package provides runtime interop between Vue 2 and Vue 3 for a some APIs, those that can be made compatible at runtime within a few lines of "glue code". 
 
-::: tip Compatibility Listing
+For these reasons, this package is extremely light
 
-All APIs that this plugin makes compatible at runtime are marked with the <plugin /> badge in the [Compatibility Listing](/reference/compatibility/) 
+::: warning Vue version compatibility
 
+This package is compatible with Vue versions `^3.0.0` or `^2.7.0`. We do not provide support for versions below `2.7`. This means that any library/plugin using this package also requires Vue `^2.7` or `^3.0.0` to work.
+
+Make sure to document this in your library's docs and in the version requirements in `package.json`.
 :::
-
-## About dependencies
-
-This plugin has [`@vue/composition-api`](https://github.com/vuejs/composition-api) as an optional peer dependency. It provides the Vue 2 version of `defineComponent()`.
-
-So when you publish a plugin with the use of `@vue-bridge/runtime`, you should also make `@vue/composition-api` a peer dependency of your package. Users consuming your plugin in a Vue 2 project then need to install it alongside your package.
 
 ## Installation
 
@@ -37,20 +34,23 @@ yarn add @vue-bridge/runtime
 pnpm add @vue-bridge/runtime
 ```
 
-Whe importing from this package, note that you can do so in different way:
+This package exposes variants in export subpaths:
+
+* `@vue-bridge/vue3` -> to be used in Vue 3 projects
+* `@vue-bridge/vue2` -> to be used in Vue 2 projects
+
+Using these would look like this:
 
 ```js
-// Main exports are dynamically determined to be for Vue 2 or Vue 3
-// This happens in a postinstall script which checks the version of the 'vue' package installed.
-import { defineComponent } from '@vue-bridge/runtime'
-
 // always gives you the variants meant for Vue 2
 import { defineComponent } from '@vue-bridge/runtime/vue2'
 // always gives you the variants meant for Vue 3
 import { defineComponent } from '@vue-bridge/runtime/vue3'
 ```
 
-You can also alias the package to a hardcoded Vue version subpath. Here's an example in Vite:
+### Using Subpath Exports with aliases
+
+You can alias the package to a hardcoded Vue version subpath. Here's an example in Vite:
 
 ```js
 export default defineConfig({
@@ -63,26 +63,47 @@ export default defineConfig({
 })
 ```
 
-If you use [`@vue-bridge/vite-plugin`](#), this will be configured for you.
+Usually, this should not be necessary to be set by consumers of your library, because the "automagical" main export (see next section) would provide the right variant as the main export. But in your library's own repository, it can be necessary to explicitly define which variant should be used with an alias.
+
+### "Automagical" main export
+
+When installed in a project that uses Vue 2 or Vue 3, the main export should generally provide the matching variant automagically. It does so by running a postinstall script that adjusts the package.json exports definition depending on the version of Vue that is installed in the consumer's project:
+
+```js
+// Main exports are dynamically determined to be for Vue 2 or Vue 3
+import { defineComponent } from '@vue-bridge/runtime'
+```
 
 ### CDN
-
-::: warn UMD Build is TBD
-  an UMD Build is on our roadmap but not done yet. Consider the following to be a documentation of the intended/planned usage.
-:::
 
 You can also use `@vue-bridge/runtime` directly from a CDN:
 
 ```html
 <!-- Vue 3 -->
-<script src="https://unpkg.com/@vue-bridge/runtime/dist/index.vue3.iife.js"></script>
+<script src="https://unpkg.com/@vue-bridge/runtime/dist-vue3/index.iife.js"></script>
 
 <!-- Vue 2 -->
-<script src="https://unpkg.com/@vue/composition-api"></script>
-<script src="https://unpkg.com/@vue-bridge/runtime/dist/index.vue2.iife.js"></script>
+<script src="https://unpkg.com/@vue-bridge/runtime/dist-vue2/index.iife.js"></script>
 ```
 
-## API
+Then you can use it like so:
+
+```js
+window.VueBridge.defineComponent({ /*... */})
+```
+
+::: warning Don't use the main export
+
+As this plugin comes in two variants, but the package has only one main export, you should always use exact paths like shown above, and not import like this:
+
+```html
+<!-- ❌ DONT DO THIS -->
+<script src="https://unpkg.com/@vue-bridge/runtime"></script>
+```
+
+:::
+
+## API/Features
 
 This plugin has with two main exports:
 
@@ -93,9 +114,9 @@ This plugin has with two main exports:
 
 Use this function when defining your components.
 
-It is a wrapper around Vue 3's [`defineComponent()`](https://v3.vuejs.org/api/global-api.html#definecomponent) function (it doesn't exist in Vue 2, but we use the version provided by `@vue/composition-api` internall when used in a Vue 2 project provides you with a Vue 2 version of the same function under the hood for use in a Vue 2 project).
+It is a wrapper around Vue's [`defineComponent()`](https://v3.vuejs.org/api/global-api.html#definecomponent) function.
 
-While the original implementation's only purpose is to ensure Type safety, `@vue-bridge/runtime` wraps it and applies a bunch of changes and mixins to your component definition in order to ensure cross-compatibility.
+While the original function's only purpose is to ensure Type safety, `@vue-bridge/runtime` wraps it and applies a bunch of changes and mixins to your component definition in order to ensure interoperability.
 
 ```js
 import { defineComponent } from '@vue-bridge/runtime'
@@ -108,6 +129,13 @@ export default defineComponent({
   }
 })
 ```
+
+Related Guides: 
+
+* [v-model](../guides/script/v-model.md)
+* [Lifecycle Hooks](../guides/script/lifecycle-hooks.md)
+* [Slots](../guides/script/slots.md)
+* [$set/delete for Reactivity Caveats](../guides/script/reactivity-caveats.md)
 
 ### `defineDirective()`
 
@@ -123,9 +151,19 @@ export const myDirective = defineDirective({
 })
 ```
 
+Learn more: [Using `defineDirective`](../guides/other/custom-directives.md)
+
 ### `attrsListenersMixin`
 
-Usage is straightforward:
+This mixin provides ponyfills to work around differences in Vue 2/3 for the following apis:
+
+* `$attrs`
+* `$attrs.class (special handling)`
+* `$attrs.style (special handling)`
+* `$listeners`
+* `v-on.native`
+
+It comes as a separate mixin instead of being included in `defineComponent()` to safe a few bytes for those libraries that don't need them. In our experience, these APIs are not generally needed in too many components, and this ponyfill is a bit more expensive than the rest of what `defineComponent` does, so we wanted to keep it tree-shakable for those that don't need it.
 
 ```js
 import {  attrsListenersMixin, defineComponent } from '@vue-bridge/runtime'
@@ -135,18 +173,15 @@ export default defineComponent({
 })
 ```
 
-What this Mixin adds:
+This mixin adds the following instance properties:
 
-* `this.$_attrs`: Behaves like `$attrs` in Vue 2: it contains only _attributes_ passed to the component, not _event listeners_ and not `class` or `style`
-* `this.$listeners`: Behaves like `$listeners` in Vue 2: contains any `v-on` listeners that were defined on the component
-* `this.$_class()`: Gives you the class from `$attrs` in Vue 3, empty in Vue 2. This is because in Vue 2, `class` is never exposed and instead always assigned to the component's root element. 
-* `this.$_style()`: Like `$_class` but for the `style` attribute.
+* `$bridgeAttrs`
+* `$bridgeClass`
+* `$bridgeStyle`
+* `$bridgeListeners`
+* `$bridgeNativeOn`
 
-You can learn more about on the actual usage scenarios in the How-To guide on [Working with `$attrs`](#tbd) (_TBD_)
+You can learn more about on the actual usage scenarios in the How-To guide section:
 
-
-## Further Reading
-
-TODO: Link HowTo articles where these plugin APIs are used in.
-
-<!-- TODO: We will link to how-to guides about authoring components and custom directives later  -->
+* [TBD](#)
+* [TBD](#)

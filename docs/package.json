@@ -2,7 +2,7 @@
   "name": "docs",
   "version": "0.0.0",
   "private": true,
-  "description": "Docs for this lib.",
+  "description": "Docs for the VueBridge project.",
   "author": "Thorsten Luenborg <t.luneborg@googlemail.com>",
   "homepage": "",
   "license": "MIT",
@@ -21,10 +21,7 @@
   },
   "dependencies": {
     "@vue-bridge/runtime": "*",
-    "@vue/theme": "^1.0.1",
+    "vitepress": "1.0.0-alpha.4",
     "vue": "^3.2.37"
-  },
-  "devDependencies": {
-    "vitepress": "^1.0.0-alpha.4"
   }
 }

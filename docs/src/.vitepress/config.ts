@@ -298,9 +298,8 @@ export default defineConfig({
     logo: '/logo.png',
 
     editLink: {
-      repo: 'vue-bridge/vue-bridge',
-      branch: 'main',
-      dir: 'docs/src',
+      pattern:
+        'https://github.com/vue-bridge/vue-bridge/edit/main/docs/src/:path',
       text: 'Suggest change to this page',
     },
 
