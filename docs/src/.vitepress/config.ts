@@ -1,5 +1,9 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 // import baseConfig from '@vue/theme/config'
+import Icons from 'unplugin-icons/vite'
+import IconResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
+import WindiCSS from 'vite-plugin-windicss'
 
 const nav: DefaultTheme.Config['nav'] = [
   {
@@ -335,6 +339,15 @@ export default defineConfig({
     define: {
       __VUE_OPTIONS_API__: false,
     },
+    plugins: [
+      WindiCSS(),
+      Icons(),
+      Components({
+        resolvers: [IconResolver()],
+        // filters for transforming targets
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      }),
+    ],
     // optimizeDeps: {
     // exclude: ['@vue/repl']
     // },
