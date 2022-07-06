@@ -8,7 +8,13 @@ import WindiCSS from 'vite-plugin-windicss'
 const nav: DefaultTheme.Config['nav'] = [
   {
     text: 'Getting Started',
-    link: '/getting-started',
+    // link: '/getting-started',
+    activeMatch: '^/getting-started',
+    items: [
+      { text: 'Introduction', link: '/getting-started/' },
+      { text: 'Quickstart', link: '/getting-started/quickstart' },
+      { text: 'Tutorial', link: '/getting-started/tutorial' },
+    ],
   },
   {
     text: 'Topics',
@@ -164,7 +170,7 @@ function getTopicsSidebar() {
       text: 'Background',
       items: [
         {
-          text: 'Introduction',
+          text: 'Overview',
           link: '/topics/',
           items: [],
         },
