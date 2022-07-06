@@ -29,16 +29,16 @@ features:
   - icon: 📦
     title: Universal Build Plugin
     details: Build-Time toolkit to simplify building your library for both Vue 2 and Vue 3. (Vite only for now)
-  - icon: 🔩
-    title: Eslint support
-    details: an eslint preset that helps you avoid common mistakes when writing interoperable code.
+  - icon: 🗂
+    title: Extensive Documentation
+    details: Our docs provide quick How-To guides as well as background info for all aspects of interoperable libraries.
   - icon: 🪄
     title: Quickstart with Templates
     details: Start projects easily with pre-configured templates, no setup or configuration necessary.
-  - icon: 🗂
-    title: Extensive Documentation
-    details: Our docs provide quick How.Ton guides as well as background info for all aspects of interoperable libraries.
+  - icon: 🔩
+    title: Eslint support
+    details: We offer an eslint preset that helps you avoid common mistakes when writing interoperable code.
   - icon: 🔦
     title: Typescript support
-    details: Template support Type generation  for both versions.
+    details: All libraries offer full TS support, and so do our templates.
 ---
