@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   build: {
-    sourcemap: true,
+    sourcemap: false,
     lib: {
       entry: 'src/main.ts',
       formats: ['es', 'cjs'],
@@ -34,9 +34,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     deps: {
-      inline: [
-        /packages\/testing\/dist/
-      ],
+      inline: [/packages\/testing\/dist/],
     },
   },
 })
