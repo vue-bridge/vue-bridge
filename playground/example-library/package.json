@@ -7,13 +7,14 @@
     "name": "Thorsten Luenborg",
     "url": "https://twitter.com/linus_borg"
   },
-  "main": "dist/example-library.cjs.js",
-  "module": "dist/example-library.es.js",
+  "main": "dist/example-library.js",
+  "module": "dist/example-library.mjs",
   "typings": "typings/main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/example-library.es.js",
-      "require": "./dist/example-library.cjs.js"
+      "import": "./dist/example-library.mjs",
+      "require": "./dist/example-library.js",
+      "types": "./typings/main.d.ts"
     },
     "./style.css": "./dist/style.css",
     "./src/": "./src/"
