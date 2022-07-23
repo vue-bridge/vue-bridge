@@ -1,5 +1,11 @@
 # @vue-bridge/testing
 
+## 0.2.1
+
+### Patch Changes
+
+- 34ed927: fix: global.plugins compat for Vue 2 should handle (nested) array
+
 ## 0.2.0
 
 ### Minor Changes
