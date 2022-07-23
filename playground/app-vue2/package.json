@@ -27,8 +27,8 @@
     "@vitejs/plugin-vue2": "^1.1.2",
     "@vue-bridge/vite-plugin": "*",
     "typescript": "^4.7.4",
-    "vite": "^2.9.13",
-    "vue-template-compiler": "^2.7.0",
-    "vue-tsc": "^0.38.2"
+    "vite": "^3.0.2",
+    "vue-template-compiler": "^2.7.8",
+    "vue-tsc": "^0.39.0"
   }
 }
