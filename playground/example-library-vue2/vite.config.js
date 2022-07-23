@@ -9,6 +9,18 @@ export default defineConfig({
     vueBridge({
       vueVersion: '2',
       localizeDeps: true,
+      swcOptions: {
+        env: {
+          mode: 'usage',
+        },
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: false,
+          },
+          loose: true,
+        },
+      },
     }),
   ],
   resolve: {
@@ -24,7 +36,7 @@ export default defineConfig({
     },
     minify: false,
     rollupOptions: {
-      external: ['vue', '@vue/composition-api', '@vue-bridge/runtime'],
+      external: ['vue', '@vue-bridge/runtime', 'regenerator-runtime'],
     },
   },
   test: {
@@ -38,9 +50,7 @@ export default defineConfig({
         /packages\/testing\/dist/,
         '@vue/testing-utils',
         '@vue/composition-api',
-        // 'vue',
       ],
-      // external: [],
     },
   },
 })

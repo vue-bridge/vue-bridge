@@ -1,12 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "ES5",
     "outDir": "./typings",
     "baseUrl": ".",
     "skipLibCheck": true,
     "paths": {
       "@vue-bridge/runtime": ["@vue-bridge/runtime/vue2"],
       "@/*?v-bridge": ["src/*.vue2"],
+      "vue": ["node_modules/vue"]
     }
   },
   "include": [
