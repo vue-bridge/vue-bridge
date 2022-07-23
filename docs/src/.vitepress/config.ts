@@ -167,7 +167,7 @@ function getGuidesSidebar() {
 function getTopicsSidebar() {
   return [
     {
-      text: 'Background',
+      text: 'Introduction',
       items: [
         {
           text: 'Overview',
@@ -185,12 +185,33 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Learning',
+      text: 'Recommendations',
       items: [
+        {
+          text: 'Interoperability',
+          link: '#',
+        },
         {
           text: 'Project Setup',
           link: '/topics/project-setup',
         },
+        {
+          text: 'Source Sharing',
+          link: '#',
+        },
+        {
+          text: 'Dependency Management',
+          link: '#',
+        },
+        {
+          text: 'Recommended Tooling',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Workflow',
+      items: [
         {
           text: 'Writing the code',
           link: '/topics/writing-components',

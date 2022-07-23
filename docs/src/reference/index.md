@@ -1,4 +1,4 @@
-# Reference
+# References
 
 ::: warning Work in Progress
 
@@ -10,6 +10,17 @@ process accordingly. If you are interested in contributing, [contact us](https:/
 
 :::
 
-## List of Reference Materials
+## Packages
+
+* [`@vue-bridge/runtime`](./runtime.md)
+* [`@vue-bridge/testing`](./testing.md)
+* [`@vue-bridge/vite-plugin`](./vite-plugin.md)
+* [`@vue-bridge/eslint-config`](./eslint-config.md)
+
+## Templates
+
+* **Basic "Quickstart" Setup** - (WIP) For experiments or very simple component libraries.
+* **Simple "Single-workspace" Setup** - (WIP) For developers that want a full-features setup without a monorepo structure.
+* **Full Multi-Workspaces Setup** - (WIP) For developers that want a sophisticated and full-featured setup
 
 > TODO: Show nice Overview of References and Packages documented in this section

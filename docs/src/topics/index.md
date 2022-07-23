@@ -20,12 +20,18 @@ The Topics Section is all about learning, deep understanding, the big picture. E
   * Why Vue-Bridge?
   * Comparisons
   * Workflow
-  * Migration Strategies for Vue 2 Libraries
-* Learning
-  * On Writing cross-compatible components.
-  * On Unit testing your code.
-  * On building your project.
-  * On publishing your project.
+* Recommendations
+  * Interoperability
+  * Project setup
+  * Source Sharing
+  * Dependency Management
+  * Recommended Tooling
+
+* Workflow
+  * On Writing cross-interoperable components.
+  * On Unit testing your code against Vue 2+3 with one set of tests.
+  * On different publishing strategies for your library.
+  * On building/bundling your library.
 * Adoption Strategies
   * Greenfield project
   * Adding Vue 3 support to an existing Vue 2 library

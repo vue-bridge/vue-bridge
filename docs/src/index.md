@@ -5,7 +5,7 @@ title: VueBridge
 titleTemplate: Tooling & Templates for interoperable Vue Components
 
 hero:
-  name: VueBridge
+  name: Vue-Bridge
   text: Tooling & Templates for interoperable Vue Components
   tagline: Simplifying the creation and maintenance of Vue component libraries supporting Vue 2 and 3
   image:
@@ -13,11 +13,11 @@ hero:
     alt: VueBridge
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started
+      text: Introduction
+      link: /getting-started/
     - theme: alt
-      text: Why VueBridge?
-      link: /topics/introduction-why-vue-bridge
+      text: Quickstart
+      link: /getting-started/quickstart
     - theme: alt
       text: View on GitHub
       link: https://github.com/vue-bridge/vue-bridge
