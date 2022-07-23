@@ -11,7 +11,7 @@
     "test:play:2": "pnpm --filter 'example-library-vue2' test",
     "test:play:3": "pnpm --filter 'example-library' test",
     "lint": "pnpm -r --if-present --parallel run lint --fix",
-    "build": "pnpm build:packages && pnpm build:playground && pnpm build:docs",
+    "build": "pnpm build:packages && pnpm build:playground",
     "build-ci": "pnpm build:packages && pnpm build:playground",
     "build:packages": "pnpm --filter @vue-bridge/* --parallel --aggregate-output run build",
     "build:playground": "pnpm --filter '...example-library*' run build",
