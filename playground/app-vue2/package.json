@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@vue-bridge/runtime": "*",
-    "@vue/composition-api": "^1.6.3",
     "example-library-vue2": "*",
     "vue": "^2.7.0"
   },
