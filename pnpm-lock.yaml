@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 overrides:
-  vscode-vue-languageservice: 0.38.2
+  vscode-vue-languageservice: 0.39.0
 
 packageExtensionsChecksum: aaf2f515e110d0df08cdf1835426f73a
 
@@ -41,7 +41,7 @@ importers:
     specifiers:
       '@vue-bridge/runtime': '*'
       '@vue/theme': ^1.0.1
-      vitepress: 1.0.0-alpha.4
+      vitepress: ^1.0.0-alpha.4
       vue: ^3.2.37
     dependencies:
       '@vue-bridge/runtime': link:../packages/runtime
