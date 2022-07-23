@@ -186,7 +186,6 @@ describe('Basic Test-Utils APIs', () => {
       })
       await nextTick()
       const { vm } = wrapper
-      console.log(Object.keys(vm))
       expect(mixinSpy).toHaveBeenCalled()
       expect((vm as any).$test).toBe(message)
       expect((vm as any).testPluginMixin).toBe(message)

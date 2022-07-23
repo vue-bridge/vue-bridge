@@ -109,7 +109,6 @@ importers:
       '@vitejs/plugin-vue2': ^1.1.2
       '@vue-bridge/runtime': '*'
       '@vue-bridge/vite-plugin': '*'
-      '@vue/composition-api': ^1.6.3
       example-library-vue2: '*'
       typescript: ^4.7.4
       vite: ^3.0.2
@@ -118,7 +117,6 @@ importers:
       vue-tsc: ^0.39.0
     dependencies:
       '@vue-bridge/runtime': link:../../packages/runtime
-      '@vue/composition-api': 1.7.0_vue@2.7.1
       example-library-vue2: link:../example-library-vue2
       vue: 2.7.1
     devDependencies:
@@ -183,7 +181,6 @@ importers:
       '@vue-bridge/runtime': '*'
       '@vue-bridge/testing': '*'
       '@vue-bridge/vite-plugin': '*'
-      '@vue/composition-api': ^1.6.3
       '@vue/test-utils': ^1.3.0
       browserslist: ^4.21.2
       core-js: 3.23.5
@@ -202,7 +199,6 @@ importers:
       '@vue-bridge/eslint-config': link:../../packages/eslint-config
       '@vue-bridge/testing': link:../../packages/testing
       '@vue-bridge/vite-plugin': link:../../packages/vite-plugin
-      '@vue/composition-api': 1.7.0_vue@2.7.1
       '@vue/test-utils': 1.3.0_7vnk7y5ns4khniazlm53rvnth4
       browserslist: 4.21.2
       jsdom: 20.0.0
@@ -1420,13 +1416,6 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.37
       '@vue/shared': 3.2.37
-
-  /@vue/composition-api/1.7.0_vue@2.7.1:
-    resolution: {integrity: sha512-hxOgLYR+wjuPX9bkP2pAPlqUs98XxBoa9DSLyp1z6+YR92wC42PZcZKs4d+VRtcv4udOv041Kss+F6ap5nj8YA==}
-    peerDependencies:
-      vue: '>= 2.5 < 2.7'
-    dependencies:
-      vue: 2.7.1
 
   /@vue/devtools-api/6.2.1:
     resolution: {integrity: sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==}
