@@ -4,7 +4,7 @@ import { defineComponent, attrsListenersMixin } from '@vue-bridge/runtime'
 // import { testString } from 'v-bridge:@/components/helpers/index'
 import { testString } from '@/components/helpers/index?v-bridge'
 export default defineComponent({
-  name: 'Input',
+  name: 'MyInput',
   mixins: [attrsListenersMixin],
   inheritAttrs: false,
   props: {

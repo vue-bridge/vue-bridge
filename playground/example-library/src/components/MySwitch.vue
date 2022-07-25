@@ -11,6 +11,7 @@ import CompB from './dummys/CompB.vue'
  */
 
 export default defineComponent({
+  name: 'MySwitch',
   data: () => ({
     toggle: true,
   }),
