@@ -1,7 +1,7 @@
 import { mount } from '@vue-bridge/testing'
 import { nextTick } from 'vue'
 import { describe, it, expect } from 'vitest'
-import MyInput from '../components/MYInput.vue'
+import MyInput from '../components/MyInput.vue'
 
 describe('Input', () => {
   it('v-model works', async () => {
