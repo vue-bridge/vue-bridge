@@ -1,12 +1,12 @@
 import { mount } from '@vue-bridge/testing'
 import { nextTick } from 'vue'
 import { describe, it, expect } from 'vitest'
-import Input from '../components/Input.vue'
+import MyInput from '../components/MyInput.vue'
 
 describe('Input', () => {
   it('v-model works', async () => {
     const newValue = 'Hello You!'
-    const wrapper = mount(Input, {
+    const wrapper = mount(MyInput, {
       props: {
         modelValue: 'Hello World',
       },

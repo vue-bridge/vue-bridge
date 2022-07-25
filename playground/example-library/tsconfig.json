@@ -12,6 +12,7 @@
     "paths": {
       "@/*?v-bridge": ["src/*.vue3"],
       "@/*": ["src/*"],
+      "@vue-bridge/runtime": ["@vue-bridge/runtime/vue3"]
     }
   },
   "include": [
