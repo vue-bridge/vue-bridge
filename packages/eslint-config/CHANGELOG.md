@@ -1,5 +1,11 @@
 # @vue-bridge/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- 90052a8: now uses eslint-plugin-vue 9
+
 ## 0.1.1
 
 ### Patch Changes
