@@ -83,7 +83,10 @@ function patchGlobals<P, D = {}>(options: MountingOptions<P, D> & Vue2Options) {
       })
     }
     if (options.global.plugins) {
-      Object.entries(options.global.plugins).forEach(([plugin, ...options]) => {
+      options.global.plugins.forEach((pluginEntry) => {
+        const [plugin, ...options] = Array.isArray(pluginEntry)
+          ? pluginEntry
+          : [pluginEntry]
         localVue.use(plugin, ...options)
       })
     }

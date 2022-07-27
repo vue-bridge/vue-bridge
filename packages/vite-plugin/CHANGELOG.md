@@ -1,5 +1,11 @@
 # @vue-bridge/vite-plugin
 
+## 0.2.0
+
+### Minor Changes
+
+- b88a067: feature: option to use swc to compile TS/TS for Vue 2 (better ES5 support, polyfills)
+
 ## 0.1.0
 
 ### Minor Changes

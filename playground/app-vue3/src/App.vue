@@ -1,7 +1,7 @@
 <template>
   <div>
     <label for="custom-input">Input:</label>
-    <CustomInput
+    <MyInput
       id="custom-input"
       v-model="text"
       class="test"
@@ -10,12 +10,12 @@
     <hr />
     <p data-test-text>Text from input: {{ text }}</p>
     <hr />
-    <Switch />
+    <MySwitch />
   </div>
 </template>
 
 <script setup>
-import { Input as CustomInput, Switch } from 'example-library'
+import { MyInput, MySwitch } from 'example-library'
 import { ref } from 'vue'
 
 const text = ref('')

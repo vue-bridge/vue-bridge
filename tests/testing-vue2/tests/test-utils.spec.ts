@@ -159,10 +159,7 @@ describe('Basic Test-Utils APIs', () => {
       )
     })
 
-    // FIXME: This one test always fails in CI. No idea why. none.
-    const isCI = process.env.CI || import.meta.env.CI
-    // test('global.plugins', async () => {
-    test.skipIf(isCI)('global.plugins', async () => {
+    test('global.plugins', async () => {
       const mixinSpy = vi.fn()
 
       const plugin: PluginFunction<{ message?: string }> = (

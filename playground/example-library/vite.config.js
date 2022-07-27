@@ -34,9 +34,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     deps: {
-      inline: [
-        /packages\/testing\/dist/
-      ],
+      inline: [/packages\/testing\/dist/],
     },
   },
 })
