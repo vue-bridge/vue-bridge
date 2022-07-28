@@ -10,3 +10,4 @@ playground/*/typings
 !docs
 docs/vitepress/dist
 node_modules/
+docs/src/components.d.ts

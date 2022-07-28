@@ -9,7 +9,7 @@ const vuePath = new URL(
 
 export default defineConfig({
   plugins: [
-    // @ts-expect-error - doesn't like the type for whatever reason
+    // @ts-ignore - doesn't like the type for whatever reason
     vue(),
   ],
   define: {
@@ -26,20 +26,10 @@ export default defineConfig({
       '@vue-bridge/runtime': '@vue-bridge/runtime/vue2',
     },
   },
-  optimizeDeps: {
-    // exclude: [
-    // '@vue-bridge/runtime',
-    // '@vue-bridge/runtime/vue2',
-    // '@vue-bridge/testing',
-    // '@vue/test-utils',
-    // 'vue',
-    // 'vue-template-compiler',
-    // ],
-  },
   test: {
     environment: 'jsdom',
     deps: {
-      inline: true, // [/@vue-bridge\/testing/, /@vue\/test-utils/, 'vue'],
+      inline: true, // necessary for aliases to work in deps like `@vue/test-utils
     },
   },
 })

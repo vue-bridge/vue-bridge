@@ -2,7 +2,7 @@
   "name": "docs",
   "version": "0.0.0",
   "private": true,
-  "description": "Docs for this lib.",
+  "description": "Docs for the VueBridge project.",
   "author": "Thorsten Luenborg <t.luneborg@googlemail.com>",
   "homepage": "",
   "license": "MIT",
@@ -20,11 +20,16 @@
     "lint": "eslint 'src/**/*.{ts,vue}' --no-error-on-unmatched-pattern"
   },
   "dependencies": {
+    "@iconify-json/vscode-icons": "^1.1.7",
     "@vue-bridge/runtime": "*",
-    "@vue/theme": "^1.0.1",
-    "vue": "^3.2.37"
+    "unplugin-vue-components": "^0.21.1",
+    "vite-plugin-windicss": "^1.8.6",
+    "vitepress": "1.0.0-alpha.4",
+    "vue": "^3.2.37",
+    "windicss": "^3.5.6"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.4"
+    "unplugin-icons": "^0.14.7",
+    "vite": "^2.9.13"
   }
 }

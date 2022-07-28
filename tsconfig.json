@@ -38,6 +38,8 @@
     "/docs/**/*.vue",
     "/docs/**/*.js",
     "/docs/**/*.ts",
+    "/docs/src/.vitepress/**/*.ts",
+    "/docs/src/.vitepress/**/*.vue",
     "/cypress/**/*.js"
   ]
 }

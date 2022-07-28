@@ -1,10 +1,20 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 // import baseConfig from '@vue/theme/config'
+import Icons from 'unplugin-icons/vite'
+import IconResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
+import WindiCSS from 'vite-plugin-windicss'
 
 const nav: DefaultTheme.Config['nav'] = [
   {
     text: 'Getting Started',
-    link: '/getting-started',
+    // link: '/getting-started',
+    activeMatch: '^/getting-started',
+    items: [
+      { text: 'Introduction', link: '/getting-started/' },
+      { text: 'Quickstart', link: '/getting-started/quickstart' },
+      { text: 'Tutorial', link: '/getting-started/tutorial' },
+    ],
   },
   {
     text: 'Topics',
@@ -157,10 +167,10 @@ function getGuidesSidebar() {
 function getTopicsSidebar() {
   return [
     {
-      text: 'Background',
+      text: 'Introduction',
       items: [
         {
-          text: 'Introduction',
+          text: 'Overview',
           link: '/topics/',
           items: [],
         },
@@ -175,12 +185,33 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Learning',
+      text: 'Concepts',
       items: [
         {
-          text: 'Project Setup',
+          text: 'Interoperability',
+          link: '#',
+        },
+        {
+          text: 'Project Setups',
           link: '/topics/project-setup',
         },
+        {
+          text: 'Source Sharing',
+          link: '#',
+        },
+        {
+          text: 'Dependency Management',
+          link: '#',
+        },
+        {
+          text: 'Recommended Tooling',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: 'Workflow',
+      items: [
         {
           text: 'Writing the code',
           link: '/topics/writing-components',
@@ -222,7 +253,7 @@ function getTopicsSidebar() {
 function getReferencesDropDownMenu() {
   return [
     {
-      text: 'Overview',
+      text: 'General',
       items: [
         {
           text: 'Overview',
@@ -298,9 +329,8 @@ export default defineConfig({
     logo: '/logo.png',
 
     editLink: {
-      repo: 'vue-bridge/vue-bridge',
-      branch: 'main',
-      dir: 'docs/src',
+      pattern:
+        'https://github.com/vue-bridge/vue-bridge/edit/main/docs/src/:path',
       text: 'Suggest change to this page',
     },
 
@@ -317,11 +347,6 @@ export default defineConfig({
     //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
     // },
 
-    // carbonAds: {
-    //   code: 'CEBDT27Y',
-    //   placement: 'vuejsorg'
-    // },
-
     nav,
     sidebar,
 
@@ -336,6 +361,15 @@ export default defineConfig({
     define: {
       __VUE_OPTIONS_API__: false,
     },
+    plugins: [
+      WindiCSS(),
+      Icons(),
+      Components({
+        resolvers: [IconResolver()],
+        // filters for transforming targets
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      }),
+    ],
     // optimizeDeps: {
     // exclude: ['@vue/repl']
     // },

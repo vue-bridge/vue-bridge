@@ -1,5 +1,5 @@
 ---
-aside: deep
+outline: deep
 ---
 
 # Component Lifecycle Hooks
@@ -83,10 +83,10 @@ export default defineComponent({
 
 ### Automatic handling with `@vue-demi` (Composition-API)
 
-`vue-demi` will also expose Composition-API lifecycle hooks that follow the Vue 3 naming convention but work in both versions:
+Vue `2.7` supports composition API, and in composition API, the old lifecycle names are already gone. So you can simply use the new ones from Vue 3:
 
 ```js
-import { defineComponent, onBeforeUnmount } from 'vue-demi'
+import { defineComponent, onBeforeUnmount } from 'vue'
 export default defineComponent({
 
   setup() {

@@ -1,34 +1,25 @@
 ---
 outline: deep
 ---
-# Getting Started
 
-::: warning Work in Progress
-
-The VueBridge Project still is very much a work in progress and not usable in production.
-
-Features might not work as expected, pages in these docs might be outdated, missing or incomplete.
-
-process accordingly. If you are interested in contributing, [contact us](https://twitter.com/VueBridge)
-
-:::
-
-## What is Vue-Bridge?
-
-Vue-Bridge is a project aiming to make it easier for Vue-Library Authors to write, test and build libraries that support both Vue 2 and Vue 3. The end goal is to help move the Vue ecosystem forward - move tried and true libraries that support
-
-::: info Why Vue-Bridge?
-
-If you want to learn more about the why and how of Vue-Bridge and decide wether or not this might actually helpful to you or your project, we recommend visiting the Introduction in our Topics section before getting started with a template:
-
-["Bridging the gap" - Why Vue-Bidge?](./topics/introduction-why-vue-bridge.md)
-
-:::
-
-## Quickstart with a template
+# Quickstart
 
 
-The quickest and easiest way is to clone one of our templates on github. We currently have two templates, but are working on more. In the future, we are also considering a project initializer similar to [`create-vue`](https://githubcom/vuejs/create-vue), provided we have the demand from the community and the resources to write and maintain it.
+The quickest and easiest way to get started with Vue Bridge is to clone one of our templates, run npm install, and follow the rest of the README instructions.
+
+
+## Templates
+
+We currently offer a few different templates to give developers a choice in how they want to start their project.These are the templates we provide so far:
+
+| Template     | State   | Description                                 |
+|--------------|---------|---------------------------------------------|
+|workspaces    | ready   | Full monorepo/workspaces setup              |
+|single-repo   | in dev  | Simpler setup where the Vue 2 build process and test are tucked away in the sub-directory |
+|basic         | planned | 
+
+In the future, we are also considering a project initializer similar to [`create-vue`](https://githubcom/vuejs/create-vue), provided we have the demand from the community and the resources to write and maintain it.
+
 
 ::: tip Contributors wanted!
 
@@ -39,6 +30,13 @@ That's why we are looking for contributors willing to work on other templates be
 :::
 
 ### Workspaces&Typescript Template
+
+<div class="flex mt-3 text-xl">
+  <i-vscode-icons-file-type-pnpm />
+  <i-vscode-icons-file-type-eslint />
+  <i-vscode-icons-file-type-typescript />
+  <i-vscode-icons-file-type-vitest />
+</div>
 
 Repository: https://github.com/vue-bridge/template-monorepo
 
@@ -71,13 +69,26 @@ npx degit vue-bridge/template-monorepo my-library
 ```
 ...or just click the big green button labeled "use this template" in the github repo.
 
-### Workspaces&Javascript
+### Workspaces with Javascript
 
-For now, please use the "Workspaces&Typescript" template above and follow the README intructions on how to remove Typescript from it.
+For now, please use the "Workspaces&Typescript" template above and follow the README instructions on how to remove Typescript from it.
+
 ### Single-Package template
 
-> TBD
-## Learning path to your own setup
+::: warning Work in progress
 
-> TBD
+This template is still in development and not public yet
 
+:::
+
+### Basic Template
+
+* simple repository structure
+* no Vue-specific build step
+* library is published as SFC files, no bundling.
+
+::: warning Work in progress
+
+This template is still in development and not public yet
+
+:::
