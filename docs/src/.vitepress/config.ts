@@ -185,14 +185,14 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Recommendations',
+      text: 'Concepts',
       items: [
         {
           text: 'Interoperability',
           link: '#',
         },
         {
-          text: 'Project Setup',
+          text: 'Project Setups',
           link: '/topics/project-setup',
         },
         {
@@ -253,7 +253,7 @@ function getTopicsSidebar() {
 function getReferencesDropDownMenu() {
   return [
     {
-      text: 'Overview',
+      text: 'General',
       items: [
         {
           text: 'Overview',
@@ -345,11 +345,6 @@ export default defineConfig({
     //   indexName: 'vuejs-v3',
     //   appId: 'BH4D9OD16A',
     //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
-    // },
-
-    // carbonAds: {
-    //   code: 'CEBDT27Y',
-    //   placement: 'vuejsorg'
     // },
 
     nav,
