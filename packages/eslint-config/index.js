@@ -28,6 +28,12 @@ module.exports = {
           },
           {
             name: 'vue',
+            importNames: ['set', 'del'],
+            message:
+              "Please use `import { set, del } from '@vue-bridge/runtime'` instead for cross-compatibility.",
+          },
+          {
+            name: 'vue',
             importNames: ['App'],
             message:
               "Please use `import type { App } from '@vue-bridge/runtime'` instead for cross-compatibility.",
@@ -45,12 +51,12 @@ module.exports = {
       {
         property: '$attrs',
         message:
-          "Please use $_attrs from vue-bridge's attrsListenersMixin instead for cross-compatibility",
+          "Please use $bridgeAttrs from vue-bridge's attrsListenersMixin instead for cross-compatibility",
       },
       {
         property: '$listeners',
         message:
-          'Please use $_listeners from attrsListenersMixin instead for cross-compatibility',
+          'Please use $bridgeListeners from attrsListenersMixin instead for cross-compatibility',
       },
       {
         property: '$slots',
