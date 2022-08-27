@@ -13,7 +13,7 @@ Vue-Bridge provides an eslint-config package that defines a bunch of rules that 
 
 ## Dependencies
 
-This package depends on [`eslint`](https://www.eslint.org) `^8.0.0` or higher and [`eslint-plugin-vue`](https://eslint.vuejs.org) version `^8.0.0` or higher. You have to install these packages yourself.
+This package depends on [`eslint`](https://www.eslint.org) `^8.0.0` or higher and [`eslint-plugin-vue`](https://eslint.vuejs.org) version `^9.0.0` or higher. You have to install these packages yourself.
 
 ## Installation
 

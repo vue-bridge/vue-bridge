@@ -1,6 +1,9 @@
 import { h, App } from 'vue'
 import Theme from 'vitepress/theme'
 import VBBadge from './components/Badge.vue'
+
+import 'virtual:windi.css'
+
 export default Object.assign({}, Theme, {
   Layout: () => {
     // @ts-ignore

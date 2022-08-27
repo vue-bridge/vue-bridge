@@ -1,10 +1,20 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 // import baseConfig from '@vue/theme/config'
+import Icons from 'unplugin-icons/vite'
+import IconResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
+import WindiCSS from 'vite-plugin-windicss'
 
 const nav: DefaultTheme.Config['nav'] = [
   {
     text: 'Getting Started',
-    link: '/getting-started',
+    // link: '/getting-started',
+    activeMatch: '^/getting-started',
+    items: [
+      { text: 'Introduction', link: '/getting-started/' },
+      { text: 'Quickstart', link: '/getting-started/quickstart' },
+      { text: 'Tutorial', link: '/getting-started/tutorial' },
+    ],
   },
   {
     text: 'Topics',
@@ -157,10 +167,10 @@ function getGuidesSidebar() {
 function getTopicsSidebar() {
   return [
     {
-      text: 'Background',
+      text: 'Introduction',
       items: [
         {
-          text: 'Introduction',
+          text: 'Overview',
           link: '/topics/',
           items: [],
         },
@@ -175,12 +185,33 @@ function getTopicsSidebar() {
       ],
     },
     {
-      text: 'Learning',
+      text: 'Concepts',
       items: [
         {
-          text: 'Project Setup',
-          link: '/topics/project-setup',
+          text: 'Interoperability (Intro)',
+          link: 'topics/concepts/interoperability',
         },
+        {
+          text: 'Dependency Management',
+          link: 'topics/concepts/dependencies',
+        },
+        {
+          text: 'Source Sharing',
+          link: 'topics/concepts/code-sharing',
+        },
+        {
+          text: 'Project Setups',
+          link: '/topics/concepts/project-setup',
+        },
+        {
+          text: 'Recommended Tooling',
+          link: '/topics/concepts/recommended-tooling',
+        },
+      ],
+    },
+    {
+      text: 'Workflow',
+      items: [
         {
           text: 'Writing the code',
           link: '/topics/writing-components',
@@ -222,7 +253,7 @@ function getTopicsSidebar() {
 function getReferencesDropDownMenu() {
   return [
     {
-      text: 'Overview',
+      text: 'General',
       items: [
         {
           text: 'Overview',
@@ -255,21 +286,12 @@ function getReferencesDropDownMenu() {
       text: 'Templates',
       items: [
         {
-          text: 'template-workspaces',
-          link: '/reference/template-workspaces',
+          text: 'Official Templates',
+          link: '/reference/official-templates',
         },
         {
-          text: '`create-vue-bridge (WIP)`',
-          link: '/reference/create-vue-bridge',
-        },
-      ],
-    },
-    {
-      text: 'Other',
-      items: [
-        {
-          text: 'Compatibility Reference',
-          link: '/reference/compatibility/',
+          text: 'Community Templates',
+          link: '/reference/community-templates',
         },
       ],
     },
@@ -298,9 +320,8 @@ export default defineConfig({
     logo: '/logo.png',
 
     editLink: {
-      repo: 'vue-bridge/vue-bridge',
-      branch: 'main',
-      dir: 'docs/src',
+      pattern:
+        'https://github.com/vue-bridge/vue-bridge/edit/main/docs/src/:path',
       text: 'Suggest change to this page',
     },
 
@@ -317,11 +338,6 @@ export default defineConfig({
     //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
     // },
 
-    // carbonAds: {
-    //   code: 'CEBDT27Y',
-    //   placement: 'vuejsorg'
-    // },
-
     nav,
     sidebar,
 
@@ -336,6 +352,15 @@ export default defineConfig({
     define: {
       __VUE_OPTIONS_API__: false,
     },
+    plugins: [
+      WindiCSS(),
+      Icons(),
+      Components({
+        resolvers: [IconResolver()],
+        // filters for transforming targets
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      }),
+    ],
     // optimizeDeps: {
     // exclude: ['@vue/repl']
     // },

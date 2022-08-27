@@ -59,7 +59,7 @@ However, two things make this a bit of a challenge:
 1. Since `this.$set()` and `this.$delete()` are missing from Vue 3, but needed for Vue 2, we need replacements.
 2. Write unit tests!
 
-### `$set/$delete` Polyfill via `@vue-bridge/runtime` (Options API)
+### Options API: `$set/$delete` Polyfill via `@vue-bridge/runtime`
 
 
 Concerning Vue3, `@vue-bridge/runtime` can help with the missing methods: When you define your component with its `defineComponent` export will add these missing methods to the component when building our component for Vue 3.
@@ -82,13 +82,13 @@ export default defineComponent({
 })
 ```
 
-### `set/del` helpers from `vue-demi` (Composition API)
+### Composition API: `set()/del()` polyfill via `@vue-bridge/runtime`
 
-If you are using composition-api in your library, you are surely using `vue-demi`to get it working in both Vue 2 and Vue 3. `vue-demi` exposes `set()` and `del()` helpers that work just like `$set()` and `$delete()` in Options API:
+With Vue `2.7`, both Vue 2 and Vue 3 support the composition API. Vue 2 also exposes `set()` and `del()` helpers that work just like `$set()` and `$delete()` in Options API, but can be used in `setup()`. Since Vue 3 doesn't expose them, use the ones provided by `@vue-bridge/runtime`:
 
 ```js
-import { defineComponent } from '@vue-bridge/runtime'
-import { reactive, set, del } from 'vue-demi'
+import { reactive } from 'vue'
+import { defineComponent, set, del } from '@vue-bridge/runtime'
 
 export default defineComponent({
   data: () => ({

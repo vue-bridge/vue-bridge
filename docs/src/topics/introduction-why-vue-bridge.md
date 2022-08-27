@@ -37,7 +37,7 @@ The goal of the Vue-Bridge project is to adress all of these paint poitns for Vu
 
 The easiest way to get started with vue-bridge is using our template, which comes with a bunch of options to adjust for JS/TS flavours and the like. It creates a project with all of the [Tooling](#tooling) packages pre-configured to write, test, build and publish cross-compatible Vue components/libraries.
 
-Check out the [Getting Started](../getting-started) guide to dive right in.
+Check out the [Getting Started](../getting-started/index.md) guide to dive right in.
 
 #### Tooling 
 
