@@ -26,6 +26,10 @@ import { ref } from '@vue/composition-api'
 import { ref } from 'vue'
 ```
 
+::: warning Outdated
+This page needs to be updated with Vue 2.7 in mind.
+:::
+
 This is where the next item on our list comes in:
 ## `vue-demi`
 

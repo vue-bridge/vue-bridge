@@ -69,9 +69,11 @@ npx degit vue-bridge/template-monorepo my-library
 ```
 ...or just click the big green button labeled "use this template" in the github repo.
 
-### Workspaces with Javascript
+#### Using the template with Javascript
 
-For now, please use the "Workspaces&Typescript" template above and follow the README instructions on how to remove Typescript from it.
+The template comes with full TS support, but if you want to just use Javascript, that's achievable with a few initial adjustments.
+
+Please follow the instructions in the template's README on how to remove Typescript from it and turn it into a JS-based project.
 
 ### Single-Package template
 

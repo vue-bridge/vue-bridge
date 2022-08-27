@@ -188,24 +188,24 @@ function getTopicsSidebar() {
       text: 'Concepts',
       items: [
         {
-          text: 'Interoperability',
-          link: '#',
-        },
-        {
-          text: 'Project Setups',
-          link: '/topics/project-setup',
-        },
-        {
-          text: 'Source Sharing',
-          link: '#',
+          text: 'Interoperability (Intro)',
+          link: 'topics/concepts/interoperability',
         },
         {
           text: 'Dependency Management',
-          link: '#',
+          link: 'topics/concepts/dependencies',
+        },
+        {
+          text: 'Source Sharing',
+          link: 'topics/concepts/code-sharing',
+        },
+        {
+          text: 'Project Setups',
+          link: '/topics/concepts/project-setup',
         },
         {
           text: 'Recommended Tooling',
-          link: '#',
+          link: '/topics/concepts/recommended-tooling',
         },
       ],
     },
@@ -286,21 +286,12 @@ function getReferencesDropDownMenu() {
       text: 'Templates',
       items: [
         {
-          text: 'template-workspaces',
-          link: '/reference/template-workspaces',
+          text: 'Official Templates',
+          link: '/reference/official-templates',
         },
         {
-          text: '`create-vue-bridge (WIP)`',
-          link: '/reference/create-vue-bridge',
-        },
-      ],
-    },
-    {
-      text: 'Other',
-      items: [
-        {
-          text: 'Compatibility Reference',
-          link: '/reference/compatibility/',
+          text: 'Community Templates',
+          link: '/reference/community-templates',
         },
       ],
     },

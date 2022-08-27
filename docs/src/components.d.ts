@@ -7,11 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ILogosVitejs: typeof import('~icons/logos/vitejs')['default']
     IVscodeIconsFileTypeEslint: typeof import('~icons/vscode-icons/file-type-eslint')['default']
     IVscodeIconsFileTypePnpm: typeof import('~icons/vscode-icons/file-type-pnpm')['default']
     IVscodeIconsFileTypeTypescript: typeof import('~icons/vscode-icons/file-type-typescript')['default']
-    IVscodeIconsFileTypeVite: typeof import('~icons/vscode-icons/file-type-vite')['default']
     IVscodeIconsFileTypeVitest: typeof import('~icons/vscode-icons/file-type-vitest')['default']
   }
 }

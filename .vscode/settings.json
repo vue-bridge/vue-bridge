@@ -13,7 +13,8 @@
     "titleBar.activeBackground": "#42b983",
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#42b98399",
-    "titleBar.inactiveForeground": "#15202b99"
+    "titleBar.inactiveForeground": "#15202b99",
+    "commandCenter.border": "#15202b99"
   },
   "peacock.affectStatusBar": false
 }
