@@ -10,7 +10,7 @@ On this page, we cover general recommendations and how we arrived at them, weigh
 
 ::: tip Quickstart with our Templates
 
-Vue-Bridge offers a few starter templates to get you up and running without having to set up everything yourself, so head over to the ["Getting Started" Section](../getting-started/index.md) if you want to get a project going quickly.
+Vue-Bridge offers a few starter templates to get you up and running without having to set up everything yourself, so head over to the ["Getting Started" Section](../../getting-started/index.md) if you want to get a project going quickly.
 
 :::
 
