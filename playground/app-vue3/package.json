@@ -3,10 +3,11 @@
   "version": "0.0.3",
   "private": "true",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open --port 30000",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint 'src/**/*.{ts,vue}'"
+    "lint": "eslint 'src/**/*.{ts,vue}'",
+    "test": "cypress open"
   },
   "dependencies": {
     "example-library": "*",
