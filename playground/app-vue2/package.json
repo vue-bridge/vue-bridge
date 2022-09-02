@@ -3,10 +3,11 @@
   "version": "0.0.3",
   "private": "true",
   "scripts": {
-    "dev": "vite --open --port 3001",
+    "dev": "vite --open --port 30001",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint 'src/**/*.{ts,vue}'"
+    "lint": "eslint 'src/**/*.{ts,vue}'",
+    "test": "cypress open"
   },
   "pnpm": {
     "packageExtensions": {

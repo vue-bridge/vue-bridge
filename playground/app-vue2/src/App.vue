@@ -1,34 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld :msg="msg" />
-    <!-- <ExampleInput v-model="msg" /> -->
-    <ExampleInput
-      v-model="msg"
-      class="test1"
+    <label for="custom-input">Input:</label>
+    <MyInput
+      id="custom-input"
+      v-model="text"
+      class="test"
       style="padding-top: 10px"
-      id="test-id"
     />
-    <Switchx />
+    <hr />
+    <p data-test-text>Text from input: {{ text }}</p>
+    <hr />
+    <MySwitch />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import { defineComponent } from '@vue-bridge/runtime'
-import {
-  MyInput as ExampleInput,
-  MySwitch as Switchx,
-} from 'example-library-vue2'
+import { MyInput, MySwitch } from 'example-library-vue2'
+
 export default defineComponent({
   name: 'App',
   data: () => ({
-    msg: 'Hello Vue 2 with @vue-bridge/runtime',
+    text: '',
   }),
   components: {
-    HelloWorld,
-    ExampleInput,
-    Switchx,
+    MyInput,
+    MySwitch,
   },
 })
 </script>
