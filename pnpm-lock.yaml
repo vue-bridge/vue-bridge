@@ -72,6 +72,7 @@ importers:
       tslib: ^2.4.0
       typescript: ^4.7.4
       vue: ^3.2.37
+      vue-demi: ^0.13.11
       vue2: npm:vue@^2.7.0-0
     dependencies:
       tslib: 2.4.0
@@ -82,6 +83,7 @@ importers:
       rollup-plugin-dts: 4.2.2_55kiftncucr43pz4hskma6yi2q
       typescript: 4.7.4
       vue: 3.2.37
+      vue-demi: 0.13.11_vue@3.2.37
       vue2: /vue/2.7.8
 
   packages/switch:
@@ -5622,6 +5624,21 @@ packages:
   /vscode-textmate/5.2.0:
     resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
     dev: false
+
+  /vue-demi/0.13.11_vue@3.2.37:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.37
+    dev: true
 
   /vue-demi/0.13.5_vue@3.2.37:
     resolution: {integrity: sha512-tO3K2bML3AwiHmVHeKCq6HLef2st4zBXIV5aEkoJl6HZ+gJWxWv2O8wLH8qrA3SX3lDoTDHNghLX1xZg83MXvw==}

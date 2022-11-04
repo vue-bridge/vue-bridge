@@ -23,11 +23,11 @@ export default <UserConfig>{
     },
     emptyOutDir: !isVue2,
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue-demi'],
       output: {
         banner: `
         /**
-         *  Copyright ${new Date(Date.now()).getFullYear()} Thorsten Luenborg 
+         *  Copyright ${new Date(Date.now()).getFullYear()} Thorsten Luenborg
          *  @license MIT
         **/
         `,

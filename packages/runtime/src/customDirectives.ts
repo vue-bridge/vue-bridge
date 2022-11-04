@@ -1,4 +1,4 @@
-import type { Directive, DirectiveBinding, DirectiveHook, VNode } from 'vue'
+import type { Directive, DirectiveBinding, DirectiveHook, VNode } from 'vue-demi'
 import { isVue2 } from './constants'
 
 const map = {

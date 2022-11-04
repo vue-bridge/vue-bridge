@@ -1,3 +1,3 @@
-import Vue from 'vue'
+import Vue from 'vue-demi'
 
 export type App = typeof Vue

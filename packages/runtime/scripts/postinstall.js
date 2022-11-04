@@ -1,7 +1,7 @@
 /**
  * Inspired and partially copied from https://github.com/vueuse/vue-demi
  */
-const Vue = loadModule('vue')
+const Vue = loadModule('vue-demi')
 const { switchVersion } = require('./utils')
 
 if (!Vue || typeof Vue.version !== 'string') {

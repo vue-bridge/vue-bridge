@@ -1,1 +1,1 @@
-export { set, del } from 'vue'
+export { set, del } from 'vue-demi'
