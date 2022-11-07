@@ -12,7 +12,7 @@ const config = [
   {
     input: './types-vue3/main.d.ts',
     output: [{ file: 'dist-vue3/index.d.ts', format: 'es' }],
-    external: ['vue'],
+    external: ['vue-demi'],
     plugins: [
       dts({
         respectExternal: true,
@@ -31,7 +31,7 @@ const config = [
   {
     input: './types-vue2/main.d.ts',
     output: [{ file: 'dist-vue2/index.d.ts', format: 'es' }],
-    external: ['vue'],
+    external: ['vue-demi'],
     plugins: [
       dts({
         compilerOptions: {

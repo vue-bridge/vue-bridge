@@ -1,1 +1,1 @@
-export type { App } from 'vue'
+export type { App } from 'vue-demi'

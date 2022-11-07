@@ -1,5 +1,5 @@
 import { isVue2 } from './constants'
-import { type VNode } from 'vue'
+import { type VNode } from 'vue-demi'
 type Slot = (...args: any[]) => VNode[]
 export const slotsMixin = {
   beforeCreate() {
